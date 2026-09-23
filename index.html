@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndustrialPro Fasteners – Master Fastener & Hardware Supply</title>
+  <meta name="description" content="Master distributor of industrial fasteners, structural bolts, stainless hardware, and custom engineered fastening solutions for heavy construction and OEMs.">
+  
+  <!-- Remix Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WholesaleStore",
+    "name": "IndustrialPro Fasteners",
+    "description": "Master distributor of industrial fasteners, structural bolts, and hardware.",
+    "url": "https://industrialprofasteners.com",
+    "telephone": "+1-800-555-BOLT",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4800 Industrial Parkway",
+      "addressLocality": "Cleveland",
+      "addressRegion": "OH",
+      "postalCode": "44135",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+  <!-- GSAP 3 + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Sticky Master Navigation Bar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo">
+          <i class="ri-hexagon-fill"></i>
+          <span>Industrial<span class="accent">Pro</span></span>
+        </a>
+
+        <!-- Desktop Navigation (> 1024px) -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+
+        <!-- Action Items (RTL + Theme + Login) -->
+        <div class="nav-actions">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+          <a href="login.html" class="btn-login-nav">Login</a>
+          <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Hamburger Slide Drawer (≤ 1024px) -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <i class="ri-hexagon-fill"></i>
+        <span>Industrial<span class="accent">Pro</span></span>
+      </a>
+      <button type="button" class="drawer-close" aria-label="Close Mobile Menu">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="active"><i class="ri-home-4-line"></i> Home</a></li>
+      <li><a href="home2.html"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
+      <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
+      <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
+      <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
+      <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
+      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+      <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <div class="drawer-toggles">
+        <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
+        <div style="display: flex; gap: var(--space-2);">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <!-- 1. Hero Section (with Required Industrial Animation & Staggered Reveal) -->
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="tag-badge">
+              <i class="ri-shield-check-line"></i> ISO 9001:2015 Certified Master Distributor
+            </div>
+            <h1>Engineered Fasteners For Critical Infrastructure</h1>
+            <p>
+              Direct-mill supply of heavy hex bolts, structural assemblies, and high-tensile hardware. Over 75,000 SKUs ready for same-day dispatch to job sites, manufacturing plants, and defense facilities.
+            </p>
+            <div class="hero-actions">
+              <a href="catalog.html" class="btn btn-primary btn-lg">Browse Fastener Catalog</a>
+              <a href="bulk-ordering.html" class="btn btn-secondary btn-lg">Request Volume RFQ</a>
+            </div>
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <span class="metric-number">75K+</span>
+                <span class="metric-label">SKUs in Immediate Stock</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">99.8%</span>
+                <span class="metric-label">On-Time Lot Fulfillment</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">38+</span>
+                <span class="metric-label">Years Industrial Authority</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-card-display">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Precision Industrial Fasteners and Structural Bolts" loading="eager">
+              <div class="hero-floating-badge">
+                <i class="ri-award-fill"></i>
+                <div>
+                  <div style="font-weight: 500; font-size: 0.95rem;">Full Lot Traceability</div>
+                  <div style="font-size: 0.8rem; color: var(--color-text-muted);">MTR & CMTR Included with Every Lot</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Product Range by Category (Step 3: Centered Headings & Equal Centered Cards) -->
+    <section class="section" id="product-range">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge">Comprehensive Inventory</span>
+          <h2>Heavy-Duty Fastening Systems</h2>
+          <p class="lead">
+            Certified to ASTM, SAE, ASME, and DIN standards. From high-tensile Grade 8 to corrosion-resistant 316 stainless steel.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Heavy Hex Bolts" loading="lazy">
+            </div>
+            <div class="card-icon"><i class="ri-hexagon-line"></i></div>
+            <h3>Heavy Hex Bolts & Cap Screws</h3>
+            <p>
+              Grade 2, Grade 5, and Grade 8 alloy steel bolts engineered for high-stress agricultural, automotive, and heavy mechanical assemblies.
+            </p>
+            <div class="card-footer">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Hex Specifications</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f6?auto=format&fit=crop&w=600&q=80" alt="Structural Bolting" loading="lazy">
+            </div>
+            <div class="card-icon"><i class="ri-building-line"></i></div>
+            <h3>Structural A325 & A490 Assemblies</h3>
+            <p>
+              Heavy hex structural bolts with matching 2H nuts and F436 washers for bridges, steel erection, and commercial high-rises.
+            </p>
+            <div class="card-footer">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Structural Range</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Socket Head Fasteners" loading="lazy">
+            </div>
+            <div class="card-icon"><i class="ri-settings-5-line"></i></div>
+            <h3>Socket Heads & Precision Dowels</h3>
+            <p>
+              Alloy steel and stainless socket head cap screws, set screws, shoulder screws, and precision ground dowel pins for tooling and dies.
+            </p>
+            <div class="card-footer">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Socket Screws</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Key Industries Served -->
+    <section class="section section-alt" id="industries">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge">Mission-Critical Sectors</span>
+          <h2>Industries Relying On IndustrialPro</h2>
+          <p class="lead">
+            Delivering zero-defect fastening hardware to America's most demanding manufacturing and construction sectors.
+          </p>
+        </div>
+
+        <div class="card-grid-4">
+          <div class="card">
+            <div class="card-icon"><i class="ri-road-map-line"></i></div>
+            <h4>Heavy Infrastructure</h4>
+            <p>DOT-approved structural bolts and tension-indicating assemblies for bridges and highway spans.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-oil-line"></i></div>
+            <h4>Petrochem & Refining</h4>
+            <p>ASTM A193 B7 stud bolts and fluoropolymer-coated hardware resistant to harsh chemical corrosion.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-flashlight-line"></i></div>
+            <h4>Solar & Power Generation</h4>
+            <p>Magni-coated and stainless steel solar torque-tube hardware tested to 2,000 salt-spray hours.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-plane-line"></i></div>
+            <h4>Aerospace & Defense</h4>
+            <p>Mil-spec hardware with complete chemical and physical mill test reports (MTR) stored digitally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Quality Lab & Verification Standards -->
+    <section class="section" id="quality">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge">ISO 9001:2015 Accredited</span>
+          <h2>Zero-Defect Quality Assurance Lab</h2>
+          <p class="lead">
+            Every lot entering our distribution network undergoes rigorous in-house mechanical and metallurgical testing.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="ri-microscope-line"></i></div>
+            <h3>Tensile & Proof Load Testing</h3>
+            <p>Our 300,000 lb Tinius Olsen load cell verifies yield strength, wedge tensile, and proof load capabilities according to ASTM F606 specifications.</p>
+            <div class="card-footer">
+              <span class="tag-badge" style="margin: 0;">ASTM F606 Certified</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-water-flash-line"></i></div>
+            <h3>Salt Spray Corrosion Chambers</h3>
+            <p>Cyclic salt fog testing verifies zinc electroplate, hot-dip galvanizing, and proprietary anti-corrosion barrier coatings up to 3,000 test hours.</p>
+            <div class="card-footer">
+              <span class="tag-badge" style="margin: 0;">ASTM B117 Protocol</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-scan-2-line"></i></div>
+            <h3>Laser Optical Sorting</h3>
+            <p>High-speed laser dimension and thread pitch verification guarantees 50 PPM defect thresholds for automated robotic assembly lines.</p>
+            <div class="card-footer">
+              <span class="tag-badge" style="margin: 0;">Robotic Sorting Line</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Testimonials & Case Studies -->
+    <section class="section section-alt" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge">Client Testimonials</span>
+          <h2>Proven In The Field</h2>
+          <p class="lead">
+            Hear from structural engineers, procurement directors, and plant managers who rely on our supply chain.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="ri-double-quotes-l"></i></div>
+            <h3>Apex Structural Erectors</h3>
+            <p>
+              "When you are hanging 40-ton steel trusses 300 feet in the air, you cannot question fastener integrity. IndustrialPro supplies our A325 assemblies on schedule with full MTR certs instantly downloadable."
+            </p>
+            <div class="card-footer">
+              <div>
+                <strong>Marcus Vance</strong>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted);">Director of Field Operations</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ri-double-quotes-l"></i></div>
+            <h3>Precision Automation Corp</h3>
+            <p>
+              "The Vendor Managed Inventory (VMI) system IndustrialPro implemented in our facility reduced stockouts to zero and decreased our procurement overhead by 28% within the first two quarters."
+            </p>
+            <div class="card-footer">
+              <div>
+                <strong>Elena Rostova</strong>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted);">Plant Procurement Manager</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ri-double-quotes-l"></i></div>
+            <h3>Gulf Coast Energy Solutions</h3>
+            <p>
+              "Finding domestic ASTM A193 B7 studs with specific fluoropolymer coatings on short notice used to take weeks. IndustrialPro had 4,000 units on our offshore dock within 36 hours."
+            </p>
+            <div class="card-footer">
+              <div>
+                <strong>David H. Miller</strong>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted);">Senior Project Engineer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. High-Volume Distributor CTA -->
+    <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 100%); color: #F8FAFC;">
+      <div class="container">
+        <div class="section-header" style="color: #F8FAFC;">
+          <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24;">Enterprise Commercial Accounts</span>
+          <h2 style="color: #FFFFFF;">Ready To Optimize Your Fastener Supply Chain?</h2>
+          <p class="lead" style="color: #94A3B8;">
+            Apply for commercial credit terms, unlock tiered contract pricing, or upload your BOM for an expedited 2-hour volume quote.
+          </p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-block-start: var(--space-5);">
+            <a href="bulk-ordering.html" class="btn btn-primary btn-lg">Submit Bulk BOM / RFQ</a>
+            <a href="pricing.html" class="btn btn-secondary btn-lg">Explore Pricing Tiers</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- STEP 10: Master Engineered Footer (Multi-column > 1024px, 2-col 768-1024px, 1-col <768px) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="color: #FFFFFF; margin-block-end: var(--space-3);">
+            <i class="ri-hexagon-fill" style="color: var(--color-accent);"></i>
+            <span>Industrial<span class="accent">Pro</span></span>
+          </a>
+          <p>
+            IndustrialPro Fasteners is a premier master distributor supplying high-integrity structural fasteners, standard commercial hardware, and customized inventory management to industrial contractors worldwide.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html">Heavy Hex Bolts</a></li>
+            <li><a href="catalog.html">A325 Structural Bolts</a></li>
+            <li><a href="catalog.html">Socket Cap Screws</a></li>
+            <li><a href="catalog.html">316 Stainless Fasteners</a></li>
+            <li><a href="catalog.html">ASTM Anchor Bolts</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>B2B Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Vendor Managed Inventory</a></li>
+            <li><a href="services.html">Custom CNC Machining</a></li>
+            <li><a href="pricing.html">Account Pricing Tiers</a></li>
+            <li><a href="bulk-ordering.html">Bulk Volume Ordering</a></li>
+            <li><a href="dashboard.html">Client Portal Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Dispatch</h4>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-map-pin-2-line" style="color: var(--color-accent);"></i> 4800 Industrial Parkway, Cleveland, OH 44135</p>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-phone-line" style="color: var(--color-accent);"></i> +1 (800) 555-BOLT (Toll Free)</p>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-mail-line" style="color: var(--color-accent);"></i> quotes@industrialprofasteners.com</p>
+          <div class="tag-badge" style="margin-block-start: var(--space-3);">ISO 9001:2015 Registered</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 IndustrialPro Fasteners Inc. All rights reserved. ASTM, SAE, ASME certified fasteners.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript Engine -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gsap-animations.js"></script>
+</body>
+</html>

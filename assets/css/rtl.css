@@ -1,0 +1,80 @@
+/* ==========================================================================
+   IndustrialPro Fasteners – RTL (Right-to-Left) Stylesheet
+   Overrides for Arabic, Hebrew, and other RTL Locales
+   ========================================================================== */
+
+[dir="rtl"], body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Mirrored Slide Drawer from LEFT */
+[dir="rtl"] .nav-drawer,
+body.rtl .nav-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+  border-inline-start: none;
+  border-inline-end: 1px solid var(--color-border);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+}
+
+[dir="rtl"] .nav-drawer.active,
+body.rtl .nav-drawer.active {
+  transform: translateX(0);
+}
+
+/* Hero Badge & Absolute positions flip */
+[dir="rtl"] .hero-floating-badge,
+body.rtl .hero-floating-badge {
+  left: auto;
+  right: -20px;
+}
+
+[dir="rtl"] .search-input-wrap i,
+body.rtl .search-input-wrap i {
+  left: auto;
+  right: 14px;
+}
+
+[dir="rtl"] .search-input-wrap input,
+body.rtl .search-input-wrap input {
+  padding-left: 16px;
+  padding-right: 40px;
+}
+
+[dir="rtl"] .modal-close,
+body.rtl .modal-close {
+  right: auto;
+  left: 20px;
+}
+
+/* Nav Link indicator bar flip */
+[dir="rtl"] .nav-link.active::after,
+body.rtl .nav-link.active::after {
+  left: 12px;
+  right: 12px;
+}
+
+/* Card alignments remain consistent */
+[dir="rtl"] .card,
+body.rtl .card {
+  text-align: center;
+}
+
+/* Section headers remain centered */
+[dir="rtl"] .section-header,
+body.rtl .section-header,
+[dir="rtl"] .section-header h2,
+body.rtl .section-header h2,
+[dir="rtl"] .section-header p,
+body.rtl .section-header p {
+  text-align: center;
+}
+
+/* Dashboard sidebar adjustments if applicable */
+[dir="rtl"] .dashboard-sidebar,
+body.rtl .dashboard-sidebar {
+  border-inline-end: 1px solid var(--color-border);
+  border-inline-start: none;
+}

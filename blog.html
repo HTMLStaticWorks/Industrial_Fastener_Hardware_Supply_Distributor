@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Technical Blog & Fastener Guides – IndustrialPro</title>
+  <meta name="description" content="Technical whitepapers, ASTM standards guides, torque-tension calculations, and metallurgy insights from IndustrialPro fastener engineers.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <!-- GSAP 3 + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Master Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo">
+          <i class="ri-hexagon-fill"></i>
+          <span>Industrial<span class="accent">Pro</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+          <a href="login.html" class="btn-login-nav">Login</a>
+          <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <i class="ri-hexagon-fill"></i>
+        <span>Industrial<span class="accent">Pro</span></span>
+      </a>
+      <button type="button" class="drawer-close" aria-label="Close Mobile Menu">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+      <li><a href="home2.html"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
+      <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
+      <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
+      <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
+      <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
+      <li><a href="blog.html" class="active"><i class="ri-article-line"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+      <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <div class="drawer-toggles">
+        <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
+        <div style="display: flex; gap: var(--space-2);">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-article-line"></i> Metallurgy & Bolting Insights</span>
+          <h1>Fastener Engineering Knowledge Base</h1>
+          <p class="lead">
+            In-depth guides on ASTM specifications, torque-tension mechanics, hydrogen embrittlement relief, and corrosion mitigation written by certified fastener specialists.
+          </p>
+        </div>
+
+        <div class="card-grid">
+
+          <!-- Post 1 (Featured) -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Hydrogen Embrittlement Article" loading="lazy">
+            </div>
+            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
+              <span class="badge-grade">Metallurgy & QA</span>
+              <span class="caption">Sep 28, 2026</span>
+            </div>
+            <h3>Preventing Hydrogen Embrittlement In High-Tensile Fasteners</h3>
+            <p>
+              Why electroplating Grade 8 and 12.9 socket screws introduces trapped atomic hydrogen, and how proper 400°F baking cycles mitigate catastrophic delayed brittle fracture.
+            </p>
+            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted);">By Dr. Linda Chen, PhD</span>
+              <a href="blog-single.html" class="btn btn-sm btn-secondary">Read Article</a>
+            </div>
+          </div>
+
+          <!-- Post 2 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f6?auto=format&fit=crop&w=600&q=80" alt="ASTM A325 vs A490" loading="lazy">
+            </div>
+            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
+              <span class="badge-grade">Structural Engineering</span>
+              <span class="caption">Oct 12, 2026</span>
+            </div>
+            <h3>ASTM F3125 Grade A325 vs A490: Structural Selection</h3>
+            <p>
+              A direct comparison between A325 and A490 structural bolting assemblies, shear plane load capacities, hot-dip galvanizing restrictions, and AISC connection guidelines.
+            </p>
+            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted);">By Arthur Sterling, PE</span>
+              <a href="blog-single.html" class="btn btn-sm btn-secondary">Read Article</a>
+            </div>
+          </div>
+
+          <!-- Post 3 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Torque Tension Mechanics" loading="lazy">
+            </div>
+            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
+              <span class="badge-grade">Fastener Mechanics</span>
+              <span class="caption">Sep 14, 2026</span>
+            </div>
+            <h3>The Torque-Tension Relationship: Why Friction Dictates Clamp Load</h3>
+            <p>
+              90% of applied torque is lost overcoming under-head and thread friction. Discover how K-factor coatings stabilize bolt stretch and prevent joint fatigue.
+            </p>
+            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted);">By Marcus Vance</span>
+              <a href="blog-single.html" class="btn btn-sm btn-secondary">Read Article</a>
+            </div>
+          </div>
+
+          <!-- Post 4 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="304 vs 316 Stainless" loading="lazy">
+            </div>
+            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
+              <span class="badge-grade">Materials Science</span>
+              <span class="caption">Aug 30, 2026</span>
+            </div>
+            <h3>304 vs 316 Stainless Steel: Marine & Chemical Resistance</h3>
+            <p>
+              Evaluating pitting resistance equivalent numbers (PREN) and why 2-3% molybdenum content makes 316 stainless mandatory for coastal and offshore infrastructure.
+            </p>
+            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted);">By Dr. Linda Chen, PhD</span>
+              <a href="blog-single.html" class="btn btn-sm btn-secondary">Read Article</a>
+            </div>
+          </div>
+
+          <!-- Post 5 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="VMI Logistics" loading="lazy">
+            </div>
+            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
+              <span class="badge-grade">Supply Chain Logistics</span>
+              <span class="caption">Aug 18, 2026</span>
+            </div>
+            <h3>Implementing Automated VMI To Eliminate Assembly Line Stoppages</h3>
+            <p>
+              How automated RFID weight sensors and smart bins cut fastener handling costs, reduce safety buffer inventory, and guarantee continuous manufacturing.
+            </p>
+            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted);">By Raymond Ramirez</span>
+              <a href="blog-single.html" class="btn btn-sm btn-secondary">Read Article</a>
+            </div>
+          </div>
+
+          <!-- Post 6 -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f6?auto=format&fit=crop&w=600&q=80" alt="Buy America Standards" loading="lazy">
+            </div>
+            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
+              <span class="badge-grade">Compliance & Standards</span>
+              <span class="caption">Aug 02, 2026</span>
+            </div>
+            <h3>Deciphering Buy America & BAA Fastener Mandates</h3>
+            <p>
+              What federal infrastructure contractors need to know about domestic melt and manufacturing documentation requirements for federal highway and defense projects.
+            </p>
+            <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span style="font-size: 0.85rem; color: var(--color-text-muted);">By Arthur Sterling, PE</span>
+              <a href="blog-single.html" class="btn btn-sm btn-secondary">Read Article</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="color: #FFFFFF; margin-block-end: var(--space-3);">
+            <i class="ri-hexagon-fill" style="color: var(--color-accent);"></i>
+            <span>Industrial<span class="accent">Pro</span></span>
+          </a>
+          <p>Master distributor of heavy industrial fasteners, structural assemblies, and engineered fastening solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html">Heavy Hex Bolts</a></li>
+            <li><a href="catalog.html">A325 Structural</a></li>
+            <li><a href="catalog.html">Socket Screws</a></li>
+            <li><a href="catalog.html">Concrete Anchors</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>B2B Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">VMI Bin Programs</a></li>
+            <li><a href="pricing.html">Account Pricing Tiers</a></li>
+            <li><a href="bulk-ordering.html">Bulk RFQ Builder</a></li>
+            <li><a href="dashboard.html">Client Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Direct Dispatch</h4>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-phone-line" style="color: var(--color-accent);"></i> +1 (800) 555-BOLT</p>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-mail-line" style="color: var(--color-accent);"></i> editorial@industrialprofasteners.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 IndustrialPro Fasteners Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gsap-animations.js"></script>
+</body>
+</html>

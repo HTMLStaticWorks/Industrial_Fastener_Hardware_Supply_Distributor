@@ -1,0 +1,581 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Client Dashboard – IndustrialPro Fasteners</title>
+  <meta name="description" content="Commercial client dashboard: Browse catalog by category, bulk reorder requests, live shipment tracking, invoice management, and tier pricing.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <!-- GSAP 3 + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Master Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo">
+          <i class="ri-hexagon-fill"></i>
+          <span>Industrial<span class="accent">Pro</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+          <a href="login.html" class="btn-login-nav">Login</a>
+          <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <i class="ri-hexagon-fill"></i>
+        <span>Industrial<span class="accent">Pro</span></span>
+      </a>
+      <button type="button" class="drawer-close" aria-label="Close Mobile Menu">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+      <li><a href="home2.html"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
+      <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
+      <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
+      <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
+      <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
+      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+      <li><a href="dashboard.html" class="active"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <div class="drawer-toggles">
+        <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
+        <div style="display: flex; gap: var(--space-2);">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <!-- Dashboard Workspace Container -->
+  <main class="dashboard-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <!-- Verified Client Badge -->
+      <div class="dashboard-user-card">
+        <div class="user-avatar">TC</div>
+        <div>
+          <div style="font-weight: 500; font-size: 0.95rem;">Turner Construction</div>
+          <span class="badge-grade" style="margin: 0; font-size: 0.7rem;">Tier 2 Enterprise (-18%)</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <ul class="dashboard-menu">
+        <li>
+          <a href="#overview" class="dashboard-nav-link active" data-target="pane-overview">
+            <i class="ri-dashboard-line"></i> Overview & KPIs
+          </a>
+        </li>
+        <li>
+          <a href="#reorder" class="dashboard-nav-link" data-target="pane-reorder">
+            <i class="ri-shopping-cart-line"></i> Bulk Reorder Cart
+          </a>
+        </li>
+        <li>
+          <a href="#tracking" class="dashboard-nav-link" data-target="pane-tracking">
+            <i class="ri-truck-line"></i> Shipment Tracking
+          </a>
+        </li>
+        <li>
+          <a href="#pricing-tiers" class="dashboard-nav-link" data-target="pane-pricing">
+            <i class="ri-price-tag-3-line"></i> Account Pricing Tiers
+          </a>
+        </li>
+        <li>
+          <a href="#invoices" class="dashboard-nav-link" data-target="pane-invoices">
+            <i class="ri-file-text-line"></i> Invoices & Statements
+          </a>
+        </li>
+        <li>
+          <a href="#history" class="dashboard-nav-link" data-target="pane-history">
+            <i class="ri-history-line"></i> Order History
+          </a>
+        </li>
+        <li>
+          <a href="#settings" class="dashboard-nav-link" data-target="pane-settings">
+            <i class="ri-settings-3-line"></i> Account Settings
+          </a>
+        </li>
+      </ul>
+
+      <div style="margin-top: auto; border-top: 1px solid var(--color-border); padding-top: var(--space-3);">
+        <a href="login.html" class="dashboard-nav-link" style="color: var(--color-error);">
+          <i class="ri-logout-box-r-line"></i> Logout Portal
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Work Area -->
+    <div class="dashboard-main">
+      
+      <!-- Pane 1: Overview & Statistics -->
+      <div class="dashboard-tab-pane active" id="pane-overview">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-5); flex-wrap: wrap; gap: var(--space-3);">
+          <div>
+            <h2 style="font-size: 1.85rem; margin-block-end: 4px;">Commercial Operations Overview</h2>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Account ID: IND-892401 &bull; Assigned Facility: Cleveland Master Hub</p>
+          </div>
+          <div>
+            <a href="bulk-ordering.html" class="btn btn-primary btn-sm"><i class="ri-add-line"></i> New Volume RFQ</a>
+          </div>
+        </div>
+
+        <!-- KPI Metric Cards (Step 9.9) -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="ri-file-list-3-line"></i></div>
+            <div class="kpi-data">
+              <span class="kpi-val">14</span>
+              <span class="kpi-title">Active Purchase Orders</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="ri-truck-fill"></i></div>
+            <div class="kpi-data">
+              <span class="kpi-val">3</span>
+              <span class="kpi-title">In-Transit Freight Shipments</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="ri-money-dollar-circle-line"></i></div>
+            <div class="kpi-data">
+              <span class="kpi-val">$184,520</span>
+              <span class="kpi-title">YTD Fastener Spend</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="ri-percent-line"></i></div>
+            <div class="kpi-data">
+              <span class="kpi-val">18% OFF</span>
+              <span class="kpi-title">Tier 2 Contract Margin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Shipment Banner in Overview -->
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); padding: var(--space-5); margin-block-end: var(--space-6);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-3); flex-wrap: wrap;">
+            <div>
+              <span class="status-badge status-transit"><i class="ri-truck-line"></i> Out for Delivery Today</span>
+              <h3 style="font-size: 1.35rem; margin-block: 6px;">Shipment PO-9812-C &bull; 12 Pallets A325 Heavy Hex</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0;">Carrier: Old Dominion Freight Line &bull; PRO# 894-192-8823 &bull; Destination: Cuyahoga Bridge Pier 4</p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="alert('Viewing Carrier BOL & Live GPS Geofence...')">Live GPS Tracking</button>
+          </div>
+
+          <!-- Timeline -->
+          <div class="shipment-timeline">
+            <div class="timeline-step completed">
+              <div class="timeline-dot"><i class="ri-check-line"></i></div>
+              <span class="step-title">PO Confirmed</span>
+              <span class="step-time">Oct 18, 08:30 AM</span>
+            </div>
+            <div class="timeline-step completed">
+              <div class="timeline-dot"><i class="ri-check-line"></i></div>
+              <span class="step-title">Pallets Picked</span>
+              <span class="step-time">Oct 18, 11:45 AM</span>
+            </div>
+            <div class="timeline-step completed">
+              <div class="timeline-dot"><i class="ri-check-line"></i></div>
+              <span class="step-title">QA MTR Verified</span>
+              <span class="step-time">Oct 18, 02:15 PM</span>
+            </div>
+            <div class="timeline-step active">
+              <div class="timeline-dot"><i class="ri-truck-line"></i></div>
+              <span class="step-title">In Transit</span>
+              <span class="step-time">Oct 19, 06:10 AM</span>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot"><i class="ri-map-pin-line"></i></div>
+              <span class="step-title">Job Site Arrival</span>
+              <span class="step-time">Est. 02:30 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent PO Table -->
+        <h3 style="font-size: 1.35rem; margin-block-end: var(--space-3);">Recent Purchase Orders</h3>
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>PO Number</th>
+                <th>Fastener Description</th>
+                <th>Units / Kegs</th>
+                <th>Order Date</th>
+                <th>Total Value</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>PO-9812-C</strong></td>
+                <td>3/4"-10 x 2-1/2" A325 Structural HDG</td>
+                <td>36 Kegs (9,000 pcs)</td>
+                <td>Oct 18, 2026</td>
+                <td>$18,900.00</td>
+                <td><span class="status-badge status-transit">In Transit</span></td>
+                <td><a href="#tracking" class="btn btn-sm btn-outline" style="padding: 4px 10px;">Track</a></td>
+              </tr>
+              <tr>
+                <td><strong>PO-9740-B</strong></td>
+                <td>1/2"-13 x 2" SAE Grade 8 Yellow Zinc</td>
+                <td>50 Cartons (5,000 pcs)</td>
+                <td>Oct 14, 2026</td>
+                <td>$4,250.00</td>
+                <td><span class="status-badge status-delivered">Delivered</span></td>
+                <td><button type="button" class="btn btn-sm btn-outline" style="padding: 4px 10px;" onclick="alert('Reorder initiated for PO-9740-B.')">Reorder</button></td>
+              </tr>
+              <tr>
+                <td><strong>PO-9688-A</strong></td>
+                <td>316 Stainless Socket Head Cap Screws</td>
+                <td>20 Boxes (2,000 pcs)</td>
+                <td>Oct 08, 2026</td>
+                <td>$2,900.00</td>
+                <td><span class="status-badge status-delivered">Delivered</span></td>
+                <td><button type="button" class="btn btn-sm btn-outline" style="padding: 4px 10px;" onclick="alert('Reorder initiated for PO-9688-A.')">Reorder</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Pane 2: Live Bulk Reorder Cart (Interactive Engine) -->
+      <div class="dashboard-tab-pane" id="pane-reorder">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-4); flex-wrap: wrap;">
+          <div>
+            <h2 style="font-size: 1.85rem; margin-block-end: 4px;">Quick Bulk Reorder Builder</h2>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Adjust line quantities or add items from your standard contracted replenishment catalog.</p>
+          </div>
+          <button type="button" id="btn-add-reorder-row" class="btn btn-secondary btn-sm">
+            <i class="ri-add-line"></i> Add Catalog Item
+          </button>
+        </div>
+
+        <div id="reorder-success-banner" class="alert-success-banner" style="display: none;">
+          <i class="ri-checkbox-circle-fill" style="color: var(--color-success); font-size: 1.5rem;"></i>
+          <div>
+            <strong>Reorder Request Submitted!</strong> PO-REORDER-4491 generated with your negotiated 18% Enterprise Tier discount. Staging will begin at the Cleveland Hub.
+          </div>
+        </div>
+
+        <div class="dash-table-wrap" style="margin-block-end: var(--space-5);">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Fastener Item / SKU</th>
+                <th>Standard Packaging</th>
+                <th>Unit Price</th>
+                <th>Qty (Boxes/Kegs)</th>
+                <th>Line Total</th>
+                <th style="text-align: center;">Remove</th>
+              </tr>
+            </thead>
+            <tbody id="reorder-table-body">
+              <!-- Dynamically populated by dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Summary & Reorder Action -->
+        <div style="display: flex; justify-content: flex-end;">
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); padding: var(--space-5); width: 100%; max-width: 420px;">
+            <div style="display: flex; justify-content: space-between; margin-block-end: var(--space-2); font-size: 0.95rem;">
+              <span>Catalog Subtotal:</span>
+              <strong id="reorder-subtotal">$0.00</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-block-end: var(--space-2); font-size: 0.95rem; color: var(--color-success);">
+              <span>Tier 2 Enterprise Discount:</span>
+              <strong id="reorder-discount">-$0.00 (18%)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-block-start: var(--space-3); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-3); font-size: 1.25rem;">
+              <span>Invoice Total:</span>
+              <strong id="reorder-total" style="color: var(--color-accent); font-family: var(--font-heading);">$0.00</strong>
+            </div>
+
+            <button type="button" id="btn-submit-reorder" class="btn btn-primary" style="width: 100%; margin-block-start: var(--space-4);">
+              Confirm & Submit Purchase Order
+            </button>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); text-align: center; margin-block-start: 8px;">
+              Billed to Net 60 Commercial Terms &bull; Free Freight Included
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pane 3: Shipment Tracking -->
+      <div class="dashboard-tab-pane" id="pane-tracking">
+        <h2 style="font-size: 1.85rem; margin-block-end: 4px;">Track Active Job-Site Shipments</h2>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-block-end: var(--space-5);">Enter PO number, BOL number, or freight tracking code to check real-time dock arrival estimates.</p>
+
+        <div style="display: flex; gap: var(--space-3); max-width: 600px; margin-block-end: var(--space-6);">
+          <input type="text" id="shipment-search-input" class="form-control" placeholder="Enter PO Number (e.g. PO-9812-C)..." value="PO-9812-C">
+          <button type="button" id="btn-shipment-search" class="btn btn-primary">Track</button>
+        </div>
+
+        <div id="shipment-tracker-card" style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); padding: var(--space-5);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-3);">
+            <div>
+              <span class="status-badge status-transit"><i class="ri-truck-line"></i> Freight In-Transit</span>
+              <h3 style="font-size: 1.45rem; margin-block: 8px;">Purchase Order: PO-9812-C</h3>
+              <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-muted);">
+                36 Kegs ASTM A325 Structural Bolts &bull; Weight: 7,200 lbs &bull; Seal # 48219-A
+              </p>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">Estimated Delivery:</div>
+              <strong style="font-size: 1.15rem; color: var(--color-text);">Today, by 2:30 PM EST</strong>
+            </div>
+          </div>
+
+          <div class="shipment-timeline" style="margin-block: var(--space-6);">
+            <div class="timeline-step completed">
+              <div class="timeline-dot"><i class="ri-check-line"></i></div>
+              <span class="step-title">Order Picked</span>
+              <span class="step-time">Cleveland Hub</span>
+            </div>
+            <div class="timeline-step completed">
+              <div class="timeline-dot"><i class="ri-check-line"></i></div>
+              <span class="step-title">QA Staged</span>
+              <span class="step-time">Passed Optical Check</span>
+            </div>
+            <div class="timeline-step completed">
+              <div class="timeline-dot"><i class="ri-check-line"></i></div>
+              <span class="step-title">Loaded on Trailer</span>
+              <span class="step-time">BOL # 94810283</span>
+            </div>
+            <div class="timeline-step active">
+              <div class="timeline-dot"><i class="ri-truck-line"></i></div>
+              <span class="step-title">On Route to Site</span>
+              <span class="step-time">Interstate 77 South</span>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot"><i class="ri-flag-line"></i></div>
+              <span class="step-title">Site Signoff</span>
+              <span class="step-time">Pier 4 Crane Laydown</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: var(--space-3); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-4);">
+            <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Downloading Certified Heat Lot Mill Test Reports (MTR)...')">
+              <i class="ri-file-download-line"></i> Download MTR Lot Certs
+            </button>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Bill of Lading manifest printed.')">
+              <i class="ri-printer-line"></i> Print BOL
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pane 4: Account Pricing Tiers -->
+      <div class="dashboard-tab-pane" id="pane-pricing">
+        <h2 style="font-size: 1.85rem; margin-block-end: 4px;">Contracted Pricing & Credit Line</h2>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-block-end: var(--space-5);">Overview of your active volume tiers and commercial credit status.</p>
+
+        <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-block-end: var(--space-6);">
+          <div class="card" style="align-items: flex-start; text-align: left;">
+            <div class="tag-badge">Current Tier</div>
+            <h3>Tier 2: Enterprise Industrial</h3>
+            <p>Your contract guarantees an 18% base discount across all catalogue SKUs, 60-day terms, and dedicated warehouse inventory holds.</p>
+            <div style="margin-block-start: var(--space-3); font-size: 0.85rem; color: var(--color-text-muted);">
+              Qualify for Tier 3 Direct Mill (25% off) by surpassing $250K annual volume. Current YTD: $184,520 (74% to next tier).
+            </div>
+          </div>
+
+          <div class="card" style="align-items: flex-start; text-align: left;">
+            <div class="tag-badge">Credit Facility</div>
+            <h3>Commercial Line of Credit</h3>
+            <div style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--color-accent); margin-block: 4px;">
+              $250,000.00
+            </div>
+            <div style="width: 100%; height: 8px; background-color: var(--color-bg); border-radius: var(--radius-global); overflow: hidden; margin-block: var(--space-2);">
+              <div style="width: 25%; height: 100%; background-color: var(--color-accent);"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.85rem; color: var(--color-text-muted);">
+              <span>Utilized: $62,400.00</span>
+              <span>Available: $187,600.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pane 5: Invoices & Statements -->
+      <div class="dashboard-tab-pane" id="pane-invoices">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-4); flex-wrap: wrap;">
+          <div>
+            <h2 style="font-size: 1.85rem; margin-block-end: 4px;">Billing & Statements</h2>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Download certified tax invoices, payment receipts, and monthly accounting logs.</p>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="alert('Downloading annual accounting statement CSV...')">
+            <i class="ri-file-excel-line"></i> Export Statement
+          </button>
+        </div>
+
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Invoice #</th>
+                <th>PO Reference</th>
+                <th>Invoice Date</th>
+                <th>Due Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>PDF Receipt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>INV-2026-904</strong></td>
+                <td>PO-9812-C</td>
+                <td>Oct 18, 2026</td>
+                <td>Dec 18, 2026</td>
+                <td>$18,900.00</td>
+                <td><span class="status-badge status-pending">Pending Net 60</span></td>
+                <td><button type="button" class="btn btn-sm btn-outline btn-view-invoice" data-invoice="INV-2026-904"><i class="ri-download-line"></i> PDF</button></td>
+              </tr>
+              <tr>
+                <td><strong>INV-2026-882</strong></td>
+                <td>PO-9740-B</td>
+                <td>Oct 14, 2026</td>
+                <td>Dec 14, 2026</td>
+                <td>$4,250.00</td>
+                <td><span class="status-badge status-delivered">Paid</span></td>
+                <td><button type="button" class="btn btn-sm btn-outline btn-view-invoice" data-invoice="INV-2026-882"><i class="ri-download-line"></i> PDF</button></td>
+              </tr>
+              <tr>
+                <td><strong>INV-2026-821</strong></td>
+                <td>PO-9688-A</td>
+                <td>Oct 08, 2026</td>
+                <td>Dec 08, 2026</td>
+                <td>$2,900.00</td>
+                <td><span class="status-badge status-delivered">Paid</span></td>
+                <td><button type="button" class="btn btn-sm btn-outline btn-view-invoice" data-invoice="INV-2026-821"><i class="ri-download-line"></i> PDF</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Pane 6: Order History -->
+      <div class="dashboard-tab-pane" id="pane-history">
+        <h2 style="font-size: 1.85rem; margin-block-end: 4px;">Fastener Order History</h2>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-block-end: var(--space-5);">Complete historical record of all past lots, invoices, and job-site drops.</p>
+
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>PO Number</th>
+                <th>Fastener Lots</th>
+                <th>Total Weight</th>
+                <th>Job Site Location</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sep 28, 2026</td>
+                <td>PO-9520-X</td>
+                <td>ASTM F3125 Grade A490 Heavy Hex (40 Kegs)</td>
+                <td>8,000 lbs</td>
+                <td>Detroit Automotive Plant 3</td>
+                <td><button type="button" class="btn btn-sm btn-primary" onclick="alert('Reorder added to cart!')">Repeat Order</button></td>
+              </tr>
+              <tr>
+                <td>Sep 12, 2026</td>
+                <td>PO-9410-Z</td>
+                <td>3/8"-16 x 1-1/2" Socket Cap Screws (50 Boxes)</td>
+                <td>1,200 lbs</td>
+                <td>Cleveland Automation Facility</td>
+                <td><button type="button" class="btn btn-sm btn-primary" onclick="alert('Reorder added to cart!')">Repeat Order</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Pane 7: Settings -->
+      <div class="dashboard-tab-pane" id="pane-settings">
+        <h2 style="font-size: 1.85rem; margin-block-end: 4px;">Account Settings & Notification Rules</h2>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-block-end: var(--space-5);">Manage dispatch contact personnel, job-site delivery addresses, and automated MTR notifications.</p>
+
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); padding: var(--space-5); max-width: 680px;">
+          <div class="form-group">
+            <label class="form-label">Authorized Purchasing Manager</label>
+            <input type="text" class="form-control" value="Marcus Vance">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Billing Notification Email</label>
+            <input type="email" class="form-control" value="accounting@turnerconstruction.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Default Job-Site Receiving Address</label>
+            <input type="text" class="form-control" value="Cuyahoga River Pier 4 Staging Gate, Cleveland, OH 44113">
+          </div>
+          <div class="checkbox-wrap">
+            <input type="checkbox" id="set-auto-mtr" checked>
+            <label for="set-auto-mtr">Automatically email certified Mill Test Reports (MTR) upon trailer dispatch.</label>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="alert('Settings updated successfully!')">Save Preferences</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/gsap-animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account-Specific Pricing Tiers – IndustrialPro Fasteners</title>
+  <meta name="description" content="Commercial account pricing tiers, volume contract discounts, and industrial credit terms for manufacturing OEMs, structural erectors, and EPC contractors.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <!-- GSAP 3 + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Master Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo">
+          <i class="ri-hexagon-fill"></i>
+          <span>Industrial<span class="accent">Pro</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
+          <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+          <a href="login.html" class="btn-login-nav">Login</a>
+          <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <i class="ri-hexagon-fill"></i>
+        <span>Industrial<span class="accent">Pro</span></span>
+      </a>
+      <button type="button" class="drawer-close" aria-label="Close Mobile Menu">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+      <li><a href="home2.html"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
+      <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
+      <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
+      <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
+      <li><a href="pricing.html" class="active"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
+      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+      <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <div class="drawer-toggles">
+        <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
+        <div style="display: flex; gap: var(--space-2);">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-shield-star-line"></i> B2B Client Discount Structures</span>
+          <h1>Account-Specific Pricing Tiers</h1>
+          <p class="lead">
+            We partner with heavy contractors and manufacturing facilities with tiered volume margins, extended billing terms, and dedicated inventory reserves.
+          </p>
+        </div>
+
+        <!-- 3 Tier Cards (Step 3: Equal height, flex-direction: column, align-items: center) -->
+        <div class="card-grid">
+
+          <!-- Tier 1 -->
+          <div class="card">
+            <div class="card-icon"><i class="ri-hard-hat-line"></i></div>
+            <span class="badge-grade">Annual Spend $15K - $50K</span>
+            <h3>Tier 1: Contractor</h3>
+            <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 540; color: var(--color-accent); margin-block: var(--space-2);">
+              8% – 12% OFF
+            </div>
+            <p>
+              Ideal for commercial subcontractors, fabrication shops, and regional mechanical builders requiring quick job-site fulfillment.
+            </p>
+            <ul style="list-style: none; width: 100%; text-align: left; margin-block: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); font-size: 0.95rem;">
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Net 30 Commercial Credit Terms</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Same-day pallet staging</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Digital MTR cert download</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Online dashboard reordering</li>
+            </ul>
+            <div class="card-footer" style="width: 100%;">
+              <a href="register.html" class="btn btn-secondary" style="width: 100%;">Apply for Tier 1 Account</a>
+            </div>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="card" style="border-color: var(--color-accent); box-shadow: 0 8px 30px rgba(245, 158, 11, 0.15);">
+            <div class="card-icon" style="background-color: var(--color-accent); color: #0F172A;"><i class="ri-building-line"></i></div>
+            <span class="tag-badge" style="margin-block-end: var(--space-2);">Most Popular Enterprise</span>
+            <h3>Tier 2: Enterprise Industrial</h3>
+            <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 540; color: var(--color-accent); margin-block: var(--space-2);">
+              15% – 20% OFF
+            </div>
+            <p>
+              Designed for EPC infrastructure contractors, energy developers, and mid-sized manufacturing assembly plants.
+            </p>
+            <ul style="list-style: none; width: 100%; text-align: left; margin-block: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); font-size: 0.95rem;">
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Net 60 Extended Credit Terms</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Dedicated Key Account Engineer</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Reserved Safety Stock at Local Hub</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Priority expedited freight access</li>
+            </ul>
+            <div class="card-footer" style="width: 100%;">
+              <a href="register.html" class="btn btn-primary" style="width: 100%;">Apply for Tier 2 Account</a>
+            </div>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="card">
+            <div class="card-icon"><i class="ri-cpu-line"></i></div>
+            <span class="badge-grade">Annual Spend $250K+</span>
+            <h3>Tier 3: OEM Direct Mill</h3>
+            <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 540; color: var(--color-accent); margin-block: var(--space-2);">
+              22% – 30% OFF
+            </div>
+            <p>
+              Comprehensive supply-chain integration for heavy equipment manufacturers, defense contractors, and high-volume plants.
+            </p>
+            <ul style="list-style: none; width: 100%; text-align: left; margin-block: var(--space-4); display: flex; flex-direction: column; gap: var(--space-2); font-size: 0.95rem;">
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Vendor-Managed Inventory (VMI / RFID)</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Custom contract fixed pricing (12 mo)</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Custom barcode labeling & kitting</li>
+              <li><i class="ri-check-line" style="color: var(--color-accent);"></i> Direct EDI ERP integration</li>
+            </ul>
+            <div class="card-footer" style="width: 100%;">
+              <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Contact Enterprise Desk</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Tier Feature Matrix Table -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-table-line"></i> Detailed Comparison</span>
+          <h2>Account Privilege Matrix</h2>
+          <p class="lead">Review complete specifications, logistics benefits, and credit lines across each account grade.</p>
+        </div>
+
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+            <thead>
+              <tr style="background-color: var(--color-bg); border-bottom: 2px solid var(--color-border);">
+                <th style="padding: 16px 20px;">Feature / Service</th>
+                <th style="padding: 16px 20px;">Tier 1 Contractor</th>
+                <th style="padding: 16px 20px;">Tier 2 Enterprise</th>
+                <th style="padding: 16px 20px;">Tier 3 OEM Direct</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 16px 20px; font-weight: 500;">Average Catalog Discount</td>
+                <td style="padding: 16px 20px;">8% - 12%</td>
+                <td style="padding: 16px 20px; color: var(--color-accent); font-weight: 500;">15% - 20%</td>
+                <td style="padding: 16px 20px; color: var(--color-accent); font-weight: 500;">22% - 30% Custom</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 16px 20px; font-weight: 500;">Credit Line Terms</td>
+                <td style="padding: 16px 20px;">Net 30 Days</td>
+                <td style="padding: 16px 20px;">Net 60 Days</td>
+                <td style="padding: 16px 20px;">Net 90 / Revolving</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 16px 20px; font-weight: 500;">Vendor-Managed Inventory (VMI)</td>
+                <td style="padding: 16px 20px; color: var(--color-text-muted);">&mdash;</td>
+                <td style="padding: 16px 20px;">Standard Scan Bins</td>
+                <td style="padding: 16px 20px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> RFID Smart Scale Bins</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 16px 20px; font-weight: 500;">Lot Mill Test Reports (MTR)</td>
+                <td style="padding: 16px 20px;">On Request (Portal)</td>
+                <td style="padding: 16px 20px;">Automated with Shipment</td>
+                <td style="padding: 16px 20px;">Real-Time API / Cloud Vault</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 16px 20px; font-weight: 500;">Job-Site Staging & Kitting</td>
+                <td style="padding: 16px 20px; color: var(--color-text-muted);">&mdash;</td>
+                <td style="padding: 16px 20px;">Color Coded Bundles</td>
+                <td style="padding: 16px 20px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> Custom Bagging & Part# Labels</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sign In Callout -->
+    <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 100%); color: #F8FAFC;">
+      <div class="container">
+        <div class="section-header" style="color: #F8FAFC;">
+          <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24;">Already An Account Partner?</span>
+          <h2 style="color: #FFFFFF;">Log In To View Your Negotiated Contract Tiers</h2>
+          <p class="lead" style="color: #94A3B8;">
+            Your custom catalog pricing applies automatically upon logging in to your verified business profile.
+          </p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-block-start: var(--space-5);">
+            <a href="login.html" class="btn btn-primary btn-lg">Log In To View Tiers</a>
+            <a href="register.html" class="btn btn-secondary btn-lg">Apply for New Tier</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="color: #FFFFFF; margin-block-end: var(--space-3);">
+            <i class="ri-hexagon-fill" style="color: var(--color-accent);"></i>
+            <span>Industrial<span class="accent">Pro</span></span>
+          </a>
+          <p>Master distributor of heavy industrial fasteners, structural assemblies, and engineered fastening solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html">Heavy Hex Bolts</a></li>
+            <li><a href="catalog.html">A325 Structural</a></li>
+            <li><a href="catalog.html">Socket Screws</a></li>
+            <li><a href="catalog.html">Concrete Anchors</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>B2B Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">VMI Bin Programs</a></li>
+            <li><a href="pricing.html">Account Pricing Tiers</a></li>
+            <li><a href="bulk-ordering.html">Bulk RFQ Builder</a></li>
+            <li><a href="dashboard.html">Client Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Direct Dispatch</h4>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-phone-line" style="color: var(--color-accent);"></i> +1 (800) 555-BOLT</p>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-mail-line" style="color: var(--color-accent);"></i> accounts@industrialprofasteners.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 IndustrialPro Fasteners Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gsap-animations.js"></script>
+</body>
+</html>

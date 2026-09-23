@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preventing Hydrogen Embrittlement in High-Tensile Fasteners – IndustrialPro</title>
+  <meta name="description" content="Technical engineering breakdown: mechanism of hydrogen embrittlement in electroplated Grade 8 and socket head cap screws, and ASTM B850 baking protocols.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <!-- GSAP 3 + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Master Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo">
+          <i class="ri-hexagon-fill"></i>
+          <span>Industrial<span class="accent">Pro</span></span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+          <a href="login.html" class="btn-login-nav">Login</a>
+          <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <i class="ri-hexagon-fill"></i>
+        <span>Industrial<span class="accent">Pro</span></span>
+      </a>
+      <button type="button" class="drawer-close" aria-label="Close Mobile Menu">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+      <li><a href="home2.html"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
+      <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
+      <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
+      <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
+      <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
+      <li><a href="blog.html" class="active"><i class="ri-article-line"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+      <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <div class="drawer-toggles">
+        <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
+        <div style="display: flex; gap: var(--space-2);">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <article class="section" style="padding-block: var(--space-7);">
+      <div class="container" style="max-width: 860px;">
+
+        <!-- Breadcrumbs -->
+        <div style="font-size: var(--size-caption); color: var(--color-text-muted); margin-block-end: var(--space-4);">
+          <a href="index.html">Home</a> &rsaquo; <a href="blog.html">Blog</a> &rsaquo; <span>Metallurgy & QA</span>
+        </div>
+
+        <!-- Article Header -->
+        <div class="section-header" style="text-align: center; margin-block-end: var(--space-5);">
+          <span class="tag-badge"><i class="ri-microscope-line"></i> Peer-Reviewed Whitepaper</span>
+          <h1 style="font-size: 2.8rem; line-height: 1.15; margin-block: var(--space-2);">Preventing Hydrogen Embrittlement In High-Tensile Fasteners</h1>
+          <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-4); color: var(--color-text-muted); font-size: 0.95rem; margin-block-start: var(--space-3); flex-wrap: wrap;">
+            <span><i class="ri-user-3-line" style="color: var(--color-accent);"></i> Dr. Linda Chen, PhD</span>
+            <span><i class="ri-calendar-line" style="color: var(--color-accent);"></i> September 28, 2026</span>
+            <span><i class="ri-time-line" style="color: var(--color-accent);"></i> 8 min read</span>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="card-img-wrap" style="height: 380px; margin-block-end: var(--space-6);">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Metallurgical Analysis of Fasteners" loading="eager">
+        </div>
+
+        <!-- Article Content -->
+        <div style="font-size: 1.05rem; line-height: 1.75; color: var(--color-text);">
+          <p class="lead" style="font-size: 1.2rem; color: var(--color-text); margin-block-end: var(--space-4);">
+            Hydrogen Embrittlement (HE) represents one of the most hazardous failure modes in structural and mechanical engineering. Unlike ductile yield, which provides visual necking and warning signs, hydrogen-induced fractures are sudden, catastrophic, and often occur hours or days after tightening under static load.
+          </p>
+
+          <h2 style="font-size: 1.85rem; margin-block: var(--space-5) var(--space-2);">The Triad of Embrittlement Failure</h2>
+          <p>
+            For hydrogen embrittlement to transpire in an industrial fastener, three independent criteria must converge simultaneously:
+          </p>
+          <ul style="margin-left: 24px; margin-block-end: var(--space-4); display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>High-Strength Susceptible Metallurgy:</strong> Steels with a core or surface hardness exceeding 320 HV / 32 HRC (commonly seen in SAE Grade 8, ASTM A490, and ISO Class 10.9 and 12.9 socket head cap screws).</li>
+            <li><strong>Atomic Hydrogen Absorption:</strong> Hydrogen atoms generated during acid pickling, electroplating (zinc, cadmium), or in-service galvanic corrosion diffuse into interstitial crystal lattice defects.</li>
+            <li><strong>Sustained Tensile Stress:</strong> High elastic preload or clamping force that causes trapped hydrogen atoms to migrate to regions of triaxial stress concentration, such as thread roots and the head-to-shank fillet.</li>
+          </ul>
+
+          <!-- Technical Table -->
+          <div style="margin-block: var(--space-5); background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); overflow-hidden: hidden; box-shadow: var(--shadow-global);">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+              <thead style="background-color: var(--color-bg); border-bottom: 2px solid var(--color-border);">
+                <tr>
+                  <th style="padding: 12px 16px;">Fastener Grade</th>
+                  <th style="padding: 12px 16px;">Core Hardness</th>
+                  <th style="padding: 12px 16px;">HE Risk Level</th>
+                  <th style="padding: 12px 16px;">ASTM B850 Baking Requirement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                  <td style="padding: 12px 16px; font-weight: 500;">SAE Grade 5 / Class 8.8</td>
+                  <td style="padding: 12px 16px;">HRC 25 – 34</td>
+                  <td style="padding: 12px 16px; color: var(--color-success); font-weight: 500;">Low Risk</td>
+                  <td style="padding: 12px 16px;">Bake optional per customer spec</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                  <td style="padding: 12px 16px; font-weight: 500;">SAE Grade 8 / ASTM A325</td>
+                  <td style="padding: 12px 16px;">HRC 33 – 39</td>
+                  <td style="padding: 12px 16px; color: var(--color-accent); font-weight: 500;">Moderate / High</td>
+                  <td style="padding: 12px 16px;">375°F – 425°F for 4 to 8 hours within 4h of plating</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--color-border);">
+                  <td style="padding: 12px 16px; font-weight: 500;">Socket Screws (ASTM A574 / 12.9)</td>
+                  <td style="padding: 12px 16px;">HRC 39 – 45</td>
+                  <td style="padding: 12px 16px; color: var(--color-error); font-weight: 500;">Extreme Danger</td>
+                  <td style="padding: 12px 16px;">375°F – 425°F for 14 to 24 hours mandatory; mechanically plate or coat</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 style="font-size: 1.85rem; margin-block: var(--space-5) var(--space-2);">ASTM F1940 Process Control Testing</h2>
+          <p>
+            At IndustrialPro Fasteners, we employ the ASTM F1940 incremental step loading technique. Test specimens are loaded to 75% of notched tensile strength while measuring potential drop. If atomic hydrogen is present, localized micro-cracking is detected electronically within minutes, stopping questionable lots before shipment to customer job sites.
+          </p>
+
+          <!-- Quote Highlight -->
+          <div style="background-color: var(--color-surface); border-inline-start: 4px solid var(--color-accent); padding: var(--space-4); margin-block: var(--space-5); border-radius: var(--radius-global); box-shadow: var(--shadow-global);">
+            <p style="font-style: italic; color: var(--color-text); margin: 0; font-size: 1.1rem;">
+              "Never compromise on post-plate baking cycles for fasteners above 39 HRC. The cost of thermal dehydrogenation is pennies per hundred pieces; the cost of a sheared crane bracket or structural failure is catastrophic."
+            </p>
+            <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-block-start: var(--space-2);">&mdash; Dr. Linda Chen, PhD, VP Metallurgy at IndustrialPro Fasteners</div>
+          </div>
+
+          <h2 style="font-size: 1.85rem; margin-block: var(--space-5) var(--space-2);">Recommended Engineering Countermeasures</h2>
+          <p>
+            For designers specifying fasteners in critical fatigue joints, consider:
+          </p>
+          <ol style="margin-left: 24px; margin-block-end: var(--space-5); display: flex; flex-direction: column; gap: 8px;">
+            <li>Specify non-electrolytic coatings such as mechanically deposited zinc or Magni / Geomet dip-spin coatings which produce zero hydrogen evolution during deposition.</li>
+            <li>Mandate ASTM B850 baking certificates with lot numbers, oven charts, and time-stamped entry logs.</li>
+            <li>In corrosive outdoor marine environments, transition from high-strength carbon alloys to A4-80 or 316 austenitic stainless steels that are immune to hydrogen embrittlement.</li>
+          </ol>
+
+          <!-- Author Bio Box -->
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-5); margin-block-start: var(--space-6); display: flex; align-items: center; gap: var(--space-4); box-shadow: var(--shadow-global);">
+            <div class="card-icon" style="flex-shrink: 0; margin: 0;"><i class="ri-user-smile-line"></i></div>
+            <div>
+              <h3 style="font-size: 1.25rem; margin-block-end: 4px;">About Dr. Linda Chen, PhD</h3>
+              <p style="font-size: 0.9rem; margin: 0;">
+                Dr. Chen holds a doctorate in Metallurgical Engineering from Case Western Reserve University and leads the IndustrialPro Quality Assurance & Failure Analysis laboratory in Cleveland, Ohio.
+              </p>
+            </div>
+          </div>
+
+          <!-- Back Navigation -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-block-start: var(--space-6); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-4);">
+            <a href="blog.html" class="btn btn-secondary btn-sm"><i class="ri-arrow-left-line"></i> Back to Blog Directory</a>
+            <a href="bulk-ordering.html" class="btn btn-primary btn-sm">Request Certified Lots</a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="color: #FFFFFF; margin-block-end: var(--space-3);">
+            <i class="ri-hexagon-fill" style="color: var(--color-accent);"></i>
+            <span>Industrial<span class="accent">Pro</span></span>
+          </a>
+          <p>Master distributor of heavy industrial fasteners, structural assemblies, and engineered fastening solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html">Heavy Hex Bolts</a></li>
+            <li><a href="catalog.html">A325 Structural</a></li>
+            <li><a href="catalog.html">Socket Screws</a></li>
+            <li><a href="catalog.html">Concrete Anchors</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>B2B Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">VMI Bin Programs</a></li>
+            <li><a href="pricing.html">Account Pricing Tiers</a></li>
+            <li><a href="bulk-ordering.html">Bulk RFQ Builder</a></li>
+            <li><a href="dashboard.html">Client Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Direct Dispatch</h4>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-phone-line" style="color: var(--color-accent);"></i> +1 (800) 555-BOLT</p>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-mail-line" style="color: var(--color-accent);"></i> support@industrialprofasteners.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 IndustrialPro Fasteners Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gsap-animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Hub – IndustrialPro Fasteners Alternative View</title>
+  <meta name="description" content="Technical engineering view of IndustrialPro Fasteners: interactive bolt torque calculator, proof-load lookup, material matrix, and direct contractor reorder portal.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <!-- GSAP 3 + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Sticky Master Navigation Bar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="brand-logo">
+          <i class="ri-hexagon-fill"></i>
+          <span>Industrial<span class="accent">Pro</span></span>
+        </a>
+
+        <!-- Desktop Navigation (> 1024px) -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link active">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
+          <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+
+        <!-- Action Items (RTL + Theme + Login) -->
+        <div class="nav-actions">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+          <a href="login.html" class="btn-login-nav">Login</a>
+          <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+            <i class="ri-menu-line"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Hamburger Slide Drawer (≤ 1024px) -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <i class="ri-hexagon-fill"></i>
+        <span>Industrial<span class="accent">Pro</span></span>
+      </a>
+      <button type="button" class="drawer-close" aria-label="Close Mobile Menu">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
+      <li><a href="home2.html" class="active"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
+      <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
+      <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
+      <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
+      <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
+      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
+      <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <div class="drawer-toggles">
+        <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
+        <div style="display: flex; gap: var(--space-2);">
+          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
+            <i class="ri-arrow-left-right-line"></i>
+          </button>
+          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Theme">
+            <i class="ri-moon-line"></i>
+          </button>
+        </div>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Home 2 Hero: Engineered Precision Layout -->
+    <section class="hero" style="background: linear-gradient(180deg, rgba(15, 23, 42, 0.03) 0%, transparent 100%);">
+      <div class="container">
+        <div class="section-header" style="margin-block-end: var(--space-6);">
+          <span class="tag-badge"><i class="ri-cpu-line"></i> Precision Fastening Portal</span>
+          <h1>Engineered Torque & Structural Hardware Data</h1>
+          <p class="lead">
+            Accelerate your engineering and procurement with verified proof load specifications, torque tightening curves, and direct mill-inventory integration.
+          </p>
+          <div style="display: flex; gap: var(--space-3); justify-content: center; margin-block-start: var(--space-4);">
+            <a href="#torque-calculator" class="btn btn-primary">Open Live Calculator</a>
+            <a href="catalog.html" class="btn btn-secondary">Search 75,000 SKUs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SECTION (Required for Home 2): Live Fastener Spec & Torque Calculator -->
+    <section class="section section-alt" id="torque-calculator">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-calculator-line"></i> Interactive Engineering Utility</span>
+          <h2>Fastener Spec & Tightening Torque Calculator</h2>
+          <p class="lead">
+            Select bolt metallurgy and thread diameter to calculate theoretical tensile strength, proof load capacity, and recommended tightening torque.
+          </p>
+        </div>
+
+        <div class="calculator-box">
+          <div class="calc-grid">
+            <div>
+              <div class="form-group">
+                <label for="calc-grade" class="form-label">Fastener Grade / Metallurgy</label>
+                <select id="calc-grade" class="form-control">
+                  <option value="grade8">SAE Grade 8 (Alloy Steel Quenched & Tempered)</option>
+                  <option value="a325">ASTM A325 (Structural Steel Bolt)</option>
+                  <option value="grade5">SAE Grade 5 (Medium Carbon Q&T)</option>
+                  <option value="grade2">SAE Grade 2 (Low Carbon Steel)</option>
+                  <option value="b7">ASTM A193 B7 (High Pressure/Temperature)</option>
+                  <option value="ss316">AISI 316 Stainless Steel (Marine Grade)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="calc-dia" class="form-label">Nominal Thread Diameter</label>
+                <select id="calc-dia" class="form-control">
+                  <option value="0.25">1/4" - 20 UNC</option>
+                  <option value="0.375">3/8" - 16 UNC</option>
+                  <option value="0.5" selected>1/2" - 13 UNC</option>
+                  <option value="0.625">5/8" - 11 UNC</option>
+                  <option value="0.75">3/4" - 10 UNC</option>
+                  <option value="1.0">1" - 8 UNC</option>
+                  <option value="1.25">1-1/4" - 7 UNC</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="calc-condition" class="form-label">Surface / Lubrication State</label>
+                <select id="calc-condition" class="form-control">
+                  <option value="plain">Dry / Plain Steel (K = 0.20)</option>
+                  <option value="lubricated">Lubricated / Anti-Seize Paste (K = 0.15)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Calculation Output Dashboard Panel -->
+            <div class="calc-result-panel">
+              <span class="tag-badge" style="margin-block-end: var(--space-2);">Recommended Clamping Torque</span>
+              <div class="calc-result-val" id="calc-torque">106 ft-lbs</div>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-block-start: 4px;">Based on 75% nominal proof load yield</p>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; width: 100%; gap: var(--space-3); margin-block-start: var(--space-4); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-3);">
+                <div>
+                  <div style="font-size: 0.8rem; color: var(--color-text-muted);">Proof Load:</div>
+                  <strong id="calc-proof-load" style="color: var(--color-text);">17,028 lbs</strong>
+                </div>
+                <div>
+                  <div style="font-size: 0.8rem; color: var(--color-text-muted);">Tensile Strength:</div>
+                  <strong id="calc-tensile-strength" style="color: var(--color-text);">150,000 PSI</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-4);">
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-3);">Need custom calibration or certified bolt load cells for field testing?</p>
+            <a href="contact.html" class="btn btn-sm btn-primary">Consult Our Engineering Staff</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Material Grade Matrix (Reorganized Visuals) -->
+    <section class="section" id="metallurgy">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge">Metallurgy Specifications</span>
+          <h2>Fastener Alloy Comparison Guide</h2>
+          <p class="lead">
+            Select the exact metallurgical properties suited for structural loads, extreme temperatures, and chemical exposures.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="ri-shield-flash-line"></i></div>
+            <h3>Grade 8 High-Tensile Alloy</h3>
+            <p>Medium carbon alloy steel, quenched and tempered. 150,000 PSI minimum tensile strength. Used in heavy earthmoving machinery and powertrain mounts.</p>
+            <div class="card-footer">
+              <span class="badge-grade">SAE J429 Spec</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ri-hammer-line"></i></div>
+            <h3>ASTM A325 Structural Steel</h3>
+            <p>Heat-treated carbon steel for structural steel joints. Optimized for shear and tension in commercial construction and highway bridges.</p>
+            <div class="card-footer">
+              <span class="badge-grade">AISC Approved</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ri-temp-cold-line"></i></div>
+            <h3>ASTM A193 B7 Alloy Studs</h3>
+            <p>Chromium-molybdenum steel for high-pressure piping, valves, and petrochemical pressure vessels operating up to 800°F.</p>
+            <div class="card-footer">
+              <span class="badge-grade">ASME Boiler Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supply Chain Logistics & Distribution Hubs -->
+    <section class="section section-alt" id="logistics">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge">Supply Chain Velocity</span>
+          <h2>Nationwide Distribution Hubs</h2>
+          <p class="lead">
+            Strategically located master warehouses guarantee 98% of orders arrive at job sites within 24 to 48 hours.
+          </p>
+        </div>
+
+        <div class="card-grid-4">
+          <div class="card">
+            <div class="card-icon"><i class="ri-building-4-line"></i></div>
+            <h4>Cleveland Hub (HQ)</h4>
+            <p>500,000 sq ft master hub housing over 45,000 bulk pallets of hex and structural hardware.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-building-4-line"></i></div>
+            <h4>Houston Hub</h4>
+            <p>Dedicated petrochem, marine, and B7 Teflon-coated stud inventory for Gulf Coast refiners.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-building-4-line"></i></div>
+            <h4>Atlanta Logistics</h4>
+            <p>High-velocity distribution supporting Southeast solar farms and commercial infrastructure.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ri-building-4-line"></i></div>
+            <h4>Reno Hub</h4>
+            <p>Same-day dispatch facility serving West Coast manufacturing, aerospace, and mining.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical CTA -->
+    <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 100%); color: #F8FAFC;">
+      <div class="container">
+        <div class="section-header" style="color: #F8FAFC;">
+          <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24;">Contractor Purchasing Portal</span>
+          <h2 style="color: #FFFFFF;">Streamline Your Job-Site Reorders</h2>
+          <p class="lead" style="color: #94A3B8;">
+            Connect your ERP via EDI, place instant recurring batch orders, or download certified MTR documentation.
+          </p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-block-start: var(--space-5);">
+            <a href="dashboard.html" class="btn btn-primary btn-lg">Access Client Dashboard</a>
+            <a href="bulk-ordering.html" class="btn btn-secondary btn-lg">Build Volume Order</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Master Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="color: #FFFFFF; margin-block-end: var(--space-3);">
+            <i class="ri-hexagon-fill" style="color: var(--color-accent);"></i>
+            <span>Industrial<span class="accent">Pro</span></span>
+          </a>
+          <p>Master distributor of heavy industrial fasteners, structural assemblies, and engineered fastening solutions.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Product Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html">Heavy Hex Bolts</a></li>
+            <li><a href="catalog.html">A325 Structural Bolts</a></li>
+            <li><a href="catalog.html">Socket Cap Screws</a></li>
+            <li><a href="catalog.html">316 Stainless Fasteners</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>B2B Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Vendor Managed Inventory</a></li>
+            <li><a href="services.html">Custom CNC Machining</a></li>
+            <li><a href="pricing.html">Account Pricing Tiers</a></li>
+            <li><a href="bulk-ordering.html">Bulk Volume Ordering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Engineering Support</h4>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-phone-line" style="color: var(--color-accent);"></i> +1 (800) 555-BOLT</p>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-mail-line" style="color: var(--color-accent);"></i> engineering@industrialprofasteners.com</p>
+          <div class="tag-badge" style="margin-block-start: var(--space-3);">ISO 9001:2015 Registered</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 IndustrialPro Fasteners Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gsap-animations.js"></script>
+</body>
+</html>
