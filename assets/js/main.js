@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormValidation();
   initSpecCalculator();
   initCatalogModal();
+  initBackToTop();
 });
 
 /* ==========================================================================
@@ -359,6 +360,50 @@ function initCatalogModal() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
       closeModal();
+    }
+  });
+}
+
+/* ==========================================================================
+   7. Back To Top Button
+   ========================================================================== */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  const SHOW_AFTER = 320; // px scrolled before button appears
+
+  // Use GSAP if available, otherwise fall back to CSS class toggle
+  function showBtn() {
+    if (typeof gsap !== 'undefined') {
+      gsap.to(btn, { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: 'back.out(1.5)', pointerEvents: 'auto' });
+    } else {
+      btn.classList.add('visible');
+    }
+  }
+
+  function hideBtn() {
+    if (typeof gsap !== 'undefined') {
+      gsap.to(btn, { opacity: 0, y: 18, scale: 0.85, duration: 0.28, ease: 'power2.in', pointerEvents: 'none' });
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+
+  // Scroll listener — show/hide with passive flag for performance
+  let isVisible = false;
+  window.addEventListener('scroll', () => {
+    const shouldShow = window.scrollY > SHOW_AFTER;
+    if (shouldShow && !isVisible) { isVisible = true; showBtn(); }
+    else if (!shouldShow && isVisible) { isVisible = false; hideBtn(); }
+  }, { passive: true });
+
+  // Click — smooth scroll to top
+  btn.addEventListener('click', () => {
+    if (typeof gsap !== 'undefined') {
+      gsap.to(window, { scrollTo: 0, duration: 0.9, ease: 'power3.inOut' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
 }
