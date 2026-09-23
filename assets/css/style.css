@@ -1275,6 +1275,12 @@ img {
   .nav-actions .btn-theme-toggle {
     display: none; /* Step 6 Rule: Hidden from header, placed inside hamburger drawer only */
   }
+  .nav-actions .btn-rtl-toggle {
+    display: none; /* Already inside hamburger drawer on mobile/tablet */
+  }
+  .nav-actions .btn-login-nav {
+    display: none; /* Already inside hamburger drawer on mobile/tablet */
+  }
   .hamburger-btn {
     display: block;
   }
