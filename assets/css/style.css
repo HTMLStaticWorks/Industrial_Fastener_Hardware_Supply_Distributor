@@ -201,6 +201,15 @@ img {
   margin-inline: auto;
 }
 
+/* Force white text in hardcoded dark CTA sections (light & dark theme safe) */
+[style*="background: linear-gradient(135deg, #0F172A"] h1,
+[style*="background: linear-gradient(135deg, #0F172A"] h2,
+[style*="background: linear-gradient(135deg, #0F172A"] h3,
+[style*="background: linear-gradient(135deg, #0F172A"] h4,
+[style*="background: linear-gradient(135deg, #0F172A"] p {
+  color: inherit;
+}
+
 .tag-badge {
   display: inline-flex;
   align-items: center;
@@ -383,6 +392,12 @@ img {
 .card h3, .card h4 {
   text-align: center;
   margin-block-end: var(--space-2);
+  font-size: 1.5rem;
+  min-height: 3.6rem; /* 2 lines at 1.5rem × 1.2 line-height — forces uniform heading height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .card p {
@@ -1205,6 +1220,50 @@ img {
   border-block-start: 1px solid rgba(255, 255, 255, 0.08);
   font-size: var(--size-caption);
   color: #64748B;
+}
+
+/* ============================================================
+   LIGHT THEME FOOTER OVERRIDES
+   ============================================================ */
+:root:not([data-theme="dark"]) .site-footer {
+  background-color: #FFFFFF;
+  color: #0F172A;
+  border-block-start: 1px solid #E2E8F0;
+}
+
+:root:not([data-theme="dark"]) .footer-col h4 {
+  color: #0F172A;
+}
+
+:root:not([data-theme="dark"]) .footer-col p {
+  color: #475569;
+}
+
+:root:not([data-theme="dark"]) .footer-links a {
+  color: #475569;
+}
+
+:root:not([data-theme="dark"]) .footer-links a:hover {
+  color: var(--color-accent);
+}
+
+:root:not([data-theme="dark"]) .social-btn {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+:root:not([data-theme="dark"]) .social-btn:hover {
+  background-color: var(--color-accent);
+  color: #0F172A;
+}
+
+:root:not([data-theme="dark"]) .footer-bottom {
+  border-block-start: 1px solid #E2E8F0;
+  color: #64748B;
+}
+
+:root:not([data-theme="dark"]) .brand-logo[style*="color: #FFFFFF"] {
+  color: #0F172A !important;
 }
 
 /* ==========================================================================

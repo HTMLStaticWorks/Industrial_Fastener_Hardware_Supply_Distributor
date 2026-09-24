@@ -78,3 +78,117 @@ body.rtl .dashboard-sidebar {
   border-inline-end: 1px solid var(--color-border);
   border-inline-start: none;
 }
+
+/* Hero Section — Align all content to the right in RTL */
+[dir="rtl"] .hero-content,
+body.rtl .hero-content {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-content h1,
+body.rtl .hero-content h1 {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-content p,
+body.rtl .hero-content p {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-content .tag-badge,
+body.rtl .hero-content .tag-badge {
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+[dir="rtl"] .hero-actions,
+body.rtl .hero-actions {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .hero-metrics,
+body.rtl .hero-metrics {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .metric-item,
+body.rtl .metric-item {
+  text-align: right;
+}
+
+/* ==========================================================================
+   FOOTER — RTL ALIGNMENT
+   ========================================================================== */
+
+/* Entire footer text flows right */
+[dir="rtl"] .site-footer,
+body.rtl .site-footer {
+  text-align: right;
+}
+
+/* Footer grid columns align right */
+[dir="rtl"] .footer-col,
+body.rtl .footer-col {
+  text-align: right;
+  align-items: flex-end;
+}
+
+/* Footer headings align right */
+[dir="rtl"] .footer-col h4,
+body.rtl .footer-col h4 {
+  text-align: right;
+}
+
+/* Footer contact lines: icon on RIGHT, text on left — reverse flex row */
+[dir="rtl"] .footer-col p,
+body.rtl .footer-col p {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 6px;
+  text-align: right;
+}
+
+/* Prevent icon from shrinking and keep top-aligned */
+[dir="rtl"] .footer-col p i,
+body.rtl .footer-col p i {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Footer links list: align right */
+[dir="rtl"] .footer-links,
+body.rtl .footer-links {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-links a,
+body.rtl .footer-links a {
+  text-align: right;
+  display: block;
+}
+
+/* Social buttons: align to the right (start from right) */
+[dir="rtl"] .footer-socials,
+body.rtl .footer-socials {
+  justify-content: flex-start;
+}
+
+/* Brand logo direction flip */
+[dir="rtl"] .brand-logo,
+body.rtl .brand-logo {
+  flex-direction: row-reverse;
+}
+
+/* Footer bottom copyright: center */
+[dir="rtl"] .footer-bottom,
+body.rtl .footer-bottom {
+  text-align: center;
+}
+
+/* Tag badge in footer: align right */
+[dir="rtl"] .footer-col .tag-badge,
+body.rtl .footer-col .tag-badge {
+  align-self: flex-end;
+}

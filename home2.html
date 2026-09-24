@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,8 +24,8 @@
     <div class="container">
       <nav class="navbar" aria-label="Main Navigation">
         <a href="index.html" class="brand-logo">
-          <i class="ri-hexagon-fill"></i>
-          <span>Industrial<span class="accent">Pro</span></span>
+          <i class="ri-tools-fill"></i>
+          <span>Fasten<span class="accent">Core</span></span>
         </a>
 
         <!-- Desktop Navigation (> 1024px) -->
@@ -63,8 +63,8 @@
   <aside class="nav-drawer" aria-label="Mobile Menu">
     <div class="drawer-header">
       <a href="index.html" class="brand-logo">
-        <i class="ri-hexagon-fill"></i>
-        <span>Industrial<span class="accent">Pro</span></span>
+        <i class="ri-tools-fill"></i>
+        <span>Fasten<span class="accent">Core</span></span>
       </a>
       <button type="button" class="drawer-close" aria-label="Close Mobile Menu">
         <i class="ri-close-line"></i>
@@ -99,12 +99,14 @@
 
   <main>
     <!-- Home 2 Hero: Engineered Precision Layout -->
-    <section class="hero" style="background: linear-gradient(180deg, rgba(15, 23, 42, 0.03) 0%, transparent 100%);">
-      <div class="container">
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; padding-block: 120px 100px;">
+      <!-- Dark overlay for readability -->
+      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,15,30,0.82) 0%, rgba(15,23,42,0.70) 100%); z-index: 0;"></div>
+      <div class="container" style="position: relative; z-index: 1;">
         <div class="section-header" style="margin-block-end: var(--space-6);">
-          <span class="tag-badge"><i class="ri-cpu-line"></i> Precision Fastening Portal</span>
+          <span class="tag-badge" style="background: rgba(245,158,11,0.2); color: #FBBF24; border: 1px solid rgba(245,158,11,0.3);"><i class="ri-cpu-line"></i> Precision Fastening Portal</span>
           <h1>Engineered Torque & Structural Hardware Data</h1>
-          <p class="lead">
+          <p class="lead" style="color: #CBD5E1 !important;">
             Accelerate your engineering and procurement with verified proof load specifications, torque tightening curves, and direct mill-inventory integration.
           </p>
           <div style="display: flex; gap: var(--space-3); justify-content: center; margin-block-start: var(--space-4);">
@@ -287,13 +289,14 @@
   </main>
 
   <!-- Master Footer -->
+  <!-- Master Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
           <a href="index.html" class="brand-logo" style="color: #FFFFFF; margin-block-end: var(--space-3);">
-            <i class="ri-hexagon-fill" style="color: var(--color-accent);"></i>
-            <span>Industrial<span class="accent">Pro</span></span>
+            <i class="ri-tools-fill" style="color: var(--color-accent);"></i>
+            <span>Fasten<span class="accent">Core</span></span>
           </a>
           <p>Master distributor of heavy industrial fasteners, structural assemblies, and engineered fastening solutions.</p>
           <div class="footer-socials">
@@ -302,6 +305,7 @@
             <a href="#" class="social-btn" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
           </div>
         </div>
+
         <div class="footer-col">
           <h4>Product Catalog</h4>
           <ul class="footer-links">
@@ -309,8 +313,10 @@
             <li><a href="catalog.html">A325 Structural Bolts</a></li>
             <li><a href="catalog.html">Socket Cap Screws</a></li>
             <li><a href="catalog.html">316 Stainless Fasteners</a></li>
+            <li><a href="catalog.html">ASTM Anchor Bolts</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
           <h4>B2B Services</h4>
           <ul class="footer-links">
@@ -318,17 +324,21 @@
             <li><a href="services.html">Custom CNC Machining</a></li>
             <li><a href="pricing.html">Account Pricing Tiers</a></li>
             <li><a href="bulk-ordering.html">Bulk Volume Ordering</a></li>
+            <li><a href="dashboard.html">Client Portal Login</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
-          <h4>Engineering Support</h4>
-          <p style="margin-block-end: var(--space-2);"><i class="ri-phone-line" style="color: var(--color-accent);"></i> +1 (800) 555-BOLT</p>
-          <p style="margin-block-end: var(--space-2);"><i class="ri-mail-line" style="color: var(--color-accent);"></i> engineering@industrialprofasteners.com</p>
+          <h4>Direct Dispatch</h4>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-map-pin-2-line" style="color: var(--color-accent);"></i> 4800 Industrial Parkway, Cleveland, OH 44135</p>
+          <p style="margin-block-end: var(--space-2);"><i class="ri-phone-line" style="color: var(--color-accent);"></i> +1 (800) 555-BOLT (Toll Free)</p>
+          <p style="margin-block-end: var(--space-2); display: flex; align-items: flex-start; gap: 6px;"><i class="ri-mail-line" style="color: var(--color-accent); flex-shrink: 0; margin-top: 2px;"></i> quotes@industrialprofasteners.com</p>
           <div class="tag-badge" style="margin-block-start: var(--space-3);">ISO 9001:2015 Registered</div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; 2026 IndustrialPro Fasteners Inc. All rights reserved.</p>
+        <p>&copy; 2026 IndustrialPro Fasteners Inc. All rights reserved. ASTM, SAE, ASME certified fasteners.</p>
       </div>
     </div>
   </footer>
