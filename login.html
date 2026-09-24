@@ -13,9 +13,21 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
-<body style="overflow: hidden;">
+<body>
 
-  <!-- Centered Layout, Vertically and Horizontally, Zero Scroll, NO theme toggle, NO back to home button -->
+  <!-- Top Action Controls: Back to Home, RTL, Theme Toggle -->
+  <div class="auth-top-actions">
+    <a href="index.html" class="btn-icon-toggle" aria-label="Back to Home" title="Back to Home">
+      <i class="ri-home-4-line"></i>
+    </a>
+    <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
+      <i class="ri-arrow-left-right-line"></i>
+    </button>
+    <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+      <i class="ri-moon-line"></i>
+    </button>
+  </div>
+
   <main class="auth-page">
     <div class="auth-card">
       <div class="brand-logo">
@@ -34,12 +46,17 @@
         </div>
 
         <div class="form-group">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-2);">
-            <label class="form-label" for="login-password" style="margin: 0;">Password <span class="required">*</span></label>
-            <a href="#" style="font-size: 0.8rem; color: var(--color-accent);" onclick="alert('Password reset link sent to registered email.')">Forgot?</a>
-          </div>
+          <label class="form-label" for="login-password">Password <span class="required">*</span></label>
           <input type="password" id="login-password" name="password" class="form-control" required minlength="8" placeholder="••••••••">
           <div class="error-message">Password must be at least 8 characters.</div>
+        </div>
+
+        <div class="auth-options-row">
+          <div class="checkbox-wrap">
+            <input type="checkbox" id="remember-me" name="remember">
+            <label for="remember-me">Remember me</label>
+          </div>
+          <a href="#" class="forgot-password-link" onclick="alert('Password reset instructions have been sent to your registered email.')">Forgot Password?</a>
         </div>
 
         <button type="submit" class="btn btn-primary btn-submit">Login</button>

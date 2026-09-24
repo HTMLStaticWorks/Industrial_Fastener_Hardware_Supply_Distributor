@@ -8,26 +8,58 @@ document.addEventListener('DOMContentLoaded', () => {
   initBulkReorderCart();
   initShipmentLookup();
   initInvoiceActions();
+  initLogout();
 });
 
-/* Tab Switching */
+/* Tab Switching (Only intercept links that have data-target) */
 function initDashboardTabs() {
-  const tabLinks = document.querySelectorAll('.dashboard-nav-link');
+  const tabLinks = document.querySelectorAll('.dashboard-nav-link[data-target], .dashboard-drawer-link[data-target]');
   const tabPanes = document.querySelectorAll('.dashboard-tab-pane');
 
   tabLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const targetId = link.getAttribute('data-target');
+      if (!targetId) return;
+
+      e.preventDefault();
 
       tabLinks.forEach(l => l.classList.remove('active'));
       tabPanes.forEach(p => p.classList.remove('active'));
 
-      link.classList.add('active');
+      // Sync active state on both sidebar and mobile drawer links
+      document.querySelectorAll(`[data-target="${targetId}"]`).forEach(l => l.classList.add('active'));
+
       const targetPane = document.getElementById(targetId);
       if (targetPane) {
         targetPane.classList.add('active');
+        // On tablet/mobile, scroll smoothly to content pane
+        if (window.innerWidth <= 1024) {
+          const headerOffset = 80;
+          const panePosition = targetPane.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: panePosition, behavior: 'smooth' });
+        }
       }
+
+      // If drawer is open, trigger close button
+      const closeBtn = document.querySelector('.dashboard-drawer .drawer-close, .nav-drawer .drawer-close');
+      if (closeBtn) {
+        closeBtn.click();
+      }
+    });
+  });
+}
+
+/* Logout Navigation */
+function initLogout() {
+  const logoutBtns = document.querySelectorAll('#btn-logout-portal, .dashboard-logout-link');
+  if (!logoutBtns.length) return;
+
+  logoutBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sessionStorage.removeItem('industrialpro-session');
+      localStorage.removeItem('industrialpro-session');
+      window.location.href = 'login.html';
     });
   });
 }

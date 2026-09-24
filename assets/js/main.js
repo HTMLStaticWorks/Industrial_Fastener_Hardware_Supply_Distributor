@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpecCalculator();
   initCatalogModal();
   initBackToTop();
+  initFaqAccordion();
 });
 
 /* ==========================================================================
@@ -407,3 +408,25 @@ function initBackToTop() {
     }
   });
 }
+
+/* ==========================================================================
+   8. FAQ Accordion System
+   ========================================================================== */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (!faqItems.length) return;
+
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        // Optional smooth accordion behavior: collapse others when one opens
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.open) {
+            otherItem.open = false;
+          }
+        });
+      }
+    });
+  });
+}
+

@@ -19,46 +19,37 @@
 </head>
 <body>
 
-  <!-- Master Header -->
-  <header class="site-header">
-    <div class="container">
-      <nav class="navbar" aria-label="Main Navigation">
+  <!-- Stable Dashboard Header (Full-Width, No Page Names in Navbar, Theme & RTL Kept in Navbar) -->
+  <header class="site-header dashboard-header">
+    <div class="dashboard-navbar" aria-label="Dashboard Navigation">
+      <div class="dashboard-brand-wrap" style="display: flex; align-items: center; gap: var(--space-3);">
         <a href="index.html" class="brand-logo">
           <i class="ri-tools-fill"></i>
           <span>Fasten<span class="accent">Core</span></span>
         </a>
+        <span class="badge-grade dashboard-badge" style="margin: 0; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(245, 158, 11, 0.15); color: var(--color-accent); border: 1px solid rgba(245, 158, 11, 0.3);">
+          <i class="ri-shield-check-line"></i> Enterprise Portal
+        </span>
+      </div>
 
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="home2.html" class="nav-link">Home 2</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="catalog.html" class="nav-link">Catalog</a></li>
-          <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
-          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-          <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
-        </ul>
-
-        <div class="nav-actions">
-          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
-            <i class="ri-arrow-left-right-line"></i>
-          </button>
-          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
-            <i class="ri-moon-line"></i>
-          </button>
-          <a href="login.html" class="btn-login-nav">Login</a>
-          <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
-            <i class="ri-menu-line"></i>
-          </button>
-        </div>
-      </nav>
+      <!-- Nav Actions: Theme and RTL Buttons Alone in Navbar + Hamburger Trigger for Mobile/Tablet -->
+      <div class="dashboard-nav-actions">
+        <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
+          <i class="ri-arrow-left-right-line"></i>
+        </button>
+        <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="ri-moon-line"></i>
+        </button>
+        <button type="button" class="hamburger-btn dashboard-hamburger-btn" aria-label="Open Dashboard Mobile Menu" title="Open Navigation Menu">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
+  <!-- Separate Mobile Hamburger Menu for Dashboard Page -->
   <div class="drawer-backdrop" aria-hidden="true"></div>
-  <aside class="nav-drawer" aria-label="Mobile Menu">
+  <aside class="nav-drawer dashboard-drawer" aria-label="Dashboard Mobile Menu">
     <div class="drawer-header">
       <a href="index.html" class="brand-logo">
         <i class="ri-tools-fill"></i>
@@ -68,7 +59,21 @@
         <i class="ri-close-line"></i>
       </button>
     </div>
-    <ul class="drawer-links">
+
+    <!-- Verified Client Profile Info -->
+    <div class="drawer-client-profile" style="padding: 10px 14px; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-global); margin-block-end: var(--space-4); display: flex; align-items: center; gap: 10px;">
+      <div class="user-avatar" style="width: 38px; height: 38px; font-size: 0.95rem; border-radius: var(--radius-global); background-color: var(--color-accent); color: #0F172A; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">TC</div>
+      <div style="min-width: 0;">
+        <div style="font-weight: 600; font-size: 0.88rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Turner Construction</div>
+        <span class="badge-grade" style="margin: 0; font-size: 0.65rem; padding: 2px 6px;">Tier 2 Enterprise (-18%)</span>
+      </div>
+    </div>
+
+    <!-- Page Names Section (Site Pages Navigation) -->
+    <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); margin-block-end: 8px; padding-inline-start: 4px; display: flex; align-items: center; gap: 6px;">
+      <i class="ri-pages-line"></i> Site Pages
+    </div>
+    <ul class="drawer-links" style="margin-block-end: var(--space-4);">
       <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
       <li><a href="home2.html"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
       <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
@@ -79,19 +84,26 @@
       <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
       <li><a href="dashboard.html" class="active"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
     </ul>
-    <div class="drawer-footer">
-      <div class="drawer-toggles">
-        <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
-        <div style="display: flex; gap: var(--space-2);">
-          <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
-            <i class="ri-arrow-left-right-line"></i>
-          </button>
-          <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Theme">
-            <i class="ri-moon-line"></i>
-          </button>
-        </div>
-      </div>
-      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+
+    <!-- Dashboard Portal Sections -->
+    <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); margin-block-end: 8px; padding-inline-start: 4px; display: flex; align-items: center; gap: 6px;">
+      <i class="ri-dashboard-line"></i> Dashboard Tabs
+    </div>
+    <ul class="drawer-links drawer-portal-links" style="margin-block-end: var(--space-4);">
+      <li><a href="#overview" class="dashboard-drawer-link active" data-target="pane-overview"><i class="ri-pie-chart-line"></i> Overview &amp; KPIs</a></li>
+      <li><a href="#reorder" class="dashboard-drawer-link" data-target="pane-reorder"><i class="ri-shopping-cart-line"></i> Bulk Reorder Cart</a></li>
+      <li><a href="#tracking" class="dashboard-drawer-link" data-target="pane-tracking"><i class="ri-truck-line"></i> Shipment Tracking</a></li>
+      <li><a href="#pricing-tiers" class="dashboard-drawer-link" data-target="pane-pricing"><i class="ri-price-tag-3-line"></i> Account Pricing Tiers</a></li>
+      <li><a href="#invoices" class="dashboard-drawer-link" data-target="pane-invoices"><i class="ri-file-text-line"></i> Invoices &amp; Statements</a></li>
+      <li><a href="#history" class="dashboard-drawer-link" data-target="pane-history"><i class="ri-history-line"></i> Order History</a></li>
+      <li><a href="#settings" class="dashboard-drawer-link" data-target="pane-settings"><i class="ri-settings-3-line"></i> Account Settings</a></li>
+    </ul>
+
+    <!-- Drawer Footer: Logout Link Only (Theme & RTL are kept in the Top Navbar) -->
+    <div class="drawer-footer" style="margin-top: auto; padding-top: var(--space-4); border-top: 1px solid var(--color-border);">
+      <a href="login.html" class="btn btn-outline dashboard-logout-link" style="width: 100%; justify-content: center; gap: 8px;">
+        <i class="ri-logout-box-r-line"></i> Sign Out
+      </a>
     </div>
   </aside>
 
@@ -147,8 +159,8 @@
         </li>
       </ul>
 
-      <div style="margin-top: auto; border-top: 1px solid var(--color-border); padding-top: var(--space-3);">
-        <a href="login.html" class="dashboard-nav-link" style="color: var(--color-error);">
+      <div class="dashboard-sidebar-footer">
+        <a href="login.html" class="dashboard-logout-link" id="btn-logout-portal">
           <i class="ri-logout-box-r-line"></i> Logout Portal
         </a>
       </div>
@@ -330,26 +342,26 @@
           </table>
         </div>
 
-        <!-- Summary & Reorder Action -->
-        <div style="display: flex; justify-content: flex-end;">
-          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); padding: var(--space-5); width: 100%; max-width: 420px;">
-            <div style="display: flex; justify-content: space-between; margin-block-end: var(--space-2); font-size: 0.95rem;">
+        <!-- Summary & Reorder Action (Centered on all devices) -->
+        <div style="display: flex; justify-content: center; width: 100%; margin-block-start: var(--space-4);">
+          <div class="reorder-summary-card">
+            <div class="reorder-summary-line">
               <span>Catalog Subtotal:</span>
               <strong id="reorder-subtotal">$0.00</strong>
             </div>
-            <div style="display: flex; justify-content: space-between; margin-block-end: var(--space-2); font-size: 0.95rem; color: var(--color-success);">
+            <div class="reorder-summary-line reorder-discount-line">
               <span>Tier 2 Enterprise Discount:</span>
               <strong id="reorder-discount">-$0.00 (18%)</strong>
             </div>
-            <div style="display: flex; justify-content: space-between; margin-block-start: var(--space-3); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-3); font-size: 1.25rem;">
+            <div class="reorder-summary-line reorder-total-line">
               <span>Invoice Total:</span>
-              <strong id="reorder-total" style="color: var(--color-accent); font-family: var(--font-heading);">$0.00</strong>
+              <strong id="reorder-total">$0.00</strong>
             </div>
 
-            <button type="button" id="btn-submit-reorder" class="btn btn-primary" style="width: 100%; margin-block-start: var(--space-4);">
-              Confirm & Submit Purchase Order
+            <button type="button" id="btn-submit-reorder" class="btn btn-primary btn-reorder-submit">
+              Confirm &amp; Submit Purchase Order
             </button>
-            <div style="font-size: 0.75rem; color: var(--color-text-muted); text-align: center; margin-block-start: 8px;">
+            <div class="reorder-terms-text">
               Billed to Net 60 Commercial Terms &bull; Free Freight Included
             </div>
           </div>
@@ -425,26 +437,26 @@
         <h2 style="font-size: 1.85rem; margin-block-end: 4px;">Contracted Pricing & Credit Line</h2>
         <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-block-end: var(--space-5);">Overview of your active volume tiers and commercial credit status.</p>
 
-        <div class="card-grid" style="grid-template-columns: 1fr 1fr; margin-block-end: var(--space-6);">
-          <div class="card" style="align-items: flex-start; text-align: left;">
+        <div class="dashboard-pricing-grid" style="margin-block-end: var(--space-6);">
+          <div class="card" style="align-items: flex-start; text-align: left; width: 100%;">
             <div class="tag-badge">Current Tier</div>
-            <h3>Tier 2: Enterprise Industrial</h3>
-            <p>Your contract guarantees an 18% base discount across all catalogue SKUs, 60-day terms, and dedicated warehouse inventory holds.</p>
-            <div style="margin-block-start: var(--space-3); font-size: 0.85rem; color: var(--color-text-muted);">
+            <h3 style="font-size: 1.35rem; line-height: 1.3; margin-block: 4px;">Tier 2: Enterprise Industrial</h3>
+            <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">Your contract guarantees an 18% base discount across all catalogue SKUs, 60-day terms, and dedicated warehouse inventory holds.</p>
+            <div style="margin-block-start: var(--space-3); font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.4;">
               Qualify for Tier 3 Direct Mill (25% off) by surpassing $250K annual volume. Current YTD: $184,520 (74% to next tier).
             </div>
           </div>
 
-          <div class="card" style="align-items: flex-start; text-align: left;">
+          <div class="card" style="align-items: flex-start; text-align: left; width: 100%;">
             <div class="tag-badge">Credit Facility</div>
-            <h3>Commercial Line of Credit</h3>
-            <div style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--color-accent); margin-block: 4px;">
+            <h3 style="font-size: 1.35rem; line-height: 1.3; margin-block: 4px;">Commercial Line of Credit</h3>
+            <div class="pricing-credit-amount" style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--color-accent); margin-block: 4px; word-break: break-all;">
               $250,000.00
             </div>
             <div style="width: 100%; height: 8px; background-color: var(--color-bg); border-radius: var(--radius-global); overflow: hidden; margin-block: var(--space-2);">
               <div style="width: 25%; height: 100%; background-color: var(--color-accent);"></div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.85rem; color: var(--color-text-muted);">
+            <div class="pricing-credit-meta" style="display: flex; justify-content: space-between; width: 100%; font-size: 0.85rem; color: var(--color-text-muted); flex-wrap: wrap; gap: 4px;">
               <span>Utilized: $62,400.00</span>
               <span>Available: $187,600.00</span>
             </div>

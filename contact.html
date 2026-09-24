@@ -106,88 +106,254 @@
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: start; margin-block-end: var(--space-8);">
+        <div class="contact-grid">
           
-          <!-- Contact Form with Client-Side Validation -->
-          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); padding: var(--space-6);">
-            <h2 style="font-size: 1.85rem; margin-block-end: var(--space-2); text-align: center;">Send Direct Inquiry</h2>
-            <p style="text-align: center; color: var(--color-text-muted); margin-block-end: var(--space-5);">Guaranteed reply within 60 minutes during standard commercial hours.</p>
+          <!-- Left Column: Form & FAQ Section filling free space -->
+          <div style="display: flex; flex-direction: column; gap: var(--space-5);">
+            
+            <!-- Contact Form with Client-Side Validation -->
+            <div class="contact-form-card">
+              <h2 style="font-size: 1.85rem; margin-block-end: var(--space-2); text-align: center;">Send Direct Inquiry</h2>
+              <p style="text-align: center; color: var(--color-text-muted); margin-block-end: var(--space-5);">Guaranteed reply within 60 minutes during standard commercial hours.</p>
 
-            <form class="validated-form" novalidate>
-              <div class="alert-success-banner" role="alert">
-                <i class="ri-checkbox-circle-fill" style="color: var(--color-success); font-size: 1.5rem;"></i>
+              <form class="validated-form" novalidate>
+                <div class="alert-success-banner" role="alert">
+                  <i class="ri-checkbox-circle-fill" style="color: var(--color-success); font-size: 1.5rem;"></i>
+                  <div>
+                    <strong>Message Sent Successfully!</strong> An IndustrialPro application engineer will contact you shortly via email or direct phone.
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-name">Full Name <span class="required">*</span></label>
+                    <input type="text" id="contact-name" name="name" class="form-control" required placeholder="Robert Jenkins">
+                    <div class="error-message">Name is required.</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="contact-email">Business Email <span class="required">*</span></label>
+                    <input type="email" id="contact-email" name="email" class="form-control" required placeholder="r.jenkins@contractor.com">
+                    <div class="error-message">Valid email is required.</div>
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-company">Company / Organization <span class="required">*</span></label>
+                    <input type="text" id="contact-company" name="company" class="form-control" required placeholder="Midwest Fabricators">
+                    <div class="error-message">Company name is required.</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="contact-inquiry">Inquiry Type <span class="required">*</span></label>
+                    <select id="contact-inquiry" name="inquiry_type" class="form-control" required>
+                      <option value="">Select Category...</option>
+                      <option value="commercial_rfq">Bulk Volume Quotation / RFQ</option>
+                      <option value="engineering_qa">Engineering / Metallurgical QA</option>
+                      <option value="vmi_program">Vendor Managed Inventory (VMI)</option>
+                      <option value="order_tracking">Existing Order & Shipment Status</option>
+                      <option value="credit_terms">Commercial Credit Application</option>
+                    </select>
+                    <div class="error-message">Please select an inquiry type.</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contact-message">Project Description / Technical Requirements <span class="required">*</span></label>
+                  <textarea id="contact-message" name="message" rows="5" class="form-control" required placeholder="Describe ASTM specs, bolt sizes, quantities, job-site delivery dates, or technical questions..."></textarea>
+                  <div class="error-message">Please provide message details.</div>
+                </div>
+
+                <div class="checkbox-wrap">
+                  <input type="checkbox" id="contact-terms" name="terms" required>
+                  <label for="contact-terms">I consent to IndustrialPro storing my business inquiry to prepare a commercial response.</label>
+                  <div class="error-message">You must accept the terms.</div>
+                </div>
+
+                <div style="text-align: center; margin-block-start: var(--space-4);">
+                  <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Dispatch Message</button>
+                </div>
+
+                <!-- Direct Engineering Social Media Channels -->
+                <div style="margin-block-start: var(--space-5); padding-block-start: var(--space-4); border-block-start: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2);">
+                  <span style="font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 6px;">
+                    <i class="ri-share-line" style="color: var(--color-accent);"></i> Official Social Channels:
+                  </span>
+                  <div style="display: flex; gap: 8px; align-items: center;">
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn" title="LinkedIn" style="width: 36px; height: 36px; border: 1px solid var(--color-border);"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter / X" title="Twitter / X" style="width: 36px; height: 36px; border: 1px solid var(--color-border);"><i class="ri-twitter-x-fill"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube" title="YouTube" style="width: 36px; height: 36px; border: 1px solid var(--color-border);"><i class="ri-youtube-fill"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook" title="Facebook" style="width: 36px; height: 36px; border: 1px solid var(--color-border);"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram" title="Instagram" style="width: 36px; height: 36px; border: 1px solid var(--color-border);"><i class="ri-instagram-line"></i></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- FAQ Section filling the free space below the form -->
+            <div class="card" style="padding: var(--space-5); text-align: left; background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global);" id="faq">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-block-end: var(--space-4); border-block-end: 1px solid var(--color-border); padding-block-end: var(--space-3); flex-wrap: wrap; gap: var(--space-2);">
                 <div>
-                  <strong>Message Sent Successfully!</strong> An IndustrialPro application engineer will contact you shortly via email or direct phone.
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="tag-badge" style="padding: 2px 8px; font-size: 0.75rem;"><i class="ri-questionnaire-line"></i> Quick Knowledgebase</span>
+                  </div>
+                  <h3 style="font-size: 1.25rem; margin-block-start: var(--space-2); margin-block-end: 2px;">Frequently Asked Questions</h3>
                 </div>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted);">Instant Dispatch &amp; RFQ Guide</span>
               </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
-                <div class="form-group">
-                  <label class="form-label" for="contact-name">Full Name <span class="required">*</span></label>
-                  <input type="text" id="contact-name" name="name" class="form-control" required placeholder="Robert Jenkins">
-                  <div class="error-message">Name is required.</div>
-                </div>
+              <div class="faq-container" style="max-width: 100%; gap: var(--space-2);">
+                <!-- FAQ Item 1 -->
+                <details class="faq-item" open>
+                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
+                    <span style="display: flex; align-items: center; gap: 10px;">
+                      <i class="ri-time-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
+                      What is the typical turnaround time for bulk RFQs?
+                    </span>
+                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
+                  </summary>
+                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
+                    <p>In-stock catalog items are quoted within <strong>60 minutes</strong> during commercial hours (6 AM – 7 PM EST). Custom ASTM alloy fabrication or mill-run RFQs are returned within 4 to 24 hours with complete metallurgical specs.</p>
+                  </div>
+                </details>
 
-                <div class="form-group">
-                  <label class="form-label" for="contact-email">Business Email <span class="required">*</span></label>
-                  <input type="email" id="contact-email" name="email" class="form-control" required placeholder="r.jenkins@contractor.com">
-                  <div class="error-message">Valid email is required.</div>
-                </div>
+                <!-- FAQ Item 2 -->
+                <details class="faq-item">
+                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
+                    <span style="display: flex; align-items: center; gap: 10px;">
+                      <i class="ri-file-text-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
+                      Are Certified Material Test Reports (MTRs) provided?
+                    </span>
+                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
+                  </summary>
+                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
+                    <p>Yes. 100% of our structural, petrochemical, and high-tensile hardware lots include complete <strong>EN 10204 3.1 Certified Material Test Reports</strong>, heat numbers, and proof-load data downloadable through our portal 24/7.</p>
+                  </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="faq-item">
+                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
+                    <span style="display: flex; align-items: center; gap: 10px;">
+                      <i class="ri-truck-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
+                      What are your delivery timeframes and emergency options?
+                    </span>
+                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
+                  </summary>
+                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
+                    <p>We provide <strong>24- to 48-hour ground transit</strong> across 90% of US job sites from OH, TX, GA, and NV. Orders before 4 PM stage same-day. For emergency shutdown situations, 24/7 Hot-Shot dedicated couriers and air freight are available.</p>
+                  </div>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="faq-item">
+                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
+                    <span style="display: flex; align-items: center; gap: 10px;">
+                      <i class="ri-bank-card-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
+                      How do contractors establish Net 30 or Net 60 credit?
+                    </span>
+                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
+                  </summary>
+                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
+                    <p>Commercial credit applications are approved within 24–48 hours for qualified subcontractors and EPCs, with revolving credit lines from $15,000 to $250,000+. Email trade references to <a href="mailto:credit@industrialprofasteners.com" style="color: var(--color-accent); text-decoration: underline;">credit@industrialprofasteners.com</a>.</p>
+                  </div>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details class="faq-item">
+                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
+                    <span style="display: flex; align-items: center; gap: 10px;">
+                      <i class="ri-tools-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
+                      Do you support custom fastener fabrication &amp; coatings?
+                    </span>
+                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
+                  </summary>
+                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
+                    <p>Yes. Our CNC and cold-heading facilities produce custom shanks, left-hand threads, and exotic alloys (Inconel, Monel, 316SS). Finishes include Hot-Dip Galvanized (A153), Zinc-Nickel, Fluoropolymer/Xylan, and Cadmium.</p>
+                  </div>
+                </details>
+
+                <!-- FAQ Item 6 -->
+                <details class="faq-item">
+                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
+                    <span style="display: flex; align-items: center; gap: 10px;">
+                      <i class="ri-shield-check-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
+                      Are your products DFARS and Buy America (BAA) compliant?
+                    </span>
+                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
+                  </summary>
+                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
+                    <p>Yes. 100% USA Melt and Manufacture documentation, DFARS qualifying country compliance, and AIS certifications can be specified at the line-item level for federal highway, infrastructure, and defense jobs.</p>
+                  </div>
+                </details>
               </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
-                <div class="form-group">
-                  <label class="form-label" for="contact-company">Company / Organization <span class="required">*</span></label>
-                  <input type="text" id="contact-company" name="company" class="form-control" required placeholder="Midwest Fabricators">
-                  <div class="error-message">Company name is required.</div>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="contact-inquiry">Inquiry Type <span class="required">*</span></label>
-                  <select id="contact-inquiry" name="inquiry_type" class="form-control" required>
-                    <option value="">Select Category...</option>
-                    <option value="commercial_rfq">Bulk Volume Quotation / RFQ</option>
-                    <option value="engineering_qa">Engineering / Metallurgical QA</option>
-                    <option value="vmi_program">Vendor Managed Inventory (VMI)</option>
-                    <option value="order_tracking">Existing Order & Shipment Status</option>
-                    <option value="credit_terms">Commercial Credit Application</option>
-                  </select>
-                  <div class="error-message">Please select an inquiry type.</div>
-                </div>
+              <!-- FAQ Support Footer -->
+              <div style="margin-block-start: var(--space-4); padding: var(--space-3) var(--space-4); background-color: var(--color-bg); border-radius: var(--radius-global); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: 0.85rem;">
+                <span style="display: flex; align-items: center; gap: 6px; color: var(--color-text-muted);">
+                  <i class="ri-customer-service-2-line" style="color: var(--color-accent);"></i> Still have questions?
+                </span>
+                <a href="tel:+18005552658" style="color: var(--color-accent); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                  <i class="ri-phone-fill"></i> +1 (800) 555-BOLT
+                </a>
               </div>
+            </div>
 
-              <div class="form-group">
-                <label class="form-label" for="contact-message">Project Description / Technical Requirements <span class="required">*</span></label>
-                <textarea id="contact-message" name="message" rows="5" class="form-control" required placeholder="Describe ASTM specs, bolt sizes, quantities, job-site delivery dates, or technical questions..."></textarea>
-                <div class="error-message">Please provide message details.</div>
-              </div>
-
-              <div class="checkbox-wrap">
-                <input type="checkbox" id="contact-terms" name="terms" required>
-                <label for="contact-terms">I consent to IndustrialPro storing my business inquiry to prepare a commercial response.</label>
-                <div class="error-message">You must accept the terms.</div>
-              </div>
-
-              <div style="text-align: center; margin-block-start: var(--space-4);">
-                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Dispatch Message</button>
-              </div>
-            </form>
           </div>
 
-          <!-- Distribution Hubs & Map Placeholder -->
+          <!-- Distribution Hubs & Proper Interactive Map -->
           <div>
-            <!-- Map Placeholder Box -->
+            <!-- Live Interactive Google Map Box -->
             <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); overflow: hidden; margin-block-end: var(--space-5);">
-              <div style="height: 260px; background: linear-gradient(135deg, #0F172A 0%, #1e293b 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #FFFFFF; padding: var(--space-4); text-align: center; position: relative;">
-                <i class="ri-road-map-fill" style="font-size: 3rem; color: var(--color-accent); margin-block-end: var(--space-2);"></i>
-                <div style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 540;">Cleveland Master Logistics Hub</div>
-                <div style="font-size: 0.85rem; color: #94A3B8;">4800 Industrial Parkway, Cleveland, OH 44135</div>
-                <span class="tag-badge" style="margin-block-start: var(--space-3); background: rgba(245, 158, 11, 0.2); color: #FBBF24;">48-Hour Nationwide Reach</span>
+              <!-- Map Card Header with Location Details -->
+              <div style="padding: var(--space-4); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-block-end: 1px solid var(--color-border); background-color: var(--color-surface);">
+                <div style="display: flex; align-items: center; gap: var(--space-3);">
+                  <div style="width: 44px; height: 44px; border-radius: var(--radius-global); background: rgba(245, 158, 11, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;">
+                    <i class="ri-map-pin-2-fill"></i>
+                  </div>
+                  <div>
+                    <h3 style="font-size: 1.15rem; margin-block-end: 2px;">Cleveland Master Logistics Hub</h3>
+                    <div style="font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                      <span><i class="ri-map-pin-line" style="color: var(--color-accent);"></i> 4800 Industrial Parkway, Cleveland, OH 44135</span>
+                      <span class="tag-badge" style="padding: 2px 8px; font-size: 0.72rem; background: rgba(245, 158, 11, 0.15); color: #FBBF24;">48-Hour Nationwide Reach</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://maps.google.com/?q=4800+Industrial+Parkway,+Cleveland,+OH+44135" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="ri-direction-line" style="color: var(--color-accent);"></i> Get Directions
+                </a>
+              </div>
+
+              <!-- Live Google Map Iframe -->
+              <div style="position: relative; width: 100%; height: 280px; background-color: #0F172A;">
+                <iframe 
+                  title="Cleveland Master Logistics Hub Map"
+                  src="https://maps.google.com/maps?q=4800+Industrial+Parkway,+Cleveland,+OH+44135&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                  width="100%" 
+                  height="100%" 
+                  style="border: 0; display: block;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+
+              <!-- Map Card Footer Info -->
+              <div style="padding: var(--space-3) var(--space-4); background-color: var(--color-bg); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: 0.85rem; color: var(--color-text-muted);">
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                  <i class="ri-building-4-line" style="color: var(--color-accent);"></i>
+                  <span>500,000 sq ft Master Depot & A2LA Lab</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                  <i class="ri-phone-line" style="color: var(--color-accent);"></i>
+                  <span>Direct Desk: <strong style="color: var(--color-text);">+1 (800) 555-BOLT</strong></span>
+                </div>
               </div>
             </div>
 
             <!-- Regional Facilities -->
-            <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+            <div class="contact-facilities-grid">
               <div class="card" style="padding: var(--space-4); align-items: flex-start; text-align: left;">
                 <div class="tag-badge" style="margin-block-end: var(--space-1);">Headquarters & Lab</div>
                 <h4 style="font-size: 1.15rem; margin-block-end: 4px;">Cleveland, OH</h4>
@@ -217,6 +383,26 @@
               </div>
             </div>
 
+            <!-- Social Media Channels Card -->
+            <div class="card" style="margin-block-start: var(--space-4); padding: var(--space-4); display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); text-align: left;">
+              <div style="display: flex; align-items: center; gap: var(--space-3);">
+                <div style="width: 44px; height: 44px; border-radius: var(--radius-global); background: rgba(245, 158, 11, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">
+                  <i class="ri-share-forward-line"></i>
+                </div>
+                <div>
+                  <h4 style="font-size: 1.05rem; margin-block-end: 2px;">Connect On Social Media</h4>
+                  <p style="font-size: 0.82rem; color: var(--color-text-muted); margin: 0;">Follow our official channels for inventory drops, ASTM updates, & engineering guides.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap;">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn" title="LinkedIn" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-linkedin-fill"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter / X" title="Twitter / X" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-twitter-x-fill"></i></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube" title="YouTube" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-youtube-fill"></i></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook" title="Facebook" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-facebook-fill"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram" title="Instagram" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-instagram-line"></i></a>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -236,9 +422,11 @@
           </a>
           <p>Master distributor of heavy industrial fasteners, structural assemblies, and engineered fastening solutions.</p>
           <div class="footer-socials">
-            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
-            <a href="#" class="social-btn" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
-            <a href="#" class="social-btn" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter / X"><i class="ri-twitter-x-fill"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
           </div>
         </div>
 

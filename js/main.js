@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormValidation();
   initSpecCalculator();
   initCatalogModal();
+  initBackToTop();
+  initFaqAccordion();
 });
 
 /* ==========================================================================
@@ -101,6 +103,17 @@ function initNavigation() {
   const closeBtn = document.querySelector('.drawer-close');
   const drawerLinks = document.querySelectorAll('.drawer-links a');
 
+  // Sticky header scroll elevation (always run regardless of GSAP)
+  const header = document.querySelector('.site-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+
+  // If GSAP is loaded it takes over the drawer — skip vanilla binding
+  if (typeof gsap !== 'undefined') return;
+
   if (!hamburgerBtn || !drawer || !backdrop) return;
 
   function openDrawer() {
@@ -118,27 +131,12 @@ function initNavigation() {
   hamburgerBtn.addEventListener('click', openDrawer);
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
   backdrop.addEventListener('click', closeDrawer);
-
-  drawerLinks.forEach(link => {
-    link.addEventListener('click', closeDrawer);
-  });
-
+  drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer.classList.contains('active')) {
-      closeDrawer();
-    }
-  });
-
-  // Sticky header scroll elevation
-  const header = document.querySelector('.site-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+    if (e.key === 'Escape' && drawer.classList.contains('active')) closeDrawer();
   });
 }
+
 
 /* ==========================================================================
    4. Form Validation Engine (Client-side, Accessible, No reload)
@@ -366,3 +364,69 @@ function initCatalogModal() {
     }
   });
 }
+
+/* ==========================================================================
+   7. Back To Top Button
+   ========================================================================== */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  const SHOW_AFTER = 320; // px scrolled before button appears
+
+  // Use GSAP if available, otherwise fall back to CSS class toggle
+  function showBtn() {
+    if (typeof gsap !== 'undefined') {
+      gsap.to(btn, { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: 'back.out(1.5)', pointerEvents: 'auto' });
+    } else {
+      btn.classList.add('visible');
+    }
+  }
+
+  function hideBtn() {
+    if (typeof gsap !== 'undefined') {
+      gsap.to(btn, { opacity: 0, y: 18, scale: 0.85, duration: 0.28, ease: 'power2.in', pointerEvents: 'none' });
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+
+  // Scroll listener — show/hide with passive flag for performance
+  let isVisible = false;
+  window.addEventListener('scroll', () => {
+    const shouldShow = window.scrollY > SHOW_AFTER;
+    if (shouldShow && !isVisible) { isVisible = true; showBtn(); }
+    else if (!shouldShow && isVisible) { isVisible = false; hideBtn(); }
+  }, { passive: true });
+
+  // Click — smooth scroll to top
+  btn.addEventListener('click', () => {
+    if (typeof gsap !== 'undefined') {
+      gsap.to(window, { scrollTo: 0, duration: 0.9, ease: 'power3.inOut' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+}
+
+/* ==========================================================================
+   8. FAQ Accordion System
+   ========================================================================== */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (!faqItems.length) return;
+
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        // Optional smooth accordion behavior: collapse others when one opens
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.open) {
+            otherItem.open = false;
+          }
+        });
+      }
+    });
+  });
+}
+

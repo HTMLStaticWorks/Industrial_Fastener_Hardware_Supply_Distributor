@@ -137,7 +137,7 @@
         </div>
 
         <!-- RFQ Form Builder -->
-        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); padding: var(--space-6); max-width: 980px; margin-inline: auto;">
+        <div class="rfq-form-card">
           <h2 style="font-size: var(--size-h3); margin-block-end: var(--space-2); text-align: center;">Request Volume Quotation</h2>
           <p style="text-align: center; color: var(--color-text-muted); margin-block-end: var(--space-5);">Fill in your job-site requirements. Our commercial desk responds within 2 business hours.</p>
 
@@ -150,7 +150,7 @@
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+            <div class="form-row-2">
               <div class="form-group">
                 <label class="form-label" for="rfq-company">Company / Contractor Name <span class="required">*</span></label>
                 <input type="text" id="rfq-company" name="company" class="form-control" required placeholder="e.g. Turner Structural Constructors">
@@ -164,7 +164,7 @@
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-4);">
+            <div class="form-row-3">
               <div class="form-group">
                 <label class="form-label" for="rfq-contact">Contact Name <span class="required">*</span></label>
                 <input type="text" id="rfq-contact" name="contact" class="form-control" required placeholder="John Miller">
@@ -204,8 +204,8 @@
               <label for="rfq-mtr">Require certified Mill Test Reports (MTR / CMTR) and domestic Buy America certifications with delivery.</label>
             </div>
 
-            <div style="text-align: center; margin-block-start: var(--space-5);">
-              <button type="submit" class="btn btn-primary btn-lg" style="min-width: 280px;">Submit Volume RFQ</button>
+            <div class="rfq-btn-wrap">
+              <button type="submit" class="btn btn-primary btn-lg btn-rfq-submit">Submit Volume RFQ</button>
             </div>
           </form>
         </div>
