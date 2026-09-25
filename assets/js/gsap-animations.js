@@ -55,7 +55,7 @@ function initGSAPAnimations() {
       opacity: 0,
       duration: 0.65,
       ease: 'power4.out',
-      clearProps: 'all'
+      clearProps: 'transform,opacity'
     });
   }
 
@@ -67,7 +67,7 @@ function initGSAPAnimations() {
     if (navLinks.length) {
       gsap.from(navLinks, {
         y: -10, opacity: 0, stagger: 0.05, duration: 0.4,
-        delay: 0.45, ease: 'power2.out', clearProps: 'all'
+        delay: 0.45, ease: 'power2.out', clearProps: 'transform,opacity'
       });
     }
   }
@@ -85,7 +85,7 @@ function initGSAPAnimations() {
     const heroTl = gsap.timeline({ delay: 0.15 });
 
     const heroBadge = heroContent.querySelector('.tag-badge');
-    if (heroBadge) heroTl.from(heroBadge, { y: 18, opacity: 0, duration: 0.45, clearProps: 'all' });
+    if (heroBadge) heroTl.from(heroBadge, { y: 18, opacity: 0, duration: 0.45, clearProps: 'transform,opacity' });
 
     const heroH1 = heroContent.querySelector('h1');
     if (heroH1) {
@@ -99,13 +99,13 @@ function initGSAPAnimations() {
     }
 
     const heroP = heroContent.querySelector('p');
-    if (heroP) heroTl.from(heroP, { y: 20, opacity: 0, duration: 0.55, clearProps: 'all' }, '-=0.2');
+    if (heroP) heroTl.from(heroP, { y: 20, opacity: 0, duration: 0.55, clearProps: 'transform,opacity' }, '-=0.2');
 
     const heroActions = heroContent.querySelector('.hero-actions');
-    if (heroActions) heroTl.from(heroActions.children, { y: 18, opacity: 0, stagger: 0.1, duration: 0.5, clearProps: 'all' }, '-=0.25');
+    if (heroActions) heroTl.from(heroActions.children, { y: 18, opacity: 0, stagger: 0.1, duration: 0.5, clearProps: 'transform,opacity' }, '-=0.25');
 
     const metricItems = heroContent.querySelectorAll('.metric-item');
-    if (metricItems.length) heroTl.from(metricItems, { y: 14, opacity: 0, stagger: 0.08, duration: 0.45, clearProps: 'all' }, '-=0.2');
+    if (metricItems.length) heroTl.from(metricItems, { y: 14, opacity: 0, stagger: 0.08, duration: 0.45, clearProps: 'transform,opacity' }, '-=0.2');
   }
 
   /* ─────────────────────────────────────────────────────────────────────────
@@ -113,7 +113,7 @@ function initGSAPAnimations() {
   ───────────────────────────────────────────────────────────────────────── */
   const heroVisual = document.querySelector('.hero-visual');
   if (heroVisual) {
-    gsap.from(heroVisual, { x: 55, opacity: 0, duration: 0.95, delay: 0.4, ease: 'power3.out', clearProps: 'all' });
+    gsap.from(heroVisual, { x: 55, opacity: 0, duration: 0.95, delay: 0.4, ease: 'power3.out', clearProps: 'transform,opacity' });
   }
 
   const floatingBadge = document.querySelector('.hero-floating-badge');
@@ -144,7 +144,7 @@ function initGSAPAnimations() {
     const heroTl2 = gsap.timeline({ delay: 0.2 });
     heroTl2.from(heroChildren, {
       y: 30, opacity: 0, stagger: 0.12, duration: 0.7,
-      ease: 'power3.out', clearProps: 'all'
+      ease: 'power3.out', clearProps: 'transform,opacity'
     });
   }
 
@@ -206,12 +206,12 @@ function initGSAPAnimations() {
       onEnter: () => {
         gsap.to(children, {
           opacity: 1, y: 0, stagger: 0.12, duration: 0.72,
-          ease: 'power3.out', clearProps: 'all'
+          ease: 'power3.out', clearProps: 'transform,opacity'
         });
       },
       // Also fires if already past start on load
       onEnterBack: () => {
-        gsap.to(children, { opacity: 1, y: 0, duration: 0.01, clearProps: 'all' });
+        gsap.to(children, { opacity: 1, y: 0, duration: 0.01, clearProps: 'transform,opacity' });
       }
     });
   });
@@ -233,7 +233,7 @@ function initGSAPAnimations() {
         gsap.to(cards, {
           opacity: 1, y: 0, scale: 1,
           stagger: { each: 0.1, from: 'start' },
-          duration: 0.68, ease: 'power3.out', clearProps: 'all'
+          duration: 0.68, ease: 'power3.out', clearProps: 'transform,opacity'
         });
       }
     });
@@ -244,7 +244,7 @@ function initGSAPAnimations() {
   ───────────────────────────────────────────────────────────────────────── */
   const kpiCards = document.querySelectorAll('.kpi-card');
   if (kpiCards.length) {
-    gsap.from(kpiCards, { y: 32, opacity: 0, stagger: 0.09, duration: 0.6, delay: 0.2, clearProps: 'all' });
+    gsap.from(kpiCards, { y: 32, opacity: 0, stagger: 0.09, duration: 0.6, delay: 0.2, clearProps: 'transform,opacity' });
 
     kpiCards.forEach(card => {
       const valEl = card.querySelector('.kpi-val');
@@ -277,7 +277,7 @@ function initGSAPAnimations() {
       onEnter: () => {
         gsap.to(timelineSteps, {
           scale: 1, opacity: 1, stagger: 0.14, duration: 0.52,
-          ease: 'back.out(1.5)', clearProps: 'all'
+          ease: 'back.out(1.5)', clearProps: 'transform,opacity'
         });
       }
     });
@@ -294,7 +294,7 @@ function initGSAPAnimations() {
       start: 'top 95%',
       once: true,
       onEnter: () => {
-        gsap.to(footerCols, { y: 0, opacity: 1, stagger: 0.11, duration: 0.65, ease: 'power3.out', clearProps: 'all' });
+        gsap.to(footerCols, { y: 0, opacity: 1, stagger: 0.11, duration: 0.65, ease: 'power3.out', clearProps: 'transform,opacity' });
       }
     });
   }
@@ -310,7 +310,7 @@ function initGSAPAnimations() {
       start: 'top 92%',
       once: true,
       onEnter: () => {
-        gsap.to(calcBox, { y: 0, opacity: 1, scale: 1, duration: 0.78, ease: 'power3.out', clearProps: 'all' });
+        gsap.to(calcBox, { y: 0, opacity: 1, scale: 1, duration: 0.78, ease: 'power3.out', clearProps: 'transform,opacity' });
       }
     });
   }
@@ -326,7 +326,7 @@ function initGSAPAnimations() {
       start: 'top 92%',
       once: true,
       onEnter: () => {
-        gsap.to(pricingRows, { x: 0, opacity: 1, stagger: 0.07, duration: 0.48, ease: 'power2.out', clearProps: 'all' });
+        gsap.to(pricingRows, { x: 0, opacity: 1, stagger: 0.07, duration: 0.48, ease: 'power2.out', clearProps: 'transform,opacity' });
       }
     });
   }
@@ -429,8 +429,8 @@ function initGSAPAnimations() {
     const articleTl = gsap.timeline({ delay: 0.18 });
     const articleHeader = articleSection.querySelector('.section-header');
     const heroImg = articleSection.querySelector('.card-img-wrap');
-    if (articleHeader) articleTl.from(articleHeader, { y: 26, opacity: 0, duration: 0.62, clearProps: 'all' });
-    if (heroImg) articleTl.from(heroImg, { y: 22, opacity: 0, scale: 0.98, duration: 0.68, clearProps: 'all' }, '-=0.12');
+    if (articleHeader) articleTl.from(articleHeader, { y: 26, opacity: 0, duration: 0.62, clearProps: 'transform,opacity' });
+    if (heroImg) articleTl.from(heroImg, { y: 22, opacity: 0, scale: 0.98, duration: 0.68, clearProps: 'transform,opacity' }, '-=0.12');
   }
 
   /* ─────────────────────────────────────────────────────────────────────────
