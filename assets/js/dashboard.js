@@ -32,12 +32,8 @@ function initDashboardTabs() {
       const targetPane = document.getElementById(targetId);
       if (targetPane) {
         targetPane.classList.add('active');
-        // On tablet/mobile, scroll smoothly to content pane
-        if (window.innerWidth <= 1024) {
-          const headerOffset = 80;
-          const panePosition = targetPane.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-          window.scrollTo({ top: panePosition, behavior: 'smooth' });
-        }
+        // Scroll smoothly to the top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
       // If drawer is open, trigger close button

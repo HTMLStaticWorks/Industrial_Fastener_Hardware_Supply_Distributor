@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCatalogModal();
   initBackToTop();
   initFaqAccordion();
+  initPasswordToggle();
 });
 
 /* ==========================================================================
@@ -430,3 +431,26 @@ function initFaqAccordion() {
   });
 }
 
+/* ==========================================================================
+   9. Password Visibility Toggle
+   ========================================================================== */
+function initPasswordToggle() {
+  const toggleBtns = document.querySelectorAll('.btn-toggle-password');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.previousElementSibling;
+      const icon = btn.querySelector('i');
+      if (input && input.tagName === 'INPUT') {
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.remove('ri-eye-off-line');
+          icon.classList.add('ri-eye-line');
+        } else {
+          input.type = 'password';
+          icon.classList.remove('ri-eye-line');
+          icon.classList.add('ri-eye-off-line');
+        }
+      }
+    });
+  });
+}

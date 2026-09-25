@@ -103,12 +103,12 @@ body.rtl .hero-content .tag-badge {
 
 [dir="rtl"] .hero-actions,
 body.rtl .hero-actions {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 [dir="rtl"] .hero-metrics,
 body.rtl .hero-metrics {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 [dir="rtl"] .metric-item,
@@ -130,7 +130,7 @@ body.rtl .site-footer {
 [dir="rtl"] .footer-col,
 body.rtl .footer-col {
   text-align: right;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 /* Footer headings align right */
@@ -139,13 +139,13 @@ body.rtl .footer-col h4 {
   text-align: right;
 }
 
-/* Footer contact lines: icon on RIGHT, text on left — reverse flex row */
+/* Footer contact lines: icon on RIGHT, text on left — flex row in RTL naturally does this */
 [dir="rtl"] .footer-col p,
 body.rtl .footer-col p {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 6px;
   text-align: right;
 }
@@ -175,10 +175,10 @@ body.rtl .footer-socials {
   justify-content: flex-start;
 }
 
-/* Brand logo direction flip */
+/* Brand logo direction naturally follows RTL */
 [dir="rtl"] .brand-logo,
 body.rtl .brand-logo {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 /* Footer bottom copyright: center */
@@ -190,5 +190,5 @@ body.rtl .footer-bottom {
 /* Tag badge in footer: align right */
 [dir="rtl"] .footer-col .tag-badge,
 body.rtl .footer-col .tag-badge {
-  align-self: flex-end;
+  align-self: flex-start;
 }

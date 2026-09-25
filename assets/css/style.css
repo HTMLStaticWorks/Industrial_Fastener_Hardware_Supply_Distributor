@@ -989,7 +989,7 @@ img {
 
 /* --- Auth Pages (Login & Register - Step 9.7 & 9.8) --- */
 .auth-top-actions {
-  position: fixed;
+  position: absolute;
   top: 1.25rem;
   right: 1.25rem;
   display: flex;
