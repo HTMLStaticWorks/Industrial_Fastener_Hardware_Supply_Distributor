@@ -89,13 +89,19 @@ function initGSAPAnimations() {
 
     const heroH1 = heroContent.querySelector('h1');
     if (heroH1) {
-      const words = heroH1.innerHTML.split(' ');
-      heroH1.innerHTML = words
-        .map(w => `<span class="gsap-word"><span class="gsap-word-inner">${w}&nbsp;</span></span>`)
-        .join('');
-      heroTl.from(heroH1.querySelectorAll('.gsap-word-inner'), {
-        y: '100%', opacity: 0, stagger: 0.04, duration: 0.6, ease: 'power3.out'
-      }, '-=0.1');
+      if (heroH1.querySelector('.hero-rotator-wrapper')) {
+        heroTl.from(heroH1, {
+          y: 22, opacity: 0, duration: 0.65, ease: 'power3.out', clearProps: 'transform,opacity'
+        }, '-=0.1');
+      } else {
+        const words = heroH1.innerHTML.split(' ');
+        heroH1.innerHTML = words
+          .map(w => `<span class="gsap-word"><span class="gsap-word-inner">${w}&nbsp;</span></span>`)
+          .join('');
+        heroTl.from(heroH1.querySelectorAll('.gsap-word-inner'), {
+          y: '100%', opacity: 0, stagger: 0.04, duration: 0.6, ease: 'power3.out'
+        }, '-=0.1');
+      }
     }
 
     const heroP = heroContent.querySelector('p');
@@ -219,8 +225,8 @@ function initGSAPAnimations() {
   /* ─────────────────────────────────────────────────────────────────────────
      8. CARDS — staggered scroll reveal
   ───────────────────────────────────────────────────────────────────────── */
-  document.querySelectorAll('.card-grid, .card-grid-4').forEach(grid => {
-    const cards = Array.from(grid.querySelectorAll(':scope > .card'));
+  document.querySelectorAll('.card-grid, .card-grid-4, .reliability-grid').forEach(grid => {
+    const cards = Array.from(grid.querySelectorAll(':scope > .card, :scope > .reliability-card'));
     if (!cards.length) return;
 
     gsap.set(cards, { opacity: 0, y: 45, scale: 0.97 });
@@ -265,22 +271,21 @@ function initGSAPAnimations() {
   }
 
   /* ─────────────────────────────────────────────────────────────────────────
-     10. TIMELINE STEPS
+     10. TIMELINE STEPS (Safely animate active timeline only without hiding tabs)
   ───────────────────────────────────────────────────────────────────────── */
-  const timelineSteps = document.querySelectorAll('.timeline-step');
-  if (timelineSteps.length) {
-    gsap.set(timelineSteps, { scale: 0.72, opacity: 0 });
-    ScrollTrigger.create({
-      trigger: '.shipment-timeline',
-      start: 'top 90%',
-      once: true,
-      onEnter: () => {
-        gsap.to(timelineSteps, {
-          scale: 1, opacity: 1, stagger: 0.14, duration: 0.52,
-          ease: 'back.out(1.5)', clearProps: 'transform,opacity'
-        });
-      }
-    });
+  const activeTimeline = document.querySelector('.dashboard-tab-pane.active .shipment-timeline, body:not(.dashboard-layout) .shipment-timeline');
+  if (activeTimeline) {
+    const steps = activeTimeline.querySelectorAll('.timeline-step');
+    if (steps.length) {
+      gsap.from(steps, {
+        scale: 0.85,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.45,
+        ease: 'back.out(1.4)',
+        clearProps: 'all'
+      });
+    }
   }
 
   /* ─────────────────────────────────────────────────────────────────────────
@@ -316,19 +321,22 @@ function initGSAPAnimations() {
   }
 
   /* ─────────────────────────────────────────────────────────────────────────
-     13. PRICING TABLE ROWS
+     13. PRICING TABLE ROWS (Scoped only to static pricing comparison table)
   ───────────────────────────────────────────────────────────────────────── */
-  const pricingRows = document.querySelectorAll('table tbody tr');
-  if (pricingRows.length) {
-    gsap.set(pricingRows, { x: -22, opacity: 0 });
-    ScrollTrigger.create({
-      trigger: 'table',
-      start: 'top 92%',
-      once: true,
-      onEnter: () => {
-        gsap.to(pricingRows, { x: 0, opacity: 1, stagger: 0.07, duration: 0.48, ease: 'power2.out', clearProps: 'transform,opacity' });
-      }
-    });
+  const pricingTable = document.querySelector('.pricing-comparison-table');
+  if (pricingTable) {
+    const pricingRows = pricingTable.querySelectorAll('tbody tr');
+    if (pricingRows.length) {
+      gsap.set(pricingRows, { x: -22, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: pricingTable,
+        start: 'top 92%',
+        once: true,
+        onEnter: () => {
+          gsap.to(pricingRows, { x: 0, opacity: 1, stagger: 0.07, duration: 0.48, ease: 'power2.out', clearProps: 'transform,opacity' });
+        }
+      });
+    }
   }
 
   /* ─────────────────────────────────────────────────────────────────────────

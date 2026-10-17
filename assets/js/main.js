@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormValidation();
   initSpecCalculator();
   initCatalogModal();
+  initCatalogFilter();
   initBackToTop();
   initFaqAccordion();
   initPasswordToggle();
+  initHeroWordRotator();
 });
 
 /* ==========================================================================
@@ -367,6 +369,58 @@ function initCatalogModal() {
 }
 
 /* ==========================================================================
+   6.5. Catalog Dynamic Search & Category Filtering
+   ========================================================================== */
+function initCatalogFilter() {
+  const filterBtns = document.querySelectorAll('.catalog-toolbar .filter-group button');
+  const searchInput = document.getElementById('catalog-search');
+  const cards = document.querySelectorAll('#catalog-grid .card');
+
+  if (!cards.length) return;
+
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  function applyFilters() {
+    cards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category') || '';
+      const text = card.textContent.toLowerCase();
+
+      const matchesCat = (currentCategory === 'all' || cardCategory === currentCategory);
+      const matchesSearch = !searchQuery || text.includes(searchQuery);
+
+      if (matchesCat && matchesSearch) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      filterBtns.forEach(b => {
+        b.classList.remove('active', 'btn-primary');
+        b.classList.add('btn-secondary');
+      });
+      btn.classList.add('active', 'btn-primary');
+      btn.classList.remove('btn-secondary');
+
+      currentCategory = btn.getAttribute('data-filter') || 'all';
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value.trim().toLowerCase();
+      applyFilters();
+    });
+  }
+}
+
+/* ==========================================================================
    7. Back To Top Button
    ========================================================================== */
 function initBackToTop() {
@@ -453,4 +507,42 @@ function initPasswordToggle() {
       }
     });
   });
+}
+
+/* ==========================================================================
+   10. Hero Headline Rotating Words Engine
+   ========================================================================== */
+function initHeroWordRotator() {
+  const wrapper = document.querySelector('.hero-rotator-wrapper');
+  if (!wrapper) return;
+  const words = wrapper.querySelectorAll('.hero-rotator-word');
+  if (words.length <= 1) return;
+
+  let currentIndex = 0;
+
+  function adjustWrapperHeight() {
+    const active = wrapper.querySelector('.hero-rotator-word.active');
+    if (active) {
+      wrapper.style.minHeight = active.offsetHeight + 'px';
+    }
+  }
+
+  adjustWrapperHeight();
+  window.addEventListener('resize', adjustWrapperHeight);
+
+  setInterval(() => {
+    const currentWord = words[currentIndex];
+    currentIndex = (currentIndex + 1) % words.length;
+    const nextWord = words[currentIndex];
+
+    currentWord.classList.remove('active');
+    currentWord.classList.add('leaving');
+
+    nextWord.classList.add('active');
+    adjustWrapperHeight();
+
+    setTimeout(() => {
+      currentWord.classList.remove('leaving');
+    }, 600);
+  }, 3200);
 }

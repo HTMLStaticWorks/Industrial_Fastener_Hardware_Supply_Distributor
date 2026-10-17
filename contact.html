@@ -6,8 +6,9 @@
   <title>Contact Distribution Hubs & Engineering Desk – IndustrialPro</title>
   <meta name="description" content="Get in touch with IndustrialPro Fasteners. Connect with commercial sales, request certified MTRs, or reach our regional distribution hubs in OH, TX, GA, NV.">
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
-  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
   
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -35,7 +36,6 @@
           <li><a href="catalog.html" class="nav-link">Catalog</a></li>
           <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
           <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link active">Contact</a></li>
           <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         </ul>
@@ -75,7 +75,6 @@
       <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
       <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
       <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
-      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
       <li><a href="contact.html" class="active"><i class="ri-mail-line"></i> Contact</a></li>
       <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
     </ul>
@@ -106,17 +105,23 @@
           </p>
         </div>
 
-        <div class="contact-grid">
+        <!-- Section 1: Form & Regional Distribution Hubs (Clean Balanced 2-Column Grid) -->
+        <div class="contact-grid" style="margin-block-end: 0;">
           
-          <!-- Left Column: Form & FAQ Section filling free space -->
-          <div style="display: flex; flex-direction: column; gap: var(--space-5);">
-            
-            <!-- Contact Form with Client-Side Validation -->
+          <!-- Left Column: Direct Inquiry Form -->
+          <div>
             <div class="contact-form-card">
-              <h2 style="font-size: 1.85rem; margin-block-end: var(--space-2); text-align: center;">Send Direct Inquiry</h2>
-              <p style="text-align: center; color: var(--color-text-muted); margin-block-end: var(--space-5);">Guaranteed reply within 60 minutes during standard commercial hours.</p>
+              <div class="inquiry-card-header">
+                <div class="inquiry-header-icon">
+                  <i class="ri-mail-send-line"></i>
+                </div>
+                <div class="inquiry-header-text">
+                  <h2>Send Direct Inquiry</h2>
+                  <p>Guaranteed engineering reply within 60 minutes.</p>
+                </div>
+              </div>
 
-              <form class="validated-form" novalidate>
+              <form class="validated-form" novalidate style="margin-top: var(--space-4);">
                 <div class="alert-success-banner" role="alert">
                   <i class="ri-checkbox-circle-fill" style="color: var(--color-success); font-size: 1.5rem;"></i>
                   <div>
@@ -141,7 +146,7 @@
                 <div class="form-row-2">
                   <div class="form-group">
                     <label class="form-label" for="contact-company">Company / Organization <span class="required">*</span></label>
-                    <input type="text" id="contact-company" name="company" class="form-control" required placeholder="Midwest Fabricators">
+                    <input type="text" id="contact-company" name="company" class="form-control" required placeholder="Midwest Fabricators LLC">
                     <div class="error-message">Company name is required.</div>
                   </div>
 
@@ -152,7 +157,7 @@
                       <option value="commercial_rfq">Bulk Volume Quotation / RFQ</option>
                       <option value="engineering_qa">Engineering / Metallurgical QA</option>
                       <option value="vmi_program">Vendor Managed Inventory (VMI)</option>
-                      <option value="order_tracking">Existing Order & Shipment Status</option>
+                      <option value="order_tracking">Existing Order &amp; Shipment Status</option>
                       <option value="credit_terms">Commercial Credit Application</option>
                     </select>
                     <div class="error-message">Please select an inquiry type.</div>
@@ -161,7 +166,7 @@
 
                 <div class="form-group">
                   <label class="form-label" for="contact-message">Project Description / Technical Requirements <span class="required">*</span></label>
-                  <textarea id="contact-message" name="message" rows="5" class="form-control" required placeholder="Describe ASTM specs, bolt sizes, quantities, job-site delivery dates, or technical questions..."></textarea>
+                  <textarea id="contact-message" name="message" rows="4" class="form-control" required placeholder="Describe ASTM specs, bolt grades (A325, B7, Grade 8), quantities, delivery schedule, or technical questions..."></textarea>
                   <div class="error-message">Please provide message details.</div>
                 </div>
 
@@ -171,223 +176,92 @@
                   <div class="error-message">You must accept the terms.</div>
                 </div>
 
-                <div style="text-align: center; margin-block-start: var(--space-4);">
-                  <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Dispatch Message</button>
+                <div style="margin-block-start: var(--space-4);">
+                  <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                    <i class="ri-send-plane-fill"></i> Dispatch Message to Engineering Desk
+                  </button>
                 </div>
-
-
               </form>
             </div>
-
-            <!-- FAQ Section filling the free space below the form -->
-            <div class="card" style="padding: var(--space-5); text-align: left; background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global);" id="faq">
-              <div style="display: flex; align-items: center; justify-content: space-between; margin-block-end: var(--space-4); border-block-end: 1px solid var(--color-border); padding-block-end: var(--space-3); flex-wrap: wrap; gap: var(--space-2);">
-                <div>
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span class="tag-badge" style="padding: 2px 8px; font-size: 0.75rem;"><i class="ri-questionnaire-line"></i> Quick Knowledgebase</span>
-                  </div>
-                  <h3 style="font-size: 1.25rem; margin-block-start: var(--space-2); margin-block-end: 2px;">Frequently Asked Questions</h3>
-                </div>
-                <span style="font-size: 0.8rem; color: var(--color-text-muted);">Instant Dispatch &amp; RFQ Guide</span>
-              </div>
-
-              <div class="faq-container" style="max-width: 100%; gap: var(--space-2);">
-                <!-- FAQ Item 1 -->
-                <details class="faq-item" open>
-                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
-                    <span style="display: flex; align-items: center; gap: 10px;">
-                      <i class="ri-time-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
-                      What is the typical turnaround time for bulk RFQs?
-                    </span>
-                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
-                  </summary>
-                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
-                    <p>In-stock catalog items are quoted within <strong>60 minutes</strong> during commercial hours (6 AM – 7 PM EST). Custom ASTM alloy fabrication or mill-run RFQs are returned within 4 to 24 hours with complete metallurgical specs.</p>
-                  </div>
-                </details>
-
-                <!-- FAQ Item 2 -->
-                <details class="faq-item">
-                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
-                    <span style="display: flex; align-items: center; gap: 10px;">
-                      <i class="ri-file-text-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
-                      Are Certified Material Test Reports (MTRs) provided?
-                    </span>
-                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
-                  </summary>
-                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
-                    <p>Yes. 100% of our structural, petrochemical, and high-tensile hardware lots include complete <strong>EN 10204 3.1 Certified Material Test Reports</strong>, heat numbers, and proof-load data downloadable through our portal 24/7.</p>
-                  </div>
-                </details>
-
-                <!-- FAQ Item 3 -->
-                <details class="faq-item">
-                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
-                    <span style="display: flex; align-items: center; gap: 10px;">
-                      <i class="ri-truck-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
-                      What are your delivery timeframes and emergency options?
-                    </span>
-                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
-                  </summary>
-                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
-                    <p>We provide <strong>24- to 48-hour ground transit</strong> across 90% of US job sites from OH, TX, GA, and NV. Orders before 4 PM stage same-day. For emergency shutdown situations, 24/7 Hot-Shot dedicated couriers and air freight are available.</p>
-                  </div>
-                </details>
-
-                <!-- FAQ Item 4 -->
-                <details class="faq-item">
-                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
-                    <span style="display: flex; align-items: center; gap: 10px;">
-                      <i class="ri-bank-card-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
-                      How do contractors establish Net 30 or Net 60 credit?
-                    </span>
-                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
-                  </summary>
-                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
-                    <p>Commercial credit applications are approved within 24–48 hours for qualified subcontractors and EPCs, with revolving credit lines from $15,000 to $250,000+. Email trade references to <a href="mailto:credit@industrialprofasteners.com" style="color: var(--color-accent); text-decoration: underline;">credit@industrialprofasteners.com</a>.</p>
-                  </div>
-                </details>
-
-                <!-- FAQ Item 5 -->
-                <details class="faq-item">
-                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
-                    <span style="display: flex; align-items: center; gap: 10px;">
-                      <i class="ri-tools-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
-                      Do you support custom fastener fabrication &amp; coatings?
-                    </span>
-                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
-                  </summary>
-                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
-                    <p>Yes. Our CNC and cold-heading facilities produce custom shanks, left-hand threads, and exotic alloys (Inconel, Monel, 316SS). Finishes include Hot-Dip Galvanized (A153), Zinc-Nickel, Fluoropolymer/Xylan, and Cadmium.</p>
-                  </div>
-                </details>
-
-                <!-- FAQ Item 6 -->
-                <details class="faq-item">
-                  <summary class="faq-question" style="font-size: 0.96rem; padding: 12px 16px;">
-                    <span style="display: flex; align-items: center; gap: 10px;">
-                      <i class="ri-shield-check-line" style="color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0;"></i>
-                      Are your products DFARS and Buy America (BAA) compliant?
-                    </span>
-                    <span class="faq-icon" style="width: 28px; height: 28px; font-size: 1rem;"><i class="ri-arrow-down-s-line"></i></span>
-                  </summary>
-                  <div class="faq-answer" style="padding: 0 16px 14px 16px; font-size: 0.88rem;">
-                    <p>Yes. 100% USA Melt and Manufacture documentation, DFARS qualifying country compliance, and AIS certifications can be specified at the line-item level for federal highway, infrastructure, and defense jobs.</p>
-                  </div>
-                </details>
-              </div>
-
-              <!-- FAQ Support Footer -->
-              <div style="margin-block-start: var(--space-4); padding: var(--space-3) var(--space-4); background-color: var(--color-bg); border-radius: var(--radius-global); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: 0.85rem;">
-                <span style="display: flex; align-items: center; gap: 6px; color: var(--color-text-muted);">
-                  <i class="ri-customer-service-2-line" style="color: var(--color-accent);"></i> Still have questions?
-                </span>
-                <a href="tel:+18005552658" style="color: var(--color-accent); font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
-                  <i class="ri-phone-fill"></i> +1 (800) 555-BOLT
-                </a>
-              </div>
-            </div>
-
           </div>
 
-          <!-- Distribution Hubs & Proper Interactive Map -->
-          <div>
-            <!-- Live Interactive Google Map Box -->
-            <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); overflow: hidden; margin-block-end: var(--space-5);">
-              <!-- Map Card Header with Location Details -->
-              <div style="padding: var(--space-4); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-block-end: 1px solid var(--color-border); background-color: var(--color-surface);">
-                <div style="display: flex; align-items: center; gap: var(--space-3);">
-                  <div style="width: 44px; height: 44px; border-radius: var(--radius-global); background: rgba(245, 158, 11, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;">
-                    <i class="ri-map-pin-2-fill"></i>
-                  </div>
-                  <div>
-                    <h3 style="font-size: 1.15rem; margin-block-end: 2px;">Cleveland Master Logistics Hub</h3>
-                    <div style="font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                      <span><i class="ri-map-pin-line" style="color: var(--color-accent);"></i> 4800 Industrial Parkway, Cleveland, OH 44135</span>
-                      <span class="tag-badge" style="padding: 2px 8px; font-size: 0.72rem; background: rgba(245, 158, 11, 0.15); color: #FBBF24;">48-Hour Nationwide Reach</span>
-                    </div>
-                  </div>
+          <!-- Right Column: Direct Hotlines, Facilities & Social Channels -->
+          <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+            
+            <!-- Quick Contact Information Cards -->
+            <div class="contact-quick-hotlines">
+              <div class="card" style="padding: var(--space-4); align-items: flex-start; text-align: left; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global);">
+                <div style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: rgba(245, 158, 11, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: var(--space-2);">
+                  <i class="ri-phone-fill"></i>
                 </div>
-                <a href="https://maps.google.com/?q=4800+Industrial+Parkway,+Cleveland,+OH+44135" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
-                  <i class="ri-direction-line" style="color: var(--color-accent);"></i> Get Directions
-                </a>
+                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-text-muted); font-weight: 600;">Toll-Free Dispatch</div>
+                <div style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; margin-top: 2px;">
+                  <a href="tel:+18005552658" style="color: var(--color-text);">+1 (800) 555-BOLT</a>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px;">24/7 Hot-Shot Support</div>
               </div>
 
-              <!-- Live Google Map Iframe -->
-              <div style="position: relative; width: 100%; height: 280px; background-color: #0F172A;">
-                <iframe 
-                  title="Cleveland Master Logistics Hub Map"
-                  src="https://maps.google.com/maps?q=4800+Industrial+Parkway,+Cleveland,+OH+44135&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                  width="100%" 
-                  height="100%" 
-                  style="border: 0; display: block;" 
-                  allowfullscreen="" 
-                  loading="lazy" 
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+              <div class="card" style="padding: var(--space-4); align-items: flex-start; text-align: left; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global);">
+                <div style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: rgba(245, 158, 11, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: var(--space-2);">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-text-muted); font-weight: 600;">Commercial RFQ Desk</div>
+                <div style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; margin-top: 2px; word-break: break-all;">
+                  <a href="mailto:quotes@fastencore.com" style="color: var(--color-text);">quotes@fastencore.com</a>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 4px;">Average Reply: &lt;60 Min</div>
+              </div>
+            </div>
+
+            <!-- Regional Facilities 4-Box Grid -->
+            <div>
+              <div class="contact-hubs-head">
+                <h3>Regional Distribution Hubs</h3>
+                <span class="tag-badge">48-Hr Transit Network</span>
               </div>
 
-              <!-- Map Card Footer Info -->
-              <div style="padding: var(--space-3) var(--space-4); background-color: var(--color-bg); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: 0.85rem; color: var(--color-text-muted);">
-                <div style="display: flex; align-items: center; gap: var(--space-2);">
-                  <i class="ri-building-4-line" style="color: var(--color-accent);"></i>
-                  <span>500,000 sq ft Master Depot & A2LA Lab</span>
+              <div class="contact-facilities-grid">
+                <div class="card" style="padding: var(--space-4); align-items: center; text-align: center;">
+                  <div class="tag-badge" style="margin-block-end: var(--space-1); font-size: 0.7rem;">Master Hub &amp; Lab</div>
+                  <h4 style="font-size: 1.05rem; margin-block-end: 2px;">Cleveland, OH</h4>
+                  <p style="font-size: 0.82rem; margin-bottom: 6px; color: var(--color-text-muted);">500,000 sq ft facility, cold headers, ISO 17025 tensile testing lab.</p>
+                  <div style="font-size: 0.82rem; color: var(--color-accent); display: inline-flex; align-items: center; justify-content: center; gap: 4px;"><i class="ri-phone-line"></i> +1 (800) 555-BOLT</div>
                 </div>
-                <div style="display: flex; align-items: center; gap: var(--space-2);">
-                  <i class="ri-phone-line" style="color: var(--color-accent);"></i>
-                  <span>Direct Desk: <strong style="color: var(--color-text);">+1 (800) 555-BOLT</strong></span>
+
+                <div class="card" style="padding: var(--space-4); align-items: center; text-align: center;">
+                  <div class="tag-badge" style="margin-block-end: var(--space-1); font-size: 0.7rem;">Gulf Coast Hub</div>
+                  <h4 style="font-size: 1.05rem; margin-block-end: 2px;">Houston, TX</h4>
+                  <p style="font-size: 0.82rem; margin-bottom: 6px; color: var(--color-text-muted);">Dedicated B7 studs, 2H heavy nuts, Teflon and fluoropolymer coatings.</p>
+                  <div style="font-size: 0.82rem; color: var(--color-accent); display: inline-flex; align-items: center; justify-content: center; gap: 4px;"><i class="ri-phone-line"></i> +1 (713) 555-0192</div>
+                </div>
+
+                <div class="card" style="padding: var(--space-4); align-items: center; text-align: center;">
+                  <div class="tag-badge" style="margin-block-end: var(--space-1); font-size: 0.7rem;">Southeast Logistics</div>
+                  <h4 style="font-size: 1.05rem; margin-block-end: 2px;">Atlanta, GA</h4>
+                  <p style="font-size: 0.82rem; margin-bottom: 6px; color: var(--color-text-muted);">Solar torque hardware, A325/A490 structural bolt assemblies.</p>
+                  <div style="font-size: 0.82rem; color: var(--color-accent); display: inline-flex; align-items: center; justify-content: center; gap: 4px;"><i class="ri-phone-line"></i> +1 (404) 555-0144</div>
+                </div>
+
+                <div class="card" style="padding: var(--space-4); align-items: center; text-align: center;">
+                  <div class="tag-badge" style="margin-block-end: var(--space-1); font-size: 0.7rem;">West Coast Depot</div>
+                  <h4 style="font-size: 1.05rem; margin-block-end: 2px;">Reno, NV</h4>
+                  <p style="font-size: 0.82rem; margin-bottom: 6px; color: var(--color-text-muted);">Next-day freight staging to California, Nevada, and the Pacific Northwest.</p>
+                  <div style="font-size: 0.82rem; color: var(--color-accent); display: inline-flex; align-items: center; justify-content: center; gap: 4px;"><i class="ri-phone-line"></i> +1 (775) 555-0188</div>
                 </div>
               </div>
             </div>
 
-            <!-- Regional Facilities -->
-            <div class="contact-facilities-grid">
-              <div class="card" style="padding: var(--space-4); align-items: flex-start; text-align: left;">
-                <div class="tag-badge" style="margin-block-end: var(--space-1);">Headquarters & Lab</div>
-                <h4 style="font-size: 1.15rem; margin-block-end: 4px;">Cleveland, OH</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 8px;">Master 500,000 sq ft facility, cold headers, tensile lab.</p>
-                <div style="font-size: 0.85rem; color: var(--color-accent);"><i class="ri-phone-line"></i> +1 (800) 555-BOLT</div>
+            <!-- Social Media Channels Bar -->
+            <div class="card" style="padding: var(--space-3) var(--space-4); display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global);">
+              <div style="display: flex; align-items: center; gap: var(--space-2);">
+                <i class="ri-share-forward-line" style="color: var(--color-accent); font-size: 1.25rem;"></i>
+                <span style="font-size: 0.88rem; font-weight: 600;">Official Fastener Networks:</span>
               </div>
-
-              <div class="card" style="padding: var(--space-4); align-items: flex-start; text-align: left;">
-                <div class="tag-badge" style="margin-block-end: var(--space-1);">Gulf Coast Petrochem</div>
-                <h4 style="font-size: 1.15rem; margin-block-end: 4px;">Houston, TX</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 8px;">Dedicated B7 studs, 2H nuts, Teflon and marine coatings.</p>
-                <div style="font-size: 0.85rem; color: var(--color-accent);"><i class="ri-phone-line"></i> +1 (713) 555-0192</div>
-              </div>
-
-              <div class="card" style="padding: var(--space-4); align-items: flex-start; text-align: left;">
-                <div class="tag-badge" style="margin-block-end: var(--space-1);">Southeast Logistics</div>
-                <h4 style="font-size: 1.15rem; margin-block-end: 4px;">Atlanta, GA</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 8px;">Solar torque hardware, A325 structural assemblies.</p>
-                <div style="font-size: 0.85rem; color: var(--color-accent);"><i class="ri-phone-line"></i> +1 (404) 555-0144</div>
-              </div>
-
-              <div class="card" style="padding: var(--space-4); align-items: flex-start; text-align: left;">
-                <div class="tag-badge" style="margin-block-end: var(--space-1);">West Coast Operations</div>
-                <h4 style="font-size: 1.15rem; margin-block-end: 4px;">Reno, NV</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 8px;">Next-day freight to California, Nevada, and Pacific Northwest.</p>
-                <div style="font-size: 0.85rem; color: var(--color-accent);"><i class="ri-phone-line"></i> +1 (775) 555-0188</div>
-              </div>
-            </div>
-
-            <!-- Social Media Channels Card -->
-            <div class="card" style="margin-block-start: var(--space-4); padding: var(--space-4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-4); text-align: center;">
-              <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-3);">
-                <div style="width: 48px; height: 48px; border-radius: var(--radius-global); background: rgba(245, 158, 11, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
-                  <i class="ri-share-forward-line"></i>
-                </div>
-                <div>
-                  <h4 style="font-size: 1.15rem; margin-block-end: 4px;">Connect On Social Media</h4>
-                  <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Follow our official channels for inventory drops, ASTM updates, & engineering guides.</p>
-                </div>
-              </div>
-              <div style="display: flex; gap: var(--space-3); justify-content: center; align-items: center; flex-wrap: wrap; width: 100%;">
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn" title="LinkedIn" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-linkedin-fill"></i></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter / X" title="Twitter / X" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-twitter-x-fill"></i></a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube" title="YouTube" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-youtube-fill"></i></a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook" title="Facebook" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-facebook-fill"></i></a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram" title="Instagram" style="border: 1px solid var(--color-border); font-size: 1.15rem;"><i class="ri-instagram-line"></i></a>
+              <div style="display: flex; gap: var(--space-2); align-items: center;">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn" title="LinkedIn" style="border: 1px solid var(--color-border); width: 34px; height: 34px; font-size: 1rem;"><i class="ri-linkedin-fill"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter / X" title="Twitter / X" style="border: 1px solid var(--color-border); width: 34px; height: 34px; font-size: 1rem;"><i class="ri-twitter-x-fill"></i></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube" title="YouTube" style="border: 1px solid var(--color-border); width: 34px; height: 34px; font-size: 1rem;"><i class="ri-youtube-fill"></i></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook" title="Facebook" style="border: 1px solid var(--color-border); width: 34px; height: 34px; font-size: 1rem;"><i class="ri-facebook-fill"></i></a>
               </div>
             </div>
 
@@ -396,9 +270,218 @@
         </div>
       </div>
     </section>
+
+    <!-- Section 2: Full-Width Nationwide Logistics & Live Interactive Map -->
+    <section class="section section-alt" style="padding-top: var(--space-7); padding-bottom: var(--space-7);">
+      <div class="container">
+        
+        <div class="section-header" style="margin-bottom: var(--space-5);">
+          <span class="tag-badge"><i class="ri-map-pin-range-line"></i> Logistics Footprint</span>
+          <h2>Nationwide Distribution Hub &amp; Live Dispatch Center</h2>
+          <p class="lead">Strategically located hubs delivering 24- to 48-hour ground transit to 90% of US industrial plants and construction sites.</p>
+        </div>
+
+        <!-- Full-Width Interactive Map Card -->
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-global); overflow: hidden;">
+          
+          <!-- Top Location Bar with Tabs & Highlights -->
+          <div style="padding: var(--space-4) var(--space-5); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-block-end: 1px solid var(--color-border); background-color: var(--color-surface);">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 48px; height: 48px; border-radius: var(--radius-global); background: rgba(245, 158, 11, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                <i class="ri-map-pin-2-fill"></i>
+              </div>
+              <div>
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <h3 style="font-size: 1.25rem; margin: 0;">Cleveland Master Logistics Hub &amp; Testing Center</h3>
+                  <span class="tag-badge" style="padding: 2px 8px; font-size: 0.72rem; background: rgba(245, 158, 11, 0.15); color: #FBBF24;">Active Staging</span>
+                </div>
+                <div style="font-size: 0.88rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 3px;">
+                  <span><i class="ri-map-pin-line" style="color: var(--color-accent);"></i> 4800 Industrial Parkway, Cleveland, OH 44135</span>
+                  <span>•</span>
+                  <span><i class="ri-time-line" style="color: var(--color-accent);"></i> Mon–Fri: 6:00 AM – 8:00 PM EST (24/7 Emergency Dispatch)</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap;">
+              <a href="tel:+18005552658" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+                <i class="ri-phone-line" style="color: var(--color-accent);"></i> Call Facility
+              </a>
+              <a href="https://maps.google.com/?q=4800+Industrial+Parkway,+Cleveland,+OH+44135" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+                <i class="ri-direction-line"></i> Open in Google Maps
+              </a>
+            </div>
+          </div>
+
+          <!-- Full Section Live Google Map Embed -->
+          <div style="position: relative; width: 100%; height: 420px; background-color: #0F172A;">
+            <iframe 
+              title="FastenCore Master Logistics Hub Map"
+              src="https://maps.google.com/maps?q=4800+Industrial+Parkway,+Cleveland,+OH+44135&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border: 0; display: block; filter: saturate(1.1);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <!-- Map Card Bottom Metric Bar -->
+          <div style="padding: var(--space-4) var(--space-5); background-color: var(--color-bg); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); border-block-start: 1px solid var(--color-border); font-size: 0.9rem;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <i class="ri-truck-fill" style="color: var(--color-accent); font-size: 1.3rem;"></i>
+              <div>
+                <strong style="display: block; color: var(--color-text);">48-Hour Guarantee</strong>
+                <span style="color: var(--color-text-muted); font-size: 0.82rem;">Direct ground freight to 90% of US</span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <i class="ri-building-4-line" style="color: var(--color-accent); font-size: 1.3rem;"></i>
+              <div>
+                <strong style="display: block; color: var(--color-text);">500,000 Sq Ft</strong>
+                <span style="color: var(--color-text-muted); font-size: 0.82rem;">Master depot &amp; ISO 17025 lab</span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <i class="ri-flight-takeoff-line" style="color: var(--color-accent); font-size: 1.3rem;"></i>
+              <div>
+                <strong style="display: block; color: var(--color-text);">Emergency Hot-Shot</strong>
+                <span style="color: var(--color-text-muted); font-size: 0.82rem;">Dedicated air &amp; courier shut-down dispatch</span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <i class="ri-shield-check-line" style="color: var(--color-accent); font-size: 1.3rem;"></i>
+              <div>
+                <strong style="display: block; color: var(--color-text);">A2LA &amp; MTR Certified</strong>
+                <span style="color: var(--color-text-muted); font-size: 0.82rem;">Lot traceability &amp; proof-load testing</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Comprehensive Full-Width FAQ Section (Below Map) -->
+    <section class="section" id="faq" style="padding-top: var(--space-8); padding-bottom: var(--space-8);">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-questionnaire-line"></i> Frequently Asked Questions</span>
+          <h2>Fastener Dispatch &amp; Commercial RFQ Guide</h2>
+          <p class="lead">Everything you need to know about bulk pricing, MTR test reports, Net terms, expedited shipments, and custom fabrication.</p>
+        </div>
+
+        <div class="faq-container">
+          
+          <!-- FAQ Item 1 -->
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span style="display: flex; align-items: center; gap: 12px;">
+                <i class="ri-time-line" style="color: var(--color-accent); font-size: 1.2rem; flex-shrink: 0;"></i>
+                What is the typical turnaround time for bulk RFQs?
+              </span>
+              <span class="faq-icon"><i class="ri-arrow-down-s-line"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>In-stock catalog fastener items (such as ASTM A325 heavy hex bolts, Grade 8 cap screws, and standard 316 stainless hardware) are quoted within <strong>60 minutes</strong> during standard commercial hours (6 AM – 7 PM EST). Custom ASTM alloy fabrication, mill-run batches, or specialized Teflon/cadmium coatings are returned within 4 to 24 hours with complete metallurgical specifications.</p>
+            </div>
+          </details>
+
+          <!-- FAQ Item 2 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span style="display: flex; align-items: center; gap: 12px;">
+                <i class="ri-file-text-line" style="color: var(--color-accent); font-size: 1.2rem; flex-shrink: 0;"></i>
+                Are Certified Material Test Reports (MTRs) provided with orders?
+              </span>
+              <span class="faq-icon"><i class="ri-arrow-down-s-line"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. 100% of our structural, petrochemical, aerospace, and high-tensile hardware lots include complete <strong>EN 10204 3.1 Certified Material Test Reports (MTRs)</strong>, chemical heat analysis, proof load verification, and hardness testing data. All documents are permanently archived and accessible 24/7 via the client portal.</p>
+            </div>
+          </details>
+
+          <!-- FAQ Item 3 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span style="display: flex; align-items: center; gap: 12px;">
+                <i class="ri-truck-line" style="color: var(--color-accent); font-size: 1.2rem; flex-shrink: 0;"></i>
+                What are your delivery transit times and emergency options?
+              </span>
+              <span class="faq-icon"><i class="ri-arrow-down-s-line"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>From our regional hubs in Cleveland OH, Houston TX, Atlanta GA, and Reno NV, we provide <strong>24- to 48-hour ground transit</strong> across 90% of US job sites. Orders placed before 4:00 PM EST stage for same-day departure. For critical plant shutdowns or job-site delays, we operate a 24/7 dedicated Hot-Shot courier service and chartered air freight options.</p>
+            </div>
+          </details>
+
+          <!-- FAQ Item 4 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span style="display: flex; align-items: center; gap: 12px;">
+                <i class="ri-bank-card-line" style="color: var(--color-accent); font-size: 1.2rem; flex-shrink: 0;"></i>
+                How do contractors and plants establish Net 30 or Net 60 commercial credit?
+              </span>
+              <span class="faq-icon"><i class="ri-arrow-down-s-line"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Qualified subcontractors, general contractors, and manufacturing plants can establish <strong>Net 30 or Net 60 commercial terms</strong> within 24 to 48 hours. Credit lines range from $15,000 to $250,000+ based on trade history. To expedite your application, email your credit sheet and bank references to <a href="mailto:credit@fastencore.com" style="color: var(--color-accent); text-decoration: underline;">credit@fastencore.com</a>.</p>
+            </div>
+          </details>
+
+          <!-- FAQ Item 5 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span style="display: flex; align-items: center; gap: 12px;">
+                <i class="ri-tools-line" style="color: var(--color-accent); font-size: 1.2rem; flex-shrink: 0;"></i>
+                Do you support custom fastener fabrication, threading, and coatings?
+              </span>
+              <span class="faq-icon"><i class="ri-arrow-down-s-line"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. Our in-house CNC lathe and cold-heading cells produce custom head geometries, left-hand threads, non-standard diameters, and exotic superalloys (Inconel 718, Monel 400, Hastelloy, Titanium, and 316L). Protective finishes include Hot-Dip Galvanizing (ASTM A153), Zinc-Nickel, Fluoropolymer/Xylan 1424, and Cadmium plating with comprehensive salt-spray certifications.</p>
+            </div>
+          </details>
+
+          <!-- FAQ Item 6 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span style="display: flex; align-items: center; gap: 12px;">
+                <i class="ri-shield-check-line" style="color: var(--color-accent); font-size: 1.2rem; flex-shrink: 0;"></i>
+                Are your hardware products DFARS and Buy America (BAA) compliant?
+              </span>
+              <span class="faq-icon"><i class="ri-arrow-down-s-line"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes. 100% domestic melt-and-manufacture fastener stock, DFARS 252.225-7009 qualifying country material, and AIS (American Iron and Steel) compliant certifications are available and tracked at the SKU line level for federal infrastructure, military, and DOT highway contracts.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <!-- FAQ Bottom Support Callout -->
+        <div style="margin-block-start: var(--space-6); max-width: 920px; margin-inline: auto; padding: var(--space-4) var(--space-5); background-color: var(--color-surface); border-radius: var(--radius-global); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); box-shadow: var(--shadow-global);">
+          <div style="display: flex; align-items: center; gap: var(--space-3);">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(245, 158, 11, 0.15); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">
+              <i class="ri-customer-service-2-line"></i>
+            </div>
+            <div>
+              <strong style="display: block; font-size: 1.05rem; color: var(--color-text);">Have a complex specification or custom drawing?</strong>
+              <span style="color: var(--color-text-muted); font-size: 0.88rem;">Our metallurgists and fastening application specialists are ready to help.</span>
+            </div>
+          </div>
+          <a href="tel:+18005552658" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+            <i class="ri-phone-fill"></i> Call +1 (800) 555-BOLT
+          </a>
+        </div>
+
+      </div>
+    </section>
   </main>
 
-  <!-- Master Footer -->
   <!-- Master Footer -->
   <footer class="site-footer">
     <div class="container">

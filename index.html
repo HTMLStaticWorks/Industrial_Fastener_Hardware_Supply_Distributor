@@ -6,8 +6,9 @@
   <title>IndustrialPro Fasteners – Master Fastener & Hardware Supply</title>
   <meta name="description" content="Master distributor of industrial fasteners, structural bolts, stainless hardware, and custom engineered fastening solutions for heavy construction and OEMs.">
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
-  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
   
   <!-- Remix Icons CDN -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
@@ -15,6 +16,11 @@
   <!-- Master Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <!-- GSAP 3 + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
   
   <!-- JSON-LD Structured Data for SEO -->
   <script type="application/ld+json">
@@ -59,7 +65,6 @@
           <li><a href="catalog.html" class="nav-link">Catalog</a></li>
           <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
           <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
           <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         </ul>
@@ -100,7 +105,6 @@
       <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
       <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
       <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
-      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
       <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
       <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
     </ul>
@@ -127,9 +131,19 @@
         <div class="hero-grid">
           <div class="hero-content">
             <div class="tag-badge">
+              <span class="live-beacon-dot" aria-hidden="true"><span class="dot-pulse"></span><span class="dot-core"></span></span>
               <i class="ri-shield-check-line"></i> ISO 9001:2015 Certified Master Distributor
             </div>
-            <h1>Engineered Fasteners For Critical Infrastructure</h1>
+            <h1 class="hero-title">
+              Engineered Fasteners For <br class="hero-title-break">
+              <span class="hero-rotator-wrapper">
+                <span class="hero-rotator-word active hero-gradient-text">Critical Infrastructure</span>
+                <span class="hero-rotator-word hero-gradient-text">Heavy Construction</span>
+                <span class="hero-rotator-word hero-gradient-text">Defense &amp; Aerospace</span>
+                <span class="hero-rotator-word hero-gradient-text">Energy &amp; Petrochem</span>
+              </span>
+            </h1>
+            <div class="hero-accent-glow-line" aria-hidden="true"></div>
             <p>
               Direct-mill supply of heavy hex bolts, structural assemblies, and high-tensile hardware. Over 75,000 SKUs ready for same-day dispatch to job sites, manufacturing plants, and defense facilities.
             </p>
@@ -154,11 +168,11 @@
           </div>
           <div class="hero-visual">
             <div class="hero-card-display">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Precision Industrial Fasteners and Structural Bolts" loading="eager">
+              <img src="assets/images/11.jpg" alt="Master Fastener & Hardware Distribution Center" loading="eager">
               <div class="hero-floating-badge">
                 <i class="ri-award-fill"></i>
                 <div>
-                  <div style="font-weight: 500; font-size: 0.95rem;">Full Lot Traceability</div>
+                  <div style="font-weight: 500; font-size: 0.95rem;">Direct Mill to Plant Supply</div>
                   <div style="font-size: 0.8rem; color: var(--color-text-muted);">MTR & CMTR Included with Every Lot</div>
                 </div>
               </div>
@@ -168,97 +182,302 @@
       </div>
     </section>
 
-    <!-- 2. Product Range by Category (Step 3: Centered Headings & Equal Centered Cards) -->
+    <!-- 2. Business Purpose: How We Supply From Manufacturers to Businesses -->
+    <section class="section section-alt" id="supply-chain">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-route-line"></i> Distribution Operations</span>
+          <h2>Direct-From-Mill Supply to Heavy Industry</h2>
+          <p class="lead">
+            We bridge the gap between primary steel fastener manufacturers and critical industrial end-users—ensuring certified metallurgy, guaranteed bulk inventory, and scheduled dispatch to your production floor.
+          </p>
+        </div>
+
+        <div class="supply-chain-grid">
+          <div class="supply-step-card">
+            <span class="supply-step-num">01</span>
+            <div class="supply-step-icon"><i class="ri-fire-fill"></i></div>
+            <h4>Primary Mill Manufacturing</h4>
+            <p>Direct volume contracts with ISO/TS certified forging mills across North America and Europe, producing cold-headed and hot-forged bolts.</p>
+          </div>
+
+          <div class="supply-step-card">
+            <span class="supply-step-num">02</span>
+            <div class="supply-step-icon"><i class="ri-microscope-line"></i></div>
+            <h4>Metallurgical Lab Verification</h4>
+            <p>Every incoming heat lot undergoes proof load, axial tensile, Rockwell hardness, and optical dimensional verification in our Cleveland QA lab.</p>
+          </div>
+
+          <div class="supply-step-card">
+            <span class="supply-step-num">03</span>
+            <div class="supply-step-icon"><i class="ri-store-3-line"></i></div>
+            <h4>500K Sq Ft Master Inventory</h4>
+            <p>Over 75,000 SKUs staged in automated pallet racking with RFID bin tracking, custom kitting, and protective fluoropolymer coatings.</p>
+          </div>
+
+          <div class="supply-step-card">
+            <span class="supply-step-num">04</span>
+            <div class="supply-step-icon"><i class="ri-truck-fill"></i></div>
+            <h4>Direct Dispatch to Facilities</h4>
+            <p>Daily scheduled truckload and pallet drops to assembly lines, fabrication plants, automotive OEM cells, and high-rise construction laydowns.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Product Range by Category with Spec Matrix -->
     <section class="section" id="product-range">
       <div class="container">
         <div class="section-header">
-          <span class="tag-badge">Comprehensive Inventory</span>
+          <span class="tag-badge"><i class="ri-archive-stack-line"></i> Comprehensive Inventory</span>
           <h2>Heavy-Duty Fastening Systems</h2>
           <p class="lead">
-            Certified to ASTM, SAE, ASME, and DIN standards. From high-tensile Grade 8 to corrosion-resistant 316 stainless steel.
+            Categorized by material, fastener type, thread size, and industrial application with full lot traceability and volume enquiry options.
           </p>
         </div>
 
         <div class="card-grid">
-          <!-- Card 1 -->
+          <!-- Card 1: Heavy Hex -->
           <div class="card">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/1200x/bf/06/4a/bf064ab00544c56ae350dbcbe612dd4d.jpg" alt="Heavy Hex Bolts" loading="lazy">
+              <img src="assets/images/1.jpg" alt="Heavy Hex Bolts and High Tensile Nuts" loading="lazy">
             </div>
-            <div class="card-icon"><i class="ri-hexagon-line"></i></div>
-            <h3>Heavy Hex Bolts & Cap Screws</h3>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">Alloy Steel / Yellow Zinc</span>
+              <span class="spec-pill">SAE J429 Gr 8</span>
+              <span class="spec-pill">1/4" to 1-1/2"</span>
+            </div>
+            <h3>Heavy Hex Bolts &amp; Cap Screws</h3>
             <p>
-              Grade 2, Grade 5, and Grade 8 alloy steel bolts engineered for high-stress agricultural, automotive, and heavy mechanical assemblies.
+              High-tensile Grade 2, 5, and 8 alloy steel bolts engineered for high-stress agricultural, heavy machinery, and powertrain assemblies.
             </p>
-            <div class="card-footer">
-              <a href="catalog.html" class="btn btn-sm btn-secondary">View Hex Specifications</a>
+            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Specs</a>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Bulk Enquiry</a>
             </div>
           </div>
 
-          <!-- Card 2 -->
+          <!-- Card 2: Structural Assemblies -->
           <div class="card">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/1200x/34/54/c5/3454c55fb5bc794c29a307589b5daaea.jpg" alt="Structural Bolting" loading="lazy">
+              <img src="assets/images/3.jpg" alt="ASTM A325 Structural Bolting" loading="lazy">
             </div>
-            <div class="card-icon"><i class="ri-building-line"></i></div>
-            <h3>Structural A325 & A490 Assemblies</h3>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">Carbon Steel / Hot-Dip Galv</span>
+              <span class="spec-pill">ASTM F3125 A325</span>
+              <span class="spec-pill">1/2" to 1-1/4"</span>
+            </div>
+            <h3>Structural A325 &amp; A490 Assemblies</h3>
             <p>
-              Heavy hex structural bolts with matching 2H nuts and F436 washers for bridges, steel erection, and commercial high-rises.
+              Heavy hex structural bolts with matched Grade 2H nuts and F436 hardened washers for bridges, commercial steel erection, and industrial cranes.
             </p>
-            <div class="card-footer">
-              <a href="catalog.html" class="btn btn-sm btn-secondary">View Structural Range</a>
+            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Specs</a>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Bulk Enquiry</a>
             </div>
           </div>
 
-          <!-- Card 3 -->
+          <!-- Card 3: Socket Screws & Screws -->
           <div class="card">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/736x/3e/9c/19/3e9c197c8702b9272d1945091f04ff48.jpg" alt="Socket Head Fasteners" loading="lazy">
+              <img src="assets/images/4.jpg" alt="Precision Socket Head and Machine Screws" loading="lazy">
             </div>
-            <div class="card-icon"><i class="ri-settings-5-line"></i></div>
-            <h3>Socket Heads & Precision Dowels</h3>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">Heat-Treated Alloy</span>
+              <span class="spec-pill">ASTM A574 / DIN 912</span>
+              <span class="spec-pill">#2 to 1"</span>
+            </div>
+            <h3>Socket Heads &amp; Precision Screws</h3>
             <p>
-              Alloy steel and stainless socket head cap screws, set screws, shoulder screws, and precision ground dowel pins for tooling and dies.
+              180,000 PSI high-precision internal hex drive socket screws, self-drilling fasteners, and dowel pins for close-tolerance machine housings and robotic dies.
             </p>
-            <div class="card-footer">
-              <a href="catalog.html" class="btn btn-sm btn-secondary">View Socket Screws</a>
+            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Specs</a>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Bulk Enquiry</a>
+            </div>
+          </div>
+
+          <!-- Card 4: All-Thread Studs & Rods -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="assets/images/6.jpg" alt="All-Thread Rods and Continuous Studs" loading="lazy">
+            </div>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">B7 Cr-Mo Alloy / PTFE</span>
+              <span class="spec-pill">ASTM A193 B7</span>
+              <span class="spec-pill">3/8" to 2-1/2"</span>
+            </div>
+            <h3>Continuous Thread Studs &amp; Rods</h3>
+            <p>
+              High-temperature, high-pressure piping studs and 12-foot threaded rods engineered for flange connections, heat exchangers, and chemical containment.
+            </p>
+            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Specs</a>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Bulk Enquiry</a>
+            </div>
+          </div>
+
+          <!-- Card 5: Heavy Anchors & U-Bolts -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="assets/images/7.jpg" alt="Expansion Anchors, J-Bolts, and Hardware" loading="lazy">
+            </div>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">Galvanized &amp; 316 SS</span>
+              <span class="spec-pill">ICC-ES Seismic</span>
+              <span class="spec-pill">3/8" to 1-1/4"</span>
+            </div>
+            <h3>Concrete Anchors &amp; U-Bolts</h3>
+            <p>
+              Heavy-duty wedge anchors, sleeve anchors, foundation J-bolts, and pipe support U-bolts rated for seismic zones and heavy vibratory equipment baseplates.
+            </p>
+            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Specs</a>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Bulk Enquiry</a>
+            </div>
+          </div>
+
+          <!-- Card 6: Washers, Nuts & Retaining Hardware -->
+          <div class="card">
+            <div class="card-img-wrap">
+              <img src="assets/images/5.jpg" alt="Hardened Washers and Lock Rings" loading="lazy">
+            </div>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">Hardened Steel / Chrome</span>
+              <span class="spec-pill">ASTM F436 / DIN 127</span>
+              <span class="spec-pill">1/4" to 2"</span>
+            </div>
+            <h3>Washers, Lock Rings &amp; 2H Nuts</h3>
+            <p>
+              Heavy structural flat washers, helical spring lock washers, and Grade 2H heavy hex nuts engineered to maintain uniform clamping preload without backing off.
+            </p>
+            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+              <a href="catalog.html" class="btn btn-sm btn-secondary">View Specs</a>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Bulk Enquiry</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Key Industries Served -->
+    <!-- 4. Key Industries Served (Automotive, Construction, Electronics, Aerospace, Oil & Gas) -->
     <section class="section section-alt" id="industries">
       <div class="container">
         <div class="section-header">
-          <span class="tag-badge">Mission-Critical Sectors</span>
-          <h2>Industries Relying On IndustrialPro</h2>
+          <span class="tag-badge"><i class="ri-shield-star-line"></i> Mission-Critical Sectors</span>
+          <h2>Dedicated Industries Served</h2>
           <p class="lead">
-            Delivering zero-defect fastening hardware to America's most demanding manufacturing and construction sectors.
+            Delivering zero-defect fastening hardware and direct vendor-managed inventory to the world's most demanding manufacturing plants and job sites.
           </p>
         </div>
 
-        <div class="card-grid-4">
-          <div class="card">
-            <div class="card-icon"><i class="ri-road-map-line"></i></div>
-            <h4>Heavy Infrastructure</h4>
-            <p>DOT-approved structural bolts and tension-indicating assemblies for bridges and highway spans.</p>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <!-- Industry 1: Automotive -->
+          <div class="industry-card-visual">
+            <div class="ind-img-wrap">
+              <img src="assets/images/ind_automotive.jpg" alt="Automotive Assembly Plants & Robotic Manufacturing" loading="lazy">
+              <span class="ind-badge"><i class="ri-car-line"></i> Automotive &amp; Transportation</span>
+            </div>
+            <div class="ind-body">
+              <h4><i class="ri-roadster-line" style="color: var(--color-accent);"></i> Automotive Assembly Plants</h4>
+              <p>Supplying Tier 1 auto manufacturers with micro-encapsulated threadlockers, wheel studs, suspension hex bolts, and optical AI-sorted hardware with < 50 PPM defect limits.</p>
+              <ul class="industry-specs-list">
+                <li>PPAP Level 3 Documentation</li>
+                <li>SAE J429 Gr 8 Fasteners</li>
+                <li>Kanban Scale-Bin Refill</li>
+              </ul>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-secondary" style="margin-top: auto;">Automotive RFQ</a>
+            </div>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="ri-oil-line"></i></div>
-            <h4>Petrochem & Refining</h4>
-            <p>ASTM A193 B7 stud bolts and fluoropolymer-coated hardware resistant to harsh chemical corrosion.</p>
+
+          <!-- Industry 2: Construction -->
+          <div class="industry-card-visual">
+            <div class="ind-img-wrap">
+              <img src="assets/images/ind_construction.jpg" alt="Heavy Structural Construction & Bridge Infrastructure" loading="lazy">
+              <span class="ind-badge"><i class="ri-building-line"></i> Heavy Construction</span>
+            </div>
+            <div class="ind-body">
+              <h4><i class="ri-building-fill" style="color: var(--color-accent);"></i> Commercial Construction &amp; Bridges</h4>
+              <p>Direct job-site pallet deliveries for steel erectors, heavy highway contractors, and tunnel infrastructure. Pre-assembled structural bolts with matching nuts and washers.</p>
+              <ul class="industry-specs-list">
+                <li>ASTM F3125 / A325 Structural</li>
+                <li>Certified Domestic Melt (Buy America)</li>
+                <li>Job-Site Grid Staging</li>
+              </ul>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-secondary" style="margin-top: auto;">Construction RFQ</a>
+            </div>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="ri-flashlight-line"></i></div>
-            <h4>Solar & Power Generation</h4>
-            <p>Magni-coated and stainless steel solar torque-tube hardware tested to 2,000 salt-spray hours.</p>
+
+          <!-- Industry 3: Electronics -->
+          <div class="industry-card-visual">
+            <div class="ind-img-wrap">
+              <img src="assets/images/ind_electronics.jpg" alt="High-Tech Precision Electronics & Cleanroom Assembly" loading="lazy">
+              <span class="ind-badge"><i class="ri-cpu-line"></i> High-Tech &amp; Electronics</span>
+            </div>
+            <div class="ind-body">
+              <h4><i class="ri-device-line" style="color: var(--color-accent);"></i> Electronics &amp; Automation</h4>
+              <p>Precision micro screws, brass standoffs, captive panel fasteners, and non-magnetic stainless fasteners for cleanrooms, server racks, and automated robotics enclosures.</p>
+              <ul class="industry-specs-list">
+                <li>Torx &amp; Phillips Miniature #0 to #6</li>
+                <li>Anti-Static (ESD) Packaging</li>
+                <li>RoHS &amp; REACH Compliant</li>
+              </ul>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-secondary" style="margin-top: auto;">Electronics RFQ</a>
+            </div>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="ri-plane-line"></i></div>
-            <h4>Aerospace & Defense</h4>
-            <p>Mil-spec hardware with complete chemical and physical mill test reports (MTR) stored digitally.</p>
+
+          <!-- Industry 4: Aerospace -->
+          <div class="industry-card-visual">
+            <div class="ind-img-wrap">
+              <img src="assets/images/ind_aerospace.jpg" alt="Aerospace & Defense Aviation Hardware" loading="lazy">
+              <span class="ind-badge"><i class="ri-plane-line"></i> Aerospace &amp; Defense</span>
+            </div>
+            <div class="ind-body">
+              <h4><i class="ri-flight-takeoff-line" style="color: var(--color-accent);"></i> Aerospace &amp; Defense Aviation</h4>
+              <p>Mil-spec, NAS, and MS standardized high-tensile hardware manufactured from titanium, Inconel 718, and A286 superalloys. 100% heat lot traceability with permanent digital MTR certs.</p>
+              <ul class="industry-specs-list">
+                <li>AS9100 / Mil-Spec Compliance</li>
+                <li>Inconel &amp; Titanium Alloys</li>
+                <li>Full Chemical Heat Traceability</li>
+              </ul>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-secondary" style="margin-top: auto;">Aerospace RFQ</a>
+            </div>
+          </div>
+
+          <!-- Industry 5: Oil & Gas -->
+          <div class="industry-card-visual">
+            <div class="ind-img-wrap">
+              <img src="assets/images/ind_oilgas.jpg" alt="Oil & Gas Refinery and Offshore High-Pressure Piping" loading="lazy">
+              <span class="ind-badge"><i class="ri-oil-line"></i> Oil, Gas &amp; Refining</span>
+            </div>
+            <div class="ind-body">
+              <h4><i class="ri-drop-line" style="color: var(--color-accent);"></i> Oil, Gas &amp; Chemical Plants</h4>
+              <p>Continuous thread stud bolts, heavy hex nuts, and high-pressure valve fasteners coated with PTFE fluoropolymer (Xylan) for extreme corrosion and subsea resistance.</p>
+              <ul class="industry-specs-list">
+                <li>ASTM A193 B7 / B7M Studs</li>
+                <li>ASTM A194 2H Heavy Nuts</li>
+                <li>PTFE Corrosion Barrier Coating</li>
+              </ul>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-secondary" style="margin-top: auto;">Oil &amp; Gas RFQ</a>
+            </div>
+          </div>
+
+          <!-- Industry 6: Renewable Energy -->
+          <div class="industry-card-visual">
+            <div class="ind-img-wrap">
+              <img src="assets/images/ind_renewable.jpg" alt="Wind Turbines and Solar Farm Renewable Infrastructure" loading="lazy">
+              <span class="ind-badge"><i class="ri-sun-line"></i> Power &amp; Renewable Energy</span>
+            </div>
+            <div class="ind-body">
+              <h4><i class="ri-flashlight-line" style="color: var(--color-accent);"></i> Solar &amp; Wind Generation</h4>
+              <p>Torque-tube structural bolts, serrated flange nuts, and ground anchor assemblies tested to 2,000 salt-fog hours for utility-scale solar farms and wind turbine towers.</p>
+              <ul class="industry-specs-list">
+                <li>Magni &amp; Geomet Flake Plating</li>
+                <li>High Preload Vibratory Locking</li>
+                <li>Bulk Pallet Staging to Remote Sites</li>
+              </ul>
+              <a href="bulk-ordering.html" class="btn btn-sm btn-secondary" style="margin-top: auto;">Renewable RFQ</a>
+            </div>
           </div>
         </div>
       </div>

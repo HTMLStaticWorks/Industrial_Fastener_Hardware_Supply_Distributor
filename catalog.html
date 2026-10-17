@@ -6,8 +6,9 @@
   <title>Product Catalog by Fastener Type – IndustrialPro Fasteners</title>
   <meta name="description" content="Browse 75,000+ industrial fasteners organized by category: Heavy Hex, ASTM Structural, Socket Heads, Marine Stainless, and Concrete Anchors.">
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
-  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
   
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -35,7 +36,6 @@
           <li><a href="catalog.html" class="nav-link active">Catalog</a></li>
           <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
           <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
           <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         </ul>
@@ -75,7 +75,6 @@
       <li><a href="catalog.html" class="active"><i class="ri-archive-stack-line"></i> Catalog</a></li>
       <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
       <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
-      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
       <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
       <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
     </ul>
@@ -103,7 +102,7 @@
           <span class="tag-badge"><i class="ri-list-check-2"></i> Master Product Directory</span>
           <h1>Industrial Fastener Catalog</h1>
           <p class="lead">
-            Filter our certified inventory by fastener family, metallurgical specification, finish, and dimensional tolerance standards.
+            Filter our certified inventory by fastener family, metallurgical specification, finish, size diameter, and industrial application standards.
           </p>
         </div>
 
@@ -111,16 +110,16 @@
         <div class="catalog-toolbar">
           <div class="search-input-wrap">
             <i class="ri-search-line"></i>
-            <input type="text" class="form-control" placeholder="Search by SKU, ASTM Spec, or Diameter..." aria-label="Search Catalog">
+            <input type="text" id="catalog-search" class="form-control" placeholder="Search by SKU, ASTM Spec, or Diameter..." aria-label="Search Catalog">
           </div>
 
           <div class="filter-group">
-            <button type="button" class="btn btn-sm btn-primary">All Fasteners</button>
-            <button type="button" class="btn btn-sm btn-secondary">Hex Cap Screws</button>
-            <button type="button" class="btn btn-sm btn-secondary">Structural A325</button>
-            <button type="button" class="btn btn-sm btn-secondary">Socket Products</button>
-            <button type="button" class="btn btn-sm btn-secondary">316 Stainless</button>
-            <button type="button" class="btn btn-sm btn-secondary">Anchors</button>
+            <button type="button" class="btn btn-sm btn-primary active" data-filter="all">All Fasteners</button>
+            <button type="button" class="btn btn-sm btn-secondary" data-filter="hex">Hex Cap Screws</button>
+            <button type="button" class="btn btn-sm btn-secondary" data-filter="structural">Structural A325</button>
+            <button type="button" class="btn btn-sm btn-secondary" data-filter="socket">Socket Screws</button>
+            <button type="button" class="btn btn-sm btn-secondary" data-filter="studs">Flange Studs</button>
+            <button type="button" class="btn btn-sm btn-secondary" data-filter="anchors">Anchors &amp; U-Bolts</button>
           </div>
         </div>
       </div>
@@ -129,110 +128,203 @@
     <!-- Catalog Product Grid -->
     <section class="section" style="padding-block-start: 0;">
       <div class="container">
-        <div class="card-grid">
+        <div class="card-grid" id="catalog-grid">
 
           <!-- Item 1: Grade 8 Hex -->
-          <div class="card">
+          <div class="card" data-category="hex" data-material="alloy-steel" data-size="1/4-to-1-1/2">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/1200x/cc/34/ff/cc34ff8cf96b5ba40c43346e096024c5.jpg" alt="Grade 8 Hex Bolt" loading="lazy">
+              <img src="assets/images/1.jpg" alt="Grade 8 Hex Bolt" loading="lazy">
             </div>
-            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
-              <span class="badge-grade">SAE J429 Grade 8</span>
-              <span class="badge-grade">Yellow Zinc</span>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">SAE J429 Grade 8</span>
+              <span class="spec-pill">Yellow Zinc</span>
+              <span class="spec-pill">Dia: 1/4" – 1-1/2"</span>
             </div>
             <h3>Grade 8 Heavy Hex Cap Screws</h3>
-            <p>High-tensile heat treated alloy steel with 150,000 PSI minimum tensile strength. Sized 1/4" to 1-1/2" up to 12" length.</p>
-            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
-              <button type="button" class="btn btn-sm btn-secondary btn-view-specs" data-part="Grade 8 Heavy Hex Cap Screw" data-standard="SAE J429 / ASME B18.2.1" data-material="Quenched & Tempered Alloy Steel (Yellow Zinc Dichromate)">View Spec Sheet</button>
+            <p>High-tensile heat treated alloy steel with 150,000 PSI minimum tensile strength. Designed for heavy construction vehicles and powertrain mounts.</p>
+            <div class="card-footer">
+              <button type="button" class="btn btn-sm btn-secondary btn-view-specs" data-part="Grade 8 Heavy Hex Cap Screw" data-standard="SAE J429 / ASME B18.2.1" data-material="Quenched &amp; Tempered Alloy Steel (Yellow Zinc Dichromate)">View Spec Sheet</button>
               <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Add to RFQ</a>
             </div>
           </div>
 
           <!-- Item 2: A325 Structural -->
-          <div class="card">
+          <div class="card" data-category="structural" data-material="carbon-steel" data-size="1/2-to-1-1/4">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/1200x/a4/59/d8/a459d8858b0bf83d5212238cd9af952b.jpg" alt="ASTM A325 Structural Bolt" loading="lazy">
+              <img src="assets/images/3.jpg" alt="ASTM A325 Structural Bolt" loading="lazy">
             </div>
-            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
-              <span class="badge-grade">ASTM F3125 / A325</span>
-              <span class="badge-grade">Hot-Dip Galvanized</span>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">ASTM F3125 / A325</span>
+              <span class="spec-pill">Hot-Dip Galvanized</span>
+              <span class="spec-pill">Dia: 1/2" – 1-1/4"</span>
             </div>
             <h3>ASTM A325 Heavy Hex Structural</h3>
-            <p>Designed for structural steel-to-steel connections in bridges, buildings, and industrial towers. Certified domestic lots with MTRs.</p>
-            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+            <p>Engineered for high-strength steel-to-steel connections in bridges, buildings, and industrial towers. Certified domestic lots with full MTR certs.</p>
+            <div class="card-footer">
               <button type="button" class="btn btn-sm btn-secondary btn-view-specs" data-part="ASTM A325 Heavy Hex Structural Bolt" data-standard="ASTM F3125 Grade A325 / AISC" data-material="Medium Carbon Steel (Hot-Dip Galvanized / Plain)">View Spec Sheet</button>
               <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Add to RFQ</a>
             </div>
           </div>
 
           <!-- Item 3: Socket Head Cap Screws -->
-          <div class="card">
+          <div class="card" data-category="socket" data-material="alloy-steel" data-size="no2-to-1">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/1200x/2a/d1/a1/2ad1a1238f180d5678cec4436d5c9d7f.jpg" alt="Socket Head Cap Screw" loading="lazy">
+              <img src="assets/images/4.jpg" alt="Socket Head Cap Screw" loading="lazy">
             </div>
-            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
-              <span class="badge-grade">ASTM A574 / DIN 912</span>
-              <span class="badge-grade">Thermal Black Oxide</span>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">ASTM A574 / DIN 912</span>
+              <span class="spec-pill">Thermal Black Oxide</span>
+              <span class="spec-pill">Dia: #2 – 1"</span>
             </div>
             <h3>Alloy Socket Head Cap Screws</h3>
-            <p>180,000 PSI high-precision internal hex drive fasteners for close-tolerance machine housings, injection dies, and robotic tooling.</p>
-            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+            <p>180,000 PSI high-precision internal hex drive fasteners for close-tolerance machine housings, injection tooling, and automation robotics.</p>
+            <div class="card-footer">
               <button type="button" class="btn btn-sm btn-secondary btn-view-specs" data-part="Alloy Steel Socket Head Cap Screw" data-standard="ASTM A574 / ASME B18.3" data-material="High-Strength Alloy Steel (Thermal Black Oxide)">View Spec Sheet</button>
               <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Add to RFQ</a>
             </div>
           </div>
 
-          <!-- Item 4: 316 Stainless Marine Hardware -->
-          <div class="card">
+          <!-- Item 4: Washers & Lock Rings -->
+          <div class="card" data-category="hex" data-material="hardened-steel" data-size="1/4-to-2">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/736x/8f/3a/82/8f3a82f12df587e42e2874717b0039d7.jpg" alt="316 Stainless Hardware" loading="lazy">
+              <img src="assets/images/5.jpg" alt="Hardened Steel Washers and Lock Rings" loading="lazy">
             </div>
-            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
-              <span class="badge-grade">AISI 316 / A4-80</span>
-              <span class="badge-grade">Passivated Marine</span>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">ASTM F436 / DIN 127</span>
+              <span class="spec-pill">Hardened &amp; Passivated</span>
+              <span class="spec-pill">Dia: 1/4" – 2"</span>
             </div>
-            <h3>316 Marine Stainless Fasteners</h3>
-            <p>Molybdenum-stabilized austenitic stainless steel providing maximum immunity against chloride pitting, salt spray, and acid washdowns.</p>
-            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
-              <button type="button" class="btn btn-sm btn-secondary btn-view-specs" data-part="AISI 316 Stainless Steel Hex & Socket" data-standard="ASTM F593 / ISO 3506 A4-80" data-material="316 Austenitic Stainless (Passivated Finish)">View Spec Sheet</button>
+            <h3>ASTM F436 Hardened Washers &amp; Rings</h3>
+            <p>Uniformly quenched structural washers and high-collar lock rings designed to prevent embedment and sustain design tension under dynamic loads.</p>
+            <div class="card-footer">
+              <button type="button" class="btn btn-sm btn-secondary btn-view-specs" data-part="ASTM F436 Hardened Structural Washer" data-standard="ASTM F436 Type 1 / ASME B18.21.1" data-material="Quenched &amp; Tempered Medium Carbon Steel">View Spec Sheet</button>
               <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Add to RFQ</a>
             </div>
           </div>
 
-          <!-- Item 5: Concrete Wedge Anchors -->
-          <div class="card">
+          <!-- Item 5: Concrete Wedge Anchors & U-Bolts -->
+          <div class="card" data-category="anchors" data-material="galvanized" data-size="3/8-to-1-1/4">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/1200x/c3/ea/a3/c3eaa3124b24c5b3f20362dc4b856e4b.jpg" alt="Concrete Wedge Anchors" loading="lazy">
+              <img src="assets/images/7.jpg" alt="Concrete Wedge Anchors" loading="lazy">
             </div>
-            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
-              <span class="badge-grade">ICC-ES ESR Certified</span>
-              <span class="badge-grade">Carbon & Stainless</span>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">ICC-ES ESR Certified</span>
+              <span class="spec-pill">Carbon &amp; 316 Stainless</span>
+              <span class="spec-pill">Dia: 3/8" – 1-1/4"</span>
             </div>
-            <h3>Heavy-Duty Concrete Wedge Anchors</h3>
-            <p>Seismic-approved expansion anchors for structural base plates, racking systems, conveyor anchors, and curtain walls.</p>
-            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+            <h3>Heavy-Duty Wedge Anchors &amp; U-Bolts</h3>
+            <p>Seismic-approved expansion anchors and heavy pipe U-bolts for structural base plates, vibrating machinery, conveyor anchors, and pipe racking.</p>
+            <div class="card-footer">
               <button type="button" class="btn btn-sm btn-secondary btn-view-specs" data-part="Heavy-Duty Concrete Wedge Anchor" data-standard="ICC-ES AC193 / ACI 355.2" data-material="Zinc-Plated Carbon Steel / 316 Stainless">View Spec Sheet</button>
               <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Add to RFQ</a>
             </div>
           </div>
 
           <!-- Item 6: ASTM A193 B7 Heavy Studs -->
-          <div class="card">
+          <div class="card" data-category="studs" data-material="cr-mo-alloy" data-size="3/8-to-2-1/2">
             <div class="card-img-wrap">
-              <img src="https://i.pinimg.com/736x/6a/44/20/6a4420aea2ecf1eac8ccaebf9689e580.jpg" alt="ASTM B7 Heavy Studs" loading="lazy">
+              <img src="assets/images/6.jpg" alt="ASTM B7 Heavy Studs" loading="lazy">
             </div>
-            <div style="display: flex; gap: var(--space-2); margin-block-end: var(--space-2);">
-              <span class="badge-grade">ASTM A193 B7</span>
-              <span class="badge-grade">PTFE Blue Fluoropolymer</span>
+            <div class="fastener-specs-pillbox">
+              <span class="spec-pill material">ASTM A193 B7</span>
+              <span class="spec-pill">PTFE Blue Fluoropolymer</span>
+              <span class="spec-pill">Dia: 3/8" – 2-1/2"</span>
             </div>
-            <h3>ASTM A193 B7 Flange Studs & 2H Nuts</h3>
-            <p>Continuous thread all-thread studs with matched heavy hex nuts for petrochemical piping, high pressure valves, and heat exchangers.</p>
-            <div class="card-footer" style="display: flex; gap: var(--space-2); width: 100%;">
+            <h3>ASTM A193 B7 Flange Studs &amp; 2H Nuts</h3>
+            <p>Continuous thread all-thread studs with matched heavy hex nuts for petrochemical piping, high pressure valves, refineries, and heat exchangers.</p>
+            <div class="card-footer">
               <button type="button" class="btn btn-sm btn-secondary btn-view-specs" data-part="ASTM A193 Grade B7 Flange Stud Assembly" data-standard="ASTM A193 / ASME B16.5" data-material="Cr-Mo Alloy Steel with PTFE Blue Fluoropolymer">View Spec Sheet</button>
               <a href="bulk-ordering.html" class="btn btn-sm btn-primary">Add to RFQ</a>
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Material, Size & Application Reference Matrix -->
+    <section class="section section-alt" id="spec-matrix">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-file-settings-line"></i> Engineering Standards</span>
+          <h2>Fastener Material &amp; Sizing Reference Matrix</h2>
+          <p class="lead">
+            Quickly reference standard tensile strength ratings, recommended protective coatings, and primary industry applications.
+          </p>
+        </div>
+
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Fastener Type</th>
+                <th>Standard Material Spec</th>
+                <th>Standard Diameters</th>
+                <th>Min. Tensile Strength</th>
+                <th>Protective Finish</th>
+                <th>Primary Application</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Heavy Hex Cap Screws</strong></td>
+                <td>SAE J429 Grade 8 Alloy Steel</td>
+                <td>1/4" – 1-1/2" (UNC/UNF)</td>
+                <td>150,000 PSI</td>
+                <td>Yellow Zinc Dichromate</td>
+                <td>Automotive, Off-Highway, Ag Equipment</td>
+              </tr>
+              <tr>
+                <td><strong>Structural Bolts</strong></td>
+                <td>ASTM F3125 Grade A325</td>
+                <td>1/2" – 1-1/4" Heavy Hex</td>
+                <td>120,000 PSI</td>
+                <td>Hot-Dip Galvanized / Plain</td>
+                <td>Bridges, Steel Frame Erection, Cranes</td>
+              </tr>
+              <tr>
+                <td><strong>Socket Head Screws</strong></td>
+                <td>ASTM A574 Alloy Steel</td>
+                <td>#2 – 1" (Coarse &amp; Fine)</td>
+                <td>180,000 PSI</td>
+                <td>Thermal Black Oxide</td>
+                <td>Precision Tooling, Robotics, Machine Tools</td>
+              </tr>
+              <tr>
+                <td><strong>High-Temp Flange Studs</strong></td>
+                <td>ASTM A193 Grade B7</td>
+                <td>3/8" – 2-1/2" All-Thread</td>
+                <td>125,000 PSI</td>
+                <td>PTFE Fluoropolymer (Blue)</td>
+                <td>Petrochemical Piping, Refineries, Valves</td>
+              </tr>
+              <tr>
+                <td><strong>Concrete Wedge Anchors</strong></td>
+                <td>Carbon Steel / 316 Stainless</td>
+                <td>3/8" – 1-1/4" Exp. Stud</td>
+                <td>Seismic Approved ESR</td>
+                <td>Mechanical Zinc Plated</td>
+                <td>Structural Baseplates, Conveyors, Racks</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Bulk Ordering & Custom Fabrication CTA Section -->
+    <section class="section" style="background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 100%); color: #F8FAFC;">
+      <div class="container">
+        <div class="section-header" style="color: #F8FAFC;">
+          <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid rgba(245,158,11,0.3);">High-Volume Procurement Desk</span>
+          <h2 style="color: #FFFFFF !important;">Need Mill Kegs, Full Pallets, or Custom Modified Fasteners?</h2>
+          <p class="lead" style="color: #CBD5E1 !important;">
+            Our Cleveland sales engineering team provides instant wholesale tier pricing, scheduled releases, and dedicated lot reservations for corporate purchasing accounts.
+          </p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-block-start: var(--space-5);">
+            <a href="bulk-ordering.html" class="btn btn-primary btn-lg">Submit Bulk BOM / RFQ</a>
+            <a href="pricing.html" class="btn btn-secondary btn-lg">View Volume Discount Tiers</a>
+          </div>
         </div>
       </div>
     </section>
@@ -246,7 +338,7 @@
         <p id="modal-part-material" style="color: var(--color-text-muted); font-size: 0.95rem;">Quenched & Tempered Alloy Steel (Yellow Zinc Dichromate)</p>
 
         <div style="margin-block: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-3); background-color: var(--color-bg);">
-          <h4 style="font-size: 1.1rem; margin-block-end: var(--space-2);">Mechanical Properties & Dimensional Tolerances</h4>
+          <h4 style="font-size: 1.1rem; margin-block-end: var(--space-2);">Mechanical Properties &amp; Dimensional Tolerances</h4>
           <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
             <tr style="border-bottom: 1px solid var(--color-border);">
               <td style="padding: 8px 4px; font-weight: 500;">Core Hardness:</td>

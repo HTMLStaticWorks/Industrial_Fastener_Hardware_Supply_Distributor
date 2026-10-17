@@ -6,8 +6,9 @@
   <title>Bulk Ordering & Large-Volume RFQ – IndustrialPro Fasteners</title>
   <meta name="description" content="Request large-volume wholesale quotes for industrial fasteners. Line-item RFQ builder, BOM upload, direct-mill keg discounts, and rapid procurement.">
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
-  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
   
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -35,7 +36,6 @@
           <li><a href="catalog.html" class="nav-link">Catalog</a></li>
           <li><a href="bulk-ordering.html" class="nav-link active">Bulk Order</a></li>
           <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
           <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         </ul>
@@ -75,7 +75,6 @@
       <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
       <li><a href="bulk-ordering.html" class="active"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
       <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
-      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
       <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
       <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
     </ul>
@@ -106,37 +105,100 @@
           </p>
         </div>
 
-        <!-- Volume Tiers Highlights -->
+        <!-- Volume Tiers Highlights (Redesigned Enterprise Cards) -->
         <div class="card-grid" style="margin-block-end: var(--space-7);">
-          <div class="card">
-            <div class="card-icon"><i class="ri-box-3-line"></i></div>
-            <h3>Master Carton Tier</h3>
-            <p>10–25 Cartons. 10% average volume discount with same-day pallet staging.</p>
-            <div class="card-footer">
-              <span class="tag-badge" style="margin: 0;">Tier 1 Volume</span>
+          
+          <!-- Tier 1: Master Carton -->
+          <div class="card" style="align-items: flex-start; text-align: left; padding: 0; overflow: hidden; border: 1px solid var(--color-border);">
+            <div style="position: relative; width: 100%; height: 180px; overflow: hidden;">
+              <img src="assets/images/10.jpg" alt="Master Cartons Staged" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="badge-grade" style="position: absolute; top: 12px; left: 12px; margin: 0; background: rgba(15, 23, 42, 0.85); color: #F8FAFC; backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.2);">Tier 1 Volume</span>
+              <span style="position: absolute; bottom: 12px; right: 12px; background: var(--color-accent); color: #0F172A; font-weight: 700; font-size: 0.82rem; padding: 4px 10px; border-radius: var(--radius-sm); font-family: var(--font-heading);">10% OFF</span>
+            </div>
+            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; width: 100%;">
+              <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: rgba(245, 158, 11, 0.12); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                  <i class="ri-box-3-line"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; margin: 0; text-align: left; min-height: auto;">Master Carton Pack</h3>
+              </div>
+              <p style="text-align: left; font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: var(--space-3);">
+                Designed for regional fabricators, subcontractors, and maintenance workshops with moderate recurring volume.
+              </p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-4) 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; border-top: 1px dashed var(--color-border); padding-top: var(--space-3); width: 100%;">
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> <strong>10 – 25 Master Cartons</strong></li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> Same-day pallet staging &amp; dispatch</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> Certified digital MTR lot download</li>
+              </ul>
+              <div style="margin-top: auto; width: 100%;">
+                <a href="#rfq-form" class="btn btn-secondary" style="width: 100%;">Configure Carton RFQ</a>
+              </div>
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-icon"><i class="ri-stack-line"></i></div>
-            <h3>Pallet / Keg Tier</h3>
-            <p>1–5 Full Pallets (36–180 Kegs). 18%–24% discount with dedicated account manager.</p>
-            <div class="card-footer">
-              <span class="tag-badge" style="margin: 0;">Tier 2 Volume</span>
+          <!-- Tier 2: Pallet & Keg -->
+          <div class="card" style="align-items: flex-start; text-align: left; padding: 0; overflow: hidden; border: 2px solid var(--color-accent); box-shadow: 0 10px 30px rgba(245, 158, 11, 0.18);">
+            <div style="position: relative; width: 100%; height: 180px; overflow: hidden;">
+              <img src="assets/images/8.jpg" alt="Pallet & Keg Inventory" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="badge-grade" style="position: absolute; top: 12px; left: 12px; margin: 0; background: var(--color-accent); color: #0F172A; font-weight: 700; border: none;">Most Popular</span>
+              <span style="position: absolute; bottom: 12px; right: 12px; background: var(--color-accent); color: #0F172A; font-weight: 700; font-size: 0.82rem; padding: 4px 10px; border-radius: var(--radius-sm); font-family: var(--font-heading);">18% – 24% OFF</span>
+            </div>
+            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; width: 100%;">
+              <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--color-accent); color: #0F172A; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                  <i class="ri-stack-line"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; margin: 0; text-align: left; min-height: auto;">Full Pallet &amp; Keg Tier</h3>
+              </div>
+              <p style="text-align: left; font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: var(--space-3);">
+                Ideal for general contractors, bridge erectors, and plant assembly floors requiring skid-level continuous supply.
+              </p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-4) 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; border-top: 1px dashed var(--color-border); padding-top: var(--space-3); width: 100%;">
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> <strong>1 – 5 Full Pallets (36–180 Kegs)</strong></li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> Dedicated Key Account Manager</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> Job-site drop with serialized barcodes</li>
+              </ul>
+              <div style="margin-top: auto; width: 100%;">
+                <a href="#rfq-form" class="btn btn-primary" style="width: 100%;">Configure Pallet RFQ</a>
+              </div>
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-icon"><i class="ri-truck-fill"></i></div>
-            <h3>Direct Mill / Truckload</h3>
-            <p>Full truckload (44,000 lbs) direct from mill furnaces. Maximum wholesale contract rates.</p>
-            <div class="card-footer">
-              <span class="tag-badge" style="margin: 0;">Tier 3 Direct Mill</span>
+          <!-- Tier 3: Direct Mill -->
+          <div class="card" style="align-items: flex-start; text-align: left; padding: 0; overflow: hidden; border: 1px solid var(--color-border);">
+            <div style="position: relative; width: 100%; height: 180px; overflow: hidden;">
+              <img src="assets/images/11.jpg" alt="Direct Mill Freight Truckloads" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="badge-grade" style="position: absolute; top: 12px; left: 12px; margin: 0; background: rgba(15, 23, 42, 0.85); color: #F8FAFC; backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.2);">Tier 3 Direct Mill</span>
+              <span style="position: absolute; bottom: 12px; right: 12px; background: var(--color-accent); color: #0F172A; font-weight: 700; font-size: 0.82rem; padding: 4px 10px; border-radius: var(--radius-sm); font-family: var(--font-heading);">Wholesale Mill Rate</span>
+            </div>
+            <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1; width: 100%;">
+              <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+                <div style="width: 36px; height: 36px; border-radius: var(--radius-sm); background: rgba(245, 158, 11, 0.12); color: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                  <i class="ri-truck-fill"></i>
+                </div>
+                <h3 style="font-size: 1.3rem; margin: 0; text-align: left; min-height: auto;">Direct Mill / Truckload</h3>
+              </div>
+              <p style="text-align: left; font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: var(--space-3);">
+                Factory furnace contract runs directly delivered to heavy industrial OEMs, mega-projects, and export terminals.
+              </p>
+              <ul style="list-style: none; padding: 0; margin: 0 0 var(--space-4) 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; border-top: 1px dashed var(--color-border); padding-top: var(--space-3); width: 100%;">
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> <strong>Full Truckload (44,000 lbs)</strong></li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> Direct melt heat traceability &amp; testing</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="ri-check-line" style="color: var(--color-accent);"></i> Net 60/90 days commercial credit lines</li>
+              </ul>
+              <div style="margin-top: auto; width: 100%;">
+                <a href="#rfq-form" class="btn btn-secondary" style="width: 100%;">Configure Truckload RFQ</a>
+              </div>
             </div>
           </div>
+
         </div>
+      </div>
+    </section>
 
-        <!-- RFQ Form Builder -->
+    <!-- 2. RFQ Form Builder -->
+    <section class="section section-alt" id="rfq-form">
+      <div class="container">
         <div class="rfq-form-card">
           <h2 style="font-size: var(--size-h3); margin-block-end: var(--space-2); text-align: center;">Request Volume Quotation</h2>
           <p style="text-align: center; color: var(--color-text-muted); margin-block-end: var(--space-5);">Fill in your job-site requirements. Our commercial desk responds within 2 business hours.</p>
@@ -208,6 +270,88 @@
               <button type="submit" class="btn btn-primary btn-lg btn-rfq-submit">Submit Volume RFQ</button>
             </div>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Certified Bulk Fulfillment Standards (Redesigned with Live Metrics & Animations) -->
+    <section class="section" id="supply-reliability">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-shield-check-line"></i> Supply Reliability</span>
+          <h2>Our Bulk Delivery Commitment</h2>
+          <p class="lead">Why America's largest contractors, automotive assembly plants, and defense facilities rely on FastenCore for mission-critical supply.</p>
+        </div>
+
+        <div class="reliability-grid">
+          <!-- Card 1 -->
+          <div class="reliability-card">
+            <div class="reliability-icon-box">
+              <i class="ri-qr-code-line"></i>
+            </div>
+            <div class="reliability-metric">100%</div>
+            <h4>Pallet Barcode Tracking</h4>
+            <p>Every pallet is tagged with serialized 2D GS1 barcodes containing heat certification, purchase order, and carton count.</p>
+            <div class="reliability-live-tag">
+              <span class="pulse-dot"></span> Real-Time RF Scan Ready
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="reliability-card">
+            <div class="reliability-icon-box">
+              <i class="ri-truck-line"></i>
+            </div>
+            <div class="reliability-metric">&lt; 48h</div>
+            <h4>Job-Site Staged Dispatch</h4>
+            <p>Direct boom truck and flatbed drops to bridge piers, laydown yards, and factory docks with guaranteed appointment windows.</p>
+            <div class="reliability-live-tag">
+              <span class="pulse-dot"></span> GPS Fleets Monitored
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="reliability-card">
+            <div class="reliability-icon-box">
+              <i class="ri-secure-payment-line"></i>
+            </div>
+            <div class="reliability-metric">$500K</div>
+            <h4>Revolving Credit Terms</h4>
+            <p>Approved enterprise clients access pre-cleared revolving Net 30/60/90 trade credit lines to ensure frictionless procurement.</p>
+            <div class="reliability-live-tag">
+              <span class="pulse-dot"></span> Instant Credit Approvals
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="reliability-card">
+            <div class="reliability-icon-box">
+              <i class="ri-file-shield-line"></i>
+            </div>
+            <div class="reliability-metric">24 / 7</div>
+            <h4>Digital CMTR Vault</h4>
+            <p>Certified chemical and mechanical mill test reports linked to each heat lot, downloadable instantly via the client portal.</p>
+            <div class="reliability-live-tag">
+              <span class="pulse-dot"></span> Cloud Traceability Live
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Client Portal Quick Callout -->
+    <section class="section section-alt" style="background: linear-gradient(135deg, var(--color-primary) 0%, #1e293b 100%); color: #F8FAFC;">
+      <div class="container">
+        <div class="section-header" style="color: #F8FAFC;">
+          <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24;">Existing B2B Client?</span>
+          <h2 style="color: #FFFFFF !important;">Already Have An Enterprise Account?</h2>
+          <p class="lead" style="color: #CBD5E1 !important;">
+            Log into your corporate client dashboard to place rapid bulk repeat orders, track active truckload freight, and view tiered contract discounts.
+          </p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-block-start: var(--space-5);">
+            <a href="dashboard.html" class="btn btn-primary btn-lg"><i class="ri-dashboard-3-line"></i> Open Client Dashboard</a>
+            <a href="pricing.html" class="btn btn-secondary btn-lg"><i class="ri-price-tag-3-line"></i> Review Discount Tiers</a>
+          </div>
         </div>
       </div>
     </section>

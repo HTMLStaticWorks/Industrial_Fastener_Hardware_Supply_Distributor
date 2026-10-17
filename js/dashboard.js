@@ -32,6 +32,12 @@ function initDashboardTabs() {
       const targetPane = document.getElementById(targetId);
       if (targetPane) {
         targetPane.classList.add('active');
+        // Ensure any table rows, timeline steps, and cards in this pane are fully visible
+        targetPane.querySelectorAll('table tbody tr, .timeline-step, .card').forEach(r => {
+          r.style.opacity = '1';
+          r.style.visibility = 'visible';
+          r.style.transform = 'none';
+        });
         // On tablet/mobile, scroll smoothly to content pane
         if (window.innerWidth <= 1024) {
           const headerOffset = 80;
@@ -112,20 +118,23 @@ function initBulkReorderCart() {
   function addRow(item = catalogItems[0], defaultQty = 5) {
     const tr = document.createElement('tr');
     tr.dataset.price = item.unitPrice;
+    tr.style.opacity = '1';
+    tr.style.visibility = 'visible';
+    tr.style.transform = 'none';
 
     tr.innerHTML = `
       <td>
-        <strong>${item.sku}</strong>
-        <div style="font-size: 0.85rem; color: var(--color-text-muted);">${item.name}</div>
+        <strong style="color: var(--color-text); font-size: 0.95rem; display: block;">${item.sku}</strong>
+        <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 3px;">${item.name}</div>
       </td>
-      <td>${item.pack}</td>
-      <td>$${item.unitPrice.toFixed(2)}</td>
+      <td style="color: var(--color-text);">${item.pack}</td>
+      <td style="color: var(--color-text); font-weight: 500;">$${item.unitPrice.toFixed(2)}</td>
       <td style="width: 130px;">
-        <input type="number" class="form-control row-qty-input" value="${defaultQty}" min="1" max="1000" style="padding: 6px 10px;">
+        <input type="number" class="form-control row-qty-input" value="${defaultQty}" min="1" max="1000" style="padding: 6px 10px; color: var(--color-text); background-color: var(--color-surface); border: 1px solid var(--color-border);">
       </td>
-      <td class="row-line-total" style="font-weight: 500; color: var(--color-accent);">$0.00</td>
+      <td class="row-line-total" style="font-weight: 600; color: var(--color-accent); font-size: 0.95rem;">$0.00</td>
       <td style="text-align: center;">
-        <button type="button" class="btn btn-sm btn-outline btn-remove-row" style="padding: 4px 8px; border: none; color: var(--color-error);">
+        <button type="button" class="btn btn-sm btn-outline btn-remove-row" title="Remove line item" aria-label="Remove line item" style="padding: 6px 10px; border: 1px solid var(--color-border); color: var(--color-error); background: transparent; cursor: pointer; border-radius: var(--radius-global);">
           <i class="ri-delete-bin-line" style="font-size: 1.15rem;"></i>
         </button>
       </td>

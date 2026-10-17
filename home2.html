@@ -6,8 +6,9 @@
   <title>Engineering Hub – IndustrialPro Fasteners Alternative View</title>
   <meta name="description" content="Technical engineering view of IndustrialPro Fasteners: interactive bolt torque calculator, proof-load lookup, material matrix, and direct contractor reorder portal.">
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
-  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
   
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -36,7 +37,6 @@
           <li><a href="catalog.html" class="nav-link">Catalog</a></li>
           <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
           <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
           <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         </ul>
@@ -77,7 +77,6 @@
       <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
       <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
       <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
-      <li><a href="blog.html"><i class="ri-article-line"></i> Blog</a></li>
       <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
       <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
     </ul>
@@ -99,13 +98,13 @@
 
   <main>
     <!-- Home 2 Hero: Engineered Precision Layout -->
-    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; padding-block: 120px 100px;">
+    <section class="hero home2-hero" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;">
       <!-- Dark overlay for readability -->
-      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,15,30,0.82) 0%, rgba(15,23,42,0.70) 100%); z-index: 0;"></div>
+      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,15,30,0.85) 0%, rgba(15,23,42,0.75) 100%); z-index: 0;"></div>
       <div class="container" style="position: relative; z-index: 1;">
-        <div class="section-header" style="margin-block-end: var(--space-6);">
+        <div class="section-header" style="margin-block-end: var(--space-4);">
           <span class="tag-badge" style="background: rgba(245,158,11,0.2); color: #FBBF24; border: 1px solid rgba(245,158,11,0.3);"><i class="ri-cpu-line"></i> Precision Fastening Portal</span>
-          <h1 style="color: #FFFFFF !important;">Engineered Torque & Structural Hardware Data</h1>
+          <h1 style="color: #FFFFFF !important;">Engineered Torque &amp; Structural Hardware Data</h1>
           <p class="lead" style="color: #CBD5E1 !important;">
             Accelerate your engineering and procurement with verified proof load specifications, torque tightening curves, and direct mill-inventory integration.
           </p>
@@ -192,79 +191,196 @@
       </div>
     </section>
 
-    <!-- Material Grade Matrix (Reorganized Visuals) -->
-    <section class="section" id="metallurgy">
+    <!-- DISTINCT SECTION 1: Advanced CNC Machine Shop & Custom Fastener Modifying -->
+    <section class="section" id="custom-machining">
       <div class="container">
         <div class="section-header">
-          <span class="tag-badge">Metallurgy Specifications</span>
-          <h2>Fastener Alloy Comparison Guide</h2>
+          <span class="tag-badge"><i class="ri-cpu-line"></i> Precision Tooling Cell</span>
+          <h2>In-House CNC Fabrication &amp; Fastener Modification</h2>
           <p class="lead">
-            Select the exact metallurgical properties suited for structural loads, extreme temperatures, and chemical exposures.
+            When off-the-shelf fasteners do not meet your tolerance envelopes, our precision machine shop turns custom threads, cross-drills bolt heads, and machines exotic alloys.
           </p>
         </div>
 
-        <div class="card-grid">
-          <div class="card">
-            <div class="card-icon"><i class="ri-shield-flash-line"></i></div>
-            <h3>Grade 8 High-Tensile Alloy</h3>
-            <p>Medium carbon alloy steel, quenched and tempered. 150,000 PSI minimum tensile strength. Used in heavy earthmoving machinery and powertrain mounts.</p>
-            <div class="card-footer">
-              <span class="badge-grade">SAE J429 Spec</span>
-            </div>
+        <div class="cnc-shop-grid">
+          <div class="card" style="padding: 0; overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-global);">
+            <img src="assets/images/h2_cnc_lathe.jpg" alt="High Precision CNC Lathe Machine Turning Fasteners" style="width: 100%; height: 380px; object-fit: cover;">
           </div>
-
-          <div class="card">
-            <div class="card-icon"><i class="ri-hammer-line"></i></div>
-            <h3>ASTM A325 Structural Steel</h3>
-            <p>Heat-treated carbon steel for structural steel joints. Optimized for shear and tension in commercial construction and highway bridges.</p>
-            <div class="card-footer">
-              <span class="badge-grade">AISC Approved</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+            <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
+              <div class="card-icon" style="margin: 0; flex-shrink: 0;"><i class="ri-tools-line"></i></div>
+              <div>
+                <h4 style="margin-bottom: var(--space-1); text-align: left;">Live 5-Axis Turning &amp; Thread Rolling</h4>
+                <p style="text-align: left; margin: 0; font-size: 0.95rem;">Producing non-standard UNJ, metric fine, ACME, and buttress threads with Class 3A pitch diameters and surface finishes down to 16 Ra.</p>
+              </div>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-icon"><i class="ri-temp-cold-line"></i></div>
-            <h3>ASTM A193 B7 Alloy Studs</h3>
-            <p>Chromium-molybdenum steel for high-pressure piping, valves, and petrochemical pressure vessels operating up to 800°F.</p>
-            <div class="card-footer">
-              <span class="badge-grade">ASME Boiler Code</span>
+            <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
+              <div class="card-icon" style="margin: 0; flex-shrink: 0;"><i class="ri-shield-check-line"></i></div>
+              <div>
+                <h4 style="margin-bottom: var(--space-1); text-align: left;">Safety-Wire Head Drilling &amp; Slotting</h4>
+                <p style="text-align: left; margin: 0; font-size: 0.95rem;">Radial and cross-drilled bolt heads conforming to MS21250 and NAS aviation specifications for positive mechanical safety wire retention.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: var(--space-3); align-items: flex-start;">
+              <div class="card-icon" style="margin: 0; flex-shrink: 0;"><i class="ri-fire-fill"></i></div>
+              <div>
+                <h4 style="margin-bottom: var(--space-1); text-align: left;">Superalloy Machining (Inconel, Monel, Hastelloy)</h4>
+                <p style="text-align: left; margin: 0; font-size: 0.95rem;">Rapid turnaround on hard-to-source high temperature and marine alloys designed for deep-well exploration and rocket thrust structures.</p>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-2);">
+              <a href="bulk-ordering.html" class="btn btn-primary">Submit Blueprint CAD for Quote</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Supply Chain Logistics & Distribution Hubs -->
-    <section class="section section-alt" id="logistics">
+    <!-- DISTINCT SECTION 2: Optical Laser Inspection & Zero-Defect Metrology -->
+    <section class="section section-alt" id="metrology-lab">
       <div class="container">
         <div class="section-header">
-          <span class="tag-badge">Supply Chain Velocity</span>
-          <h2>Nationwide Distribution Hubs</h2>
+          <span class="tag-badge"><i class="ri-scan-2-line"></i> Automated Metrology</span>
+          <h2>Computerized Optical AI Sorting &amp; Dimensional QA</h2>
           <p class="lead">
-            Strategically located master warehouses guarantee 98% of orders arrive at job sites within 24 to 48 hours.
+            High-speed vision sorting tables inspect up to 800 parts per minute, ensuring zero mixed parts, thread integrity, and sub-50 PPM quality standards.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-img-wrap" style="height: 200px;">
+              <img src="assets/images/h2_laser_metrology.jpg" alt="Computerized Laser Sorting Table" loading="lazy">
+            </div>
+            <div class="card-icon"><i class="ri-eye-line"></i></div>
+            <h3>Laser Dimension Verification</h3>
+            <p>360-degree laser profiles measure thread pitch, flank angle, concentricity, and total bolt length to ±0.005mm accuracy.</p>
+            <div class="card-footer">
+              <span class="badge-grade">Optical 360 Scan</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap" style="height: 200px;">
+              <img src="assets/images/h2_metallurgy_test.jpg" alt="Eddy Current Metallurgical Crack Testing" loading="lazy">
+            </div>
+            <div class="card-icon"><i class="ri-flashlight-line"></i></div>
+            <h3>Eddy Current Metallurgy Sorting</h3>
+            <p>Non-destructive electromagnetic testing detects improper heat-treat hardness, internal voids, and surface micro-cracking.</p>
+            <div class="card-footer">
+              <span class="badge-grade">NDT Eddy Current</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img-wrap" style="height: 200px;">
+              <img src="assets/images/h2_salt_spray.jpg" alt="Chemical Salt Spray Corrosion Testing" loading="lazy">
+            </div>
+            <div class="card-icon"><i class="ri-test-tube-line"></i></div>
+            <h3>ASTM B117 Salt Fog Chamber</h3>
+            <p>Accelerated corrosion analysis verifying protective coatings from standard zinc to fluoropolymer PTFE for 1,500+ hour endurance.</p>
+            <div class="card-footer">
+              <span class="badge-grade">ASTM B117 Lab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISTINCT SECTION 3: Smart Factory Floor VMI & RFID Kanban Ecosystem -->
+    <section class="section" id="smart-kanban">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-wifi-line"></i> Industry 4.0 Integration</span>
+          <h2>Automated Smart Bin &amp; Factory Stock Replenishment</h2>
+          <p class="lead">
+            Eliminate stock-outs and production stoppages. IndustrialPro installs smart weight-scale racks directly inside your assembly departments.
           </p>
         </div>
 
         <div class="card-grid-4">
           <div class="card">
-            <div class="card-icon"><i class="ri-building-4-line"></i></div>
-            <h4>Cleveland Hub (HQ)</h4>
-            <p>500,000 sq ft master hub housing over 45,000 bulk pallets of hex and structural hardware.</p>
+            <div class="card-img-wrap" style="height: 150px;">
+              <img src="assets/images/h2_rfid_bins.jpg" alt="Digital Weight Scale Smart Bin" loading="lazy">
+            </div>
+            <span class="badge-grade">Hardware</span>
+            <h4>RFID Scale Bins</h4>
+            <p>Continuous load-cell monitoring tracks remaining bolt quantities by weight and broadcasts replenishment triggers.</p>
           </div>
+
           <div class="card">
-            <div class="card-icon"><i class="ri-building-4-line"></i></div>
-            <h4>Houston Hub</h4>
-            <p>Dedicated petrochem, marine, and B7 Teflon-coated stud inventory for Gulf Coast refiners.</p>
+            <div class="card-img-wrap" style="height: 150px;">
+              <img src="assets/images/h2_auto_pick.jpg" alt="Automated Pallet Staging System" loading="lazy">
+            </div>
+            <span class="badge-grade">Fulfillment</span>
+            <h4>Automated Pre-Pick</h4>
+            <p>Cleveland &amp; Houston hubs receive cloud order alerts instantly, pre-picking lots 24 hours before your factory runs low.</p>
           </div>
+
           <div class="card">
-            <div class="card-icon"><i class="ri-building-4-line"></i></div>
-            <h4>Atlanta Logistics</h4>
-            <p>High-velocity distribution supporting Southeast solar farms and commercial infrastructure.</p>
+            <div class="card-img-wrap" style="height: 150px;">
+              <img src="assets/images/h2_point_of_use.jpg" alt="Direct Line-Side Delivery" loading="lazy">
+            </div>
+            <span class="badge-grade">Logistics</span>
+            <h4>Point-Of-Use Delivery</h4>
+            <p>IndustrialPro route drivers stock parts directly to workstation bins, saving assembly technicians 15 hours per week.</p>
           </div>
+
           <div class="card">
-            <div class="card-icon"><i class="ri-building-4-line"></i></div>
-            <h4>Reno Hub</h4>
-            <p>Same-day dispatch facility serving West Coast manufacturing, aerospace, and mining.</p>
+            <div class="card-img-wrap" style="height: 150px;">
+              <img src="assets/images/h2_edi_erp.jpg" alt="ERP EDI Automated Accounting" loading="lazy">
+            </div>
+            <span class="badge-grade">Accounting</span>
+            <h4>Consolidated Invoicing</h4>
+            <p>One monthly electronic invoice matched to ERP purchase orders via direct EDI 850/855/810 integration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISTINCT SECTION 4: Engineering Technical Whitepaper & Standards Library -->
+    <section class="section section-alt" id="engineering-library">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-book-read-line"></i> Engineering Repository</span>
+          <h2>Fastener Engineering Whitepapers &amp; Specs</h2>
+          <p class="lead">
+            Download verified technical guidelines authored by our metallurgical staff and certified to IFI, ASTM, and ASME requirements.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card" style="text-align: center; align-items: center;">
+            <div class="card-icon" style="margin-inline: auto;"><i class="ri-file-pdf-2-line"></i></div>
+            <span class="badge-grade" style="margin-inline: auto; margin-block-end: var(--space-2);">Technical Whitepaper</span>
+            <h4 style="text-align: center;">Hydrogen Embrittlement In High-Strength Bolts</h4>
+            <p style="text-align: center;">Comprehensive guide on baking procedures, electroplating hazards, and post-plate de-embrittlement protocols for Grade 8 and A490 fasteners.</p>
+            <div class="card-footer" style="width: 100%; display: flex; justify-content: center;">
+              <a href="contact.html" class="btn btn-sm btn-secondary" style="width: 100%; text-align: center; justify-content: center;">Request Engineering PDF</a>
+            </div>
+          </div>
+
+          <div class="card" style="text-align: center; align-items: center;">
+            <div class="card-icon" style="margin-inline: auto;"><i class="ri-file-chart-line"></i></div>
+            <span class="badge-grade" style="margin-inline: auto; margin-block-end: var(--space-2);">Torque Specification Guide</span>
+            <h4 style="text-align: center;">Flange Bolting &amp; ASME B16.5 Gasket Sealing</h4>
+            <p style="text-align: center;">Optimal cross-pattern tightening sequences, torque multipliers, and friction factor adjustments for B7 PTFE coated studs in chemical pipelines.</p>
+            <div class="card-footer" style="width: 100%; display: flex; justify-content: center;">
+              <a href="contact.html" class="btn btn-sm btn-secondary" style="width: 100%; text-align: center; justify-content: center;">Request Engineering PDF</a>
+            </div>
+          </div>
+
+          <div class="card" style="text-align: center; align-items: center;">
+            <div class="card-icon" style="margin-inline: auto;"><i class="ri-shield-keyhole-line"></i></div>
+            <span class="badge-grade" style="margin-inline: auto; margin-block-end: var(--space-2);">Certification Standard</span>
+            <h4 style="text-align: center;">Understanding EN 10204 3.1 &amp; 3.2 Mill Test Reports</h4>
+            <p style="text-align: center;">How to audit chemical composition limits, Charpy V-notch toughness values, and heat treatment certifications for critical defense contracts.</p>
+            <div class="card-footer" style="width: 100%; display: flex; justify-content: center;">
+              <a href="contact.html" class="btn btn-sm btn-secondary" style="width: 100%; text-align: center; justify-content: center;">Request Engineering PDF</a>
+            </div>
           </div>
         </div>
       </div>

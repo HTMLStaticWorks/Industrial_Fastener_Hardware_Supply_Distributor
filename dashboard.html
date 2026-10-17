@@ -6,8 +6,9 @@
   <title>Enterprise Client Dashboard – IndustrialPro Fasteners</title>
   <meta name="description" content="Commercial client dashboard: Browse catalog by category, bulk reorder requests, live shipment tracking, invoice management, and tier pricing.">
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpg">
-  <link rel="apple-touch-icon" href="assets/images/favicon.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
   
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -77,6 +78,7 @@
     </div>
     <ul class="drawer-links drawer-portal-links" style="margin-block-end: var(--space-4);">
       <li><a href="#overview" class="dashboard-drawer-link active" data-target="pane-overview"><i class="ri-pie-chart-line"></i> Overview &amp; KPIs</a></li>
+      <li><a href="#catalog-browse" class="dashboard-drawer-link" data-target="pane-catalog"><i class="ri-archive-stack-line"></i> Product Catalog</a></li>
       <li><a href="#reorder" class="dashboard-drawer-link" data-target="pane-reorder"><i class="ri-shopping-cart-line"></i> Bulk Reorder Cart</a></li>
       <li><a href="#tracking" class="dashboard-drawer-link" data-target="pane-tracking"><i class="ri-truck-line"></i> Shipment Tracking</a></li>
       <li><a href="#pricing-tiers" class="dashboard-drawer-link" data-target="pane-pricing"><i class="ri-price-tag-3-line"></i> Account Pricing Tiers</a></li>
@@ -87,7 +89,7 @@
 
     <!-- Drawer Footer: Logout Link Only (Theme & RTL are kept in the Top Navbar) -->
     <div class="drawer-footer" style="margin-top: auto; padding-top: var(--space-4); border-top: 1px solid var(--color-border);">
-      <a href="login.html" class="btn btn-outline dashboard-logout-link" style="width: 100%; justify-content: center; gap: 8px;">
+      <a href="index.html" class="btn btn-outline dashboard-logout-link" style="width: 100%; justify-content: center; gap: 8px;">
         <i class="ri-logout-box-r-line"></i> Sign Out
       </a>
     </div>
@@ -100,9 +102,9 @@
       <!-- Verified Client Badge -->
       <div class="dashboard-user-card">
         <div class="user-avatar">TC</div>
-        <div>
-          <div style="font-weight: 500; font-size: 0.95rem;">Turner Construction</div>
-          <span class="badge-grade" style="margin: 0; font-size: 0.7rem;">Tier 2 Enterprise (-18%)</span>
+        <div style="min-width: 0; white-space: nowrap;">
+          <div style="font-weight: 600; font-size: 0.92rem; line-height: 1.25; white-space: nowrap; color: var(--color-text);">Turner Construction</div>
+          <span class="badge-grade" style="margin-top: 3px; font-size: 0.68rem; padding: 2px 7px; white-space: nowrap; display: inline-block;">Tier 2 Enterprise (-18%)</span>
         </div>
       </div>
 
@@ -110,7 +112,12 @@
       <ul class="dashboard-menu">
         <li>
           <a href="#overview" class="dashboard-nav-link active" data-target="pane-overview">
-            <i class="ri-dashboard-line"></i> Overview & KPIs
+            <i class="ri-dashboard-line"></i> Overview &amp; KPIs
+          </a>
+        </li>
+        <li>
+          <a href="#catalog-browse" class="dashboard-nav-link" data-target="pane-catalog">
+            <i class="ri-archive-stack-line"></i> Product Catalog
           </a>
         </li>
         <li>
@@ -146,7 +153,7 @@
       </ul>
 
       <div class="dashboard-sidebar-footer">
-        <a href="login.html" class="dashboard-logout-link" id="btn-logout-portal">
+        <a href="index.html" class="dashboard-logout-link" id="btn-logout-portal">
           <i class="ri-logout-box-r-line"></i> Logout Portal
         </a>
       </div>
@@ -157,13 +164,36 @@
       
       <!-- Pane 1: Overview & Statistics -->
       <div class="dashboard-tab-pane active" id="pane-overview">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-5); flex-wrap: wrap; gap: var(--space-3);">
+        <!-- Overview Header with Welcome Greeting -->
+        <div class="dashboard-overview-header">
           <div>
-
+            <h1 style="font-size: 1.65rem; margin-bottom: 4px; color: var(--color-text);">Welcome back, Marcus! 👋</h1>
             <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Account ID: IND-892401 &bull; Assigned Facility: Cleveland Master Hub</p>
           </div>
           <div>
             <a href="bulk-ordering.html" class="btn btn-primary btn-sm"><i class="ri-add-line"></i> New Volume RFQ</a>
+          </div>
+        </div>
+
+        <!-- Enterprise Welcome Message Banner -->
+        <div class="dashboard-welcome-banner">
+          <div class="welcome-banner-main">
+            <div class="welcome-banner-icon">
+              <i class="ri-user-smile-line"></i>
+            </div>
+            <div class="welcome-banner-text">
+              <div class="welcome-banner-title">
+                Welcome to your FastenCore Enterprise Procurement Hub
+              </div>
+              <p class="welcome-banner-desc">
+                Turner Construction is active on Tier 2 terms (18% contracted margin). 3 freight shipments are currently en route to your Cuyahoga Pier 4 staging gate.
+              </p>
+            </div>
+          </div>
+          <div class="welcome-banner-badge-wrap">
+            <span class="status-badge status-delivered">
+              <i class="ri-shield-check-line"></i> Contract Verified
+            </span>
           </div>
         </div>
 
@@ -291,9 +321,102 @@
         </div>
       </div>
 
+      <!-- Pane: B2B Client Product Catalog by Category -->
+      <div class="dashboard-tab-pane" id="pane-catalog">
+        <div class="dashboard-pane-header">
+          <div>
+            <h3 style="font-size: 1.35rem; margin-block-end: 4px;">Contracted Product Catalog by Category</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Browse contracted fastener categories, check real-time stock levels, and add items directly to your reorder cart.</p>
+          </div>
+          <div>
+            <a href="bulk-ordering.html" class="btn btn-primary btn-sm"><i class="ri-file-upload-line"></i> Upload Custom BOM</a>
+          </div>
+        </div>
+
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-block-end: var(--space-6);">
+          <div class="card catalog-card">
+            <div class="card-img-wrap" style="height: 160px;">
+              <img src="assets/images/1.jpg" alt="Grade 8 Hex Screws" loading="lazy">
+            </div>
+            <span class="badge-grade">High-Tensile Alloy</span>
+            <h4 style="font-size: 1.15rem; margin-block: var(--space-2); min-height: auto;">Heavy Hex Cap Screws</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted);">SAE J429 Grade 8, Grade 5. Diameters 1/4" to 1-1/2". Contract Price: $0.85/pc (-18%).</p>
+            <div class="card-footer" style="padding-top: var(--space-3); width: 100%; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--color-success);"><i class="ri-checkbox-circle-fill"></i> In Stock (42,000)</span>
+              <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Added Grade 8 Hex Bolt (10 Boxes) to Reorder Cart!')">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="card catalog-card">
+            <div class="card-img-wrap" style="height: 160px;">
+              <img src="assets/images/3.jpg" alt="A325 Structural Bolts" loading="lazy">
+            </div>
+            <span class="badge-grade">Structural Bolting</span>
+            <h4 style="font-size: 1.15rem; margin-block: var(--space-2); min-height: auto;">A325 Structural Assemblies</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted);">ASTM F3125 Grade A325 Heavy Hex with 2H Nuts. Contract Price: $2.10/pc (-18%).</p>
+            <div class="card-footer" style="padding-top: var(--space-3); width: 100%; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--color-success);"><i class="ri-checkbox-circle-fill"></i> In Stock (18,500)</span>
+              <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Added A325 Structural Assembly (4 Kegs) to Reorder Cart!')">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="card catalog-card">
+            <div class="card-img-wrap" style="height: 160px;">
+              <img src="assets/images/4.jpg" alt="Socket Head Cap Screws" loading="lazy">
+            </div>
+            <span class="badge-grade">Precision Machine</span>
+            <h4 style="font-size: 1.15rem; margin-block: var(--space-2); min-height: auto;">Socket Heads &amp; Screws</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted);">ASTM A574 180,000 PSI thermal black oxide socket screws. Contract Price: $1.45/pc (-18%).</p>
+            <div class="card-footer" style="padding-top: var(--space-3); width: 100%; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--color-success);"><i class="ri-checkbox-circle-fill"></i> In Stock (65,000)</span>
+              <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Added Socket Head Screws (5 Boxes) to Reorder Cart!')">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="card catalog-card">
+            <div class="card-img-wrap" style="height: 160px;">
+              <img src="assets/images/6.jpg" alt="B7 Flange Studs" loading="lazy">
+            </div>
+            <span class="badge-grade">Petrochem &amp; Flanges</span>
+            <h4 style="font-size: 1.15rem; margin-block: var(--space-2); min-height: auto;">ASTM A193 B7 Flange Studs</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted);">PTFE blue fluoropolymer-coated all-thread studs with 2H nuts. Contract Price: $3.80/assembly.</p>
+            <div class="card-footer" style="padding-top: var(--space-3); width: 100%; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--color-success);"><i class="ri-checkbox-circle-fill"></i> In Stock (8,200)</span>
+              <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Added B7 Flange Stud Assembly to Reorder Cart!')">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="card catalog-card">
+            <div class="card-img-wrap" style="height: 160px;">
+              <img src="assets/images/7.jpg" alt="Wedge Anchors & U-Bolts" loading="lazy">
+            </div>
+            <span class="badge-grade">Heavy Foundation</span>
+            <h4 style="font-size: 1.15rem; margin-block: var(--space-2); min-height: auto;">Concrete Anchors &amp; U-Bolts</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted);">Heavy-duty wedge anchors and pipe U-bolts for equipment baseplates. Contract Price: $2.40/pc.</p>
+            <div class="card-footer" style="padding-top: var(--space-3); width: 100%; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--color-success);"><i class="ri-checkbox-circle-fill"></i> In Stock (12,000)</span>
+              <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Added Concrete Wedge Anchors to Reorder Cart!')">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="card catalog-card">
+            <div class="card-img-wrap" style="height: 160px;">
+              <img src="assets/images/5.jpg" alt="Washers and Lock Rings" loading="lazy">
+            </div>
+            <span class="badge-grade">Hardened Washers</span>
+            <h4 style="font-size: 1.15rem; margin-block: var(--space-2); min-height: auto;">ASTM F436 Hardened Washers</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted);">Structural washers for uniform bolt preload retention. Contract Price: $0.35/pc (-18%).</p>
+            <div class="card-footer" style="padding-top: var(--space-3); width: 100%; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8rem; color: var(--color-success);"><i class="ri-checkbox-circle-fill"></i> In Stock (95,000)</span>
+              <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Added F436 Hardened Washers to Reorder Cart!')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Pane 2: Live Bulk Reorder Cart (Interactive Engine) -->
       <div class="dashboard-tab-pane" id="pane-reorder">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-4); flex-wrap: wrap;">
+        <div class="dashboard-pane-header">
           <div>
 
             <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Adjust line quantities or add items from your standard contracted replenishment catalog.</p>
@@ -356,8 +479,12 @@
 
       <!-- Pane 3: Shipment Tracking -->
       <div class="dashboard-tab-pane" id="pane-tracking">
-
-        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-block-end: var(--space-5);">Enter PO number, BOL number, or freight tracking code to check real-time dock arrival estimates.</p>
+        <div class="dashboard-pane-header">
+          <div>
+            <h3 style="font-size: 1.35rem; margin-block-end: 4px;">Shipment Tracking &amp; Live Telematics</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Enter PO number, BOL number, or freight tracking code to check real-time dock arrival estimates.</p>
+          </div>
+        </div>
 
         <div style="display: flex; gap: var(--space-3); max-width: 600px; margin-block-end: var(--space-6);">
           <input type="text" id="shipment-search-input" class="form-control" placeholder="Enter PO Number (e.g. PO-9812-C)..." value="PO-9812-C">
@@ -365,7 +492,7 @@
         </div>
 
         <div id="shipment-tracker-card" style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); box-shadow: var(--shadow-global); padding: var(--space-5);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-3);">
+          <div class="shipment-card-header" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-3);">
             <div>
               <span class="status-badge status-transit"><i class="ri-truck-line"></i> Freight In-Transit</span>
               <h3 style="font-size: 1.45rem; margin-block: 8px;">Purchase Order: PO-9812-C</h3>
@@ -373,7 +500,7 @@
                 36 Kegs ASTM A325 Structural Bolts &bull; Weight: 7,200 lbs &bull; Seal # 48219-A
               </p>
             </div>
-            <div style="text-align: right;">
+            <div class="shipment-delivery-meta" style="text-align: right;">
               <div style="font-size: 0.85rem; color: var(--color-text-muted);">Estimated Delivery:</div>
               <strong style="font-size: 1.15rem; color: var(--color-text);">Today, by 2:30 PM EST</strong>
             </div>
@@ -407,7 +534,7 @@
             </div>
           </div>
 
-          <div style="display: flex; gap: var(--space-3); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-4);">
+          <div class="shipment-actions-bar" style="display: flex; gap: var(--space-3); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-4); flex-wrap: wrap;">
             <button type="button" class="btn btn-sm btn-secondary" onclick="alert('Downloading Certified Heat Lot Mill Test Reports (MTR)...')">
               <i class="ri-file-download-line"></i> Download MTR Lot Certs
             </button>
@@ -420,11 +547,15 @@
 
       <!-- Pane 4: Account Pricing Tiers -->
       <div class="dashboard-tab-pane" id="pane-pricing">
-
-        <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-block-end: var(--space-5);">Overview of your active volume tiers and commercial credit status.</p>
+        <div class="dashboard-pane-header">
+          <div>
+            <h3 style="font-size: 1.35rem; margin-block-end: 4px;">Account Pricing Tiers</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Overview of your active volume tiers and commercial credit status.</p>
+          </div>
+        </div>
 
         <div class="dashboard-pricing-grid" style="margin-block-end: var(--space-6);">
-          <div class="card" style="align-items: flex-start; text-align: left; width: 100%;">
+          <div class="card pricing-card">
             <div class="tag-badge">Current Tier</div>
             <h3 style="font-size: 1.35rem; line-height: 1.3; margin-block: 4px;">Tier 2: Enterprise Industrial</h3>
             <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">Your contract guarantees an 18% base discount across all catalogue SKUs, 60-day terms, and dedicated warehouse inventory holds.</p>
@@ -433,7 +564,7 @@
             </div>
           </div>
 
-          <div class="card" style="align-items: flex-start; text-align: left; width: 100%;">
+          <div class="card pricing-card">
             <div class="tag-badge">Credit Facility</div>
             <h3 style="font-size: 1.35rem; line-height: 1.3; margin-block: 4px;">Commercial Line of Credit</h3>
             <div class="pricing-credit-amount" style="font-size: 1.8rem; font-family: var(--font-heading); color: var(--color-accent); margin-block: 4px; word-break: break-all;">
@@ -452,7 +583,7 @@
 
       <!-- Pane 5: Invoices & Statements -->
       <div class="dashboard-tab-pane" id="pane-invoices">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-4); flex-wrap: wrap;">
+        <div class="dashboard-pane-header">
           <div>
 
             <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0;">Download certified tax invoices, payment receipts, and monthly accounting logs.</p>

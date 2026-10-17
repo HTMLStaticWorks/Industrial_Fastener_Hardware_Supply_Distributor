@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCatalogModal();
   initBackToTop();
   initFaqAccordion();
+  initHeroWordRotator();
 });
 
 /* ==========================================================================
@@ -430,3 +431,40 @@ function initFaqAccordion() {
   });
 }
 
+/* ==========================================================================
+   9. Hero Headline Rotating Words Engine
+   ========================================================================== */
+function initHeroWordRotator() {
+  const wrapper = document.querySelector('.hero-rotator-wrapper');
+  if (!wrapper) return;
+  const words = wrapper.querySelectorAll('.hero-rotator-word');
+  if (words.length <= 1) return;
+
+  let currentIndex = 0;
+
+  function adjustWrapperHeight() {
+    const active = wrapper.querySelector('.hero-rotator-word.active');
+    if (active) {
+      wrapper.style.minHeight = active.offsetHeight + 'px';
+    }
+  }
+
+  adjustWrapperHeight();
+  window.addEventListener('resize', adjustWrapperHeight);
+
+  setInterval(() => {
+    const currentWord = words[currentIndex];
+    currentIndex = (currentIndex + 1) % words.length;
+    const nextWord = words[currentIndex];
+
+    currentWord.classList.remove('active');
+    currentWord.classList.add('leaving');
+
+    nextWord.classList.add('active');
+    adjustWrapperHeight();
+
+    setTimeout(() => {
+      currentWord.classList.remove('leaving');
+    }, 600);
+  }, 3200);
+}
