@@ -3,24 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About IndustrialPro Fasteners – Master Distributor Heritage</title>
-  <meta name="description" content="Since 1988, IndustrialPro Fasteners has supplied certified heavy hex, structural bolting, and custom fastening solutions across North America.">
+  <title>About FastenCore – Master Fastener Distributor Heritage & Capabilities</title>
+  <meta name="description" content="Since 1988, FastenCore (IndustrialPro Fasteners) has served as North America's premier master distributor of certified heavy hex bolts, structural assemblies, and engineered hardware. Learn about our story, mission, vision, and advanced automated distribution hub.">
+  
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" href="assets/images/favicon.png">
   
+  <!-- Remix Icons CDN -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Master Stylesheets -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
+  
   <!-- GSAP 3 + ScrollTrigger CDN -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About FastenCore - Master Fastener Distributor",
+    "description": "Company history, mission, vision, and technical credentials of FastenCore Industrial Fasteners Inc.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "FastenCore IndustrialPro Fasteners",
+      "foundingDate": "1988",
+      "url": "https://industrialprofasteners.com"
+    }
+  }
+  </script>
 </head>
 <body>
 
-  <!-- Master Header -->
+  <!-- Master Sticky Header -->
   <header class="site-header">
     <div class="container">
       <nav class="navbar" aria-label="Main Navigation">
@@ -29,17 +50,19 @@
           <span>Fasten<span class="accent">Core</span></span>
         </a>
 
+        <!-- Desktop Navigation (> 1024px) -->
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="catalog.html" class="nav-link">Catalog</a></li>
           <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
           <li><a href="pricing.html" class="nav-link">Pricing</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
-          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         </ul>
 
+        <!-- Action Items (RTL + Theme + Four-Dot Dashboard Icon + Login) -->
         <div class="nav-actions">
           <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout" title="Toggle RTL Layout">
             <i class="ri-arrow-left-right-line"></i>
@@ -47,6 +70,9 @@
           <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
             <i class="ri-moon-line"></i>
           </button>
+          <a href="dashboard.html" class="btn-icon-toggle btn-dashboard-icon" aria-label="Client Dashboard" title="Dashboard">
+            <i class="ri-apps-2-line"></i>
+          </a>
           <a href="login.html" class="btn-login-nav">Login</a>
           <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
             <i class="ri-menu-line"></i>
@@ -56,7 +82,7 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
+  <!-- Mobile Hamburger Slide Drawer (≤ 1024px) -->
   <div class="drawer-backdrop" aria-hidden="true"></div>
   <aside class="nav-drawer" aria-label="Mobile Menu">
     <div class="drawer-header">
@@ -71,17 +97,20 @@
     <ul class="drawer-links">
       <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
       <li><a href="home2.html"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
+      <li><a href="about.html" class="active"><i class="ri-information-line"></i> About</a></li>
       <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
       <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
       <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
       <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
       <li><a href="contact.html"><i class="ri-mail-line"></i> Contact</a></li>
-      <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
     </ul>
     <div class="drawer-footer">
       <div class="drawer-toggles">
         <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
         <div style="display: flex; gap: var(--space-2);">
+          <a href="dashboard.html" class="btn-icon-toggle" aria-label="Dashboard" title="Dashboard">
+            <i class="ri-apps-2-line"></i>
+          </a>
           <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
             <i class="ri-arrow-left-right-line"></i>
           </button>
@@ -94,151 +123,293 @@
     </div>
   </aside>
 
-  <main>
-    <!-- About Story Section -->
-    <section class="section">
+  <main id="main-content">
+    <!-- 1. Dedicated Compact Hero Section -->
+    <section class="page-hero-compact">
       <div class="container">
         <div class="section-header">
-          <span class="tag-badge"><i class="ri-history-line"></i> Heritage & Precision Since 1988</span>
-          <h1>Building Trust One Bolt At A Time</h1>
+          <span class="tag-badge"><i class="ri-building-2-line"></i> North America's Master Fastener Distributor</span>
+          <h1>Who We Are &mdash; FastenCore Industrial</h1>
           <p class="lead">
-            Founded in the heart of industrial Cleveland, IndustrialPro Fasteners has grown from a regional specialty bolt warehouse into one of the nation's premier master distributors of heavy structural and engineered fastening systems.
+            Engineered precision. Uncompromising traceability. Over three decades supplying certified structural hardware to North America's most demanding industries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Our Story Section: Elegant 2-Column Heritage Narrative -->
+    <section class="section" id="our-story">
+      <div class="container">
+        <div class="heritage-story-grid">
+          <!-- Left Column: Story Narrative & Founder Quote -->
+          <div class="heritage-text-col">
+            <span class="tag-badge"><i class="ri-history-line"></i> The FastenCore Heritage</span>
+            <h2>From a Midwest Bolt House to North America's Automation Leader</h2>
+            <p class="heritage-lead">
+              Founded in 1988, FastenCore grew from a 15,000 sq ft Cleveland warehouse into a 500,000 sq ft automated mega-hub — built on a single uncompromising principle: every fastener must carry certified metallurgical traceability.
+            </p>
+            <p>
+              In 1988, founder <strong>Arthur Sterling Sr.</strong> launched FastenCore in Cleveland, Ohio with a modest 15,000 sq ft warehouse and one flatbed truck, driven by an uncompromising standard: <em>every structural fastener must carry certified Mill Test Reports (MTR) and guaranteed metallurgical traceability</em>.
+            </p>
+            
+            <p>
+              Today, FastenCore operates a flagship <strong>500,000-square-foot automated mega-hub</strong> with autonomous ASRS robotics, optical laser AI sorting maintaining an industry-leading <strong>&lt; 50 PPM defect threshold</strong>, and SmartBin IoT scale replenishment for 250+ manufacturing plants.
+            </p>
+
+            <div class="heritage-quote-card">
+              <i class="ri-double-quotes-l quote-mark"></i>
+              <p>"A 50-cent bolt holds together a fifty-million-dollar bridge. Never compromise the bolt, or you endanger the bridge."</p>
+              <div class="quote-author">
+                <strong>Arthur Sterling Sr.</strong> &bull; <span>Founder (1988)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Featured Visual with 1 Single Clean Badge -->
+          <div class="heritage-visual-wrap">
+            <img src="assets/images/11.jpg" alt="FastenCore Master Distribution Facility" class="heritage-visual-img" loading="lazy">
+
+            <!-- Single Clean Milestone Badge -->
+            <div class="badge-float badge-float-bottom">
+              <i class="ri-shield-check-fill"></i>
+              <div class="badge-float-text">
+                <strong>Master Fastener Distributor Since 1988</strong>
+                <span>Cleveland, OH &bull; 500,000 Sq Ft Automated Central Hub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Our Mission & Vision: Modern 2026 Showcase -->
+    <section class="section section-alt" id="mission-vision">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag-badge"><i class="ri-focus-3-line"></i> Strategic Trajectory</span>
+          <h2>Our Mission &amp; Vision</h2>
+          <p class="lead">
+            The core engineering principles and autonomous future shaping North America's fastener distribution.
           </p>
         </div>
 
-        <div class="card-grid" style="align-items: center; margin-block-end: var(--space-8);">
-          <div class="card" style="text-align: left; align-items: flex-start;">
-            <div class="tag-badge">Our Mission</div>
-            <h3>Zero Failure In Every Fastener</h3>
-            <p>
-              When a bridge spans a river, an oil rig withstands hurricane seas, or a high-rise ascends into the skyline, safety rests on the integrity of structural bolts. We operate with zero tolerance for sub-standard fasteners. Every heat lot we distribute is accompanied by verifiable mill certifications, tested tensile loads, and full traceability.
-            </p>
-            <p>
-              We treat our commercial partners not as invoice numbers, but as vital collaborators in building and manufacturing critical infrastructure.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-img-wrap" style="height: 320px;">
-              <img src="assets/images/11.jpg" alt="Master Distribution Center Robotics" loading="lazy">
+        <div class="mv-modern-grid">
+          <!-- Mission Card: Zero-Failure Fastener Integrity -->
+          <div class="mv-modern-card">
+            <div class="mv-card-header">
+              <div class="mv-icon-badge">
+                <i class="ri-shield-check-fill"></i>
+              </div>
+              <span class="mv-pill-tag">
+                <span class="pulse-dot"></span> Core Mission
+              </span>
             </div>
-            <div style="font-size: 0.85rem; color: var(--color-text-muted); text-align: center;">Cleveland 500,000 sq ft Master Distribution Center &amp; Quality Laboratory</div>
+            
+            <h3>Zero-Failure Fastener Integrity</h3>
+            <p class="mv-lead-quote">
+              "To empower heavy infrastructure and advanced assembly plants with certified zero-defect fasteners, verified metallurgy, and guaranteed delivery velocity."
+            </p>
+
+            <div class="mv-feature-pills">
+              <div class="mv-feature-item">
+                <i class="ri-qr-code-line"></i>
+                <div class="mv-feature-text">
+                  <strong>100% Heat Traceability</strong>
+                  Digital Mill Test Reports (MTR) permanently linked by lot.
+                </div>
+              </div>
+
+              <div class="mv-feature-item">
+                <i class="ri-speed-up-line"></i>
+                <div class="mv-feature-text">
+                  <strong>24/48-Hour Velocity</strong>
+                  Guaranteed rapid dispatch preventing plant downtime.
+                </div>
+              </div>
+
+              <div class="mv-feature-item">
+                <i class="ri-microscope-line"></i>
+                <div class="mv-feature-text">
+                  <strong>ISO 17025 Test Rigor</strong>
+                  Calibrated proof-load and tensile verification on every lot.
+                </div>
+              </div>
+
+              <div class="mv-feature-item">
+                <i class="ri-user-settings-line"></i>
+                <div class="mv-feature-text">
+                  <strong>Licensed PE Support</strong>
+                  In-house metallurgical engineers on call for blueprint reviews.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vision Card: The Autonomous Fastener Supply Chain -->
+          <div class="mv-modern-card">
+            <div class="mv-card-header">
+              <div class="mv-icon-badge">
+                <i class="ri-compass-3-line"></i>
+              </div>
+              <span class="mv-pill-tag">
+                <span class="pulse-dot"></span> Next-Gen Vision
+              </span>
+            </div>
+            
+            <h3>The Autonomous Supply Chain</h3>
+            <p class="mv-lead-quote">
+              "Pioneering Industry 4.0 through robotic warehousing, computerized laser AI sorting, and predictive IoT scales that eliminate fastener shortages forever."
+            </p>
+
+            <div class="mv-feature-pills">
+              <div class="mv-feature-item">
+                <i class="ri-scan-2-line"></i>
+                <div class="mv-feature-text">
+                  <strong>Optical AI Sorting</strong>
+                  High-speed laser inspection tables maintaining &lt; 50 PPM.
+                </div>
+              </div>
+
+              <div class="mv-feature-item">
+                <i class="ri-rfid-line"></i>
+                <div class="mv-feature-text">
+                  <strong>SmartBin VMI Scales</strong>
+                  Automated floor replenishment triggered before bins run low.
+                </div>
+              </div>
+
+              <div class="mv-feature-item">
+                <i class="ri-leaf-line"></i>
+                <div class="mv-feature-text">
+                  <strong>Eco-Green Metallurgy</strong>
+                  Hexavalent-free plating delivering 2,000+ salt-spray hours.
+                </div>
+              </div>
+
+              <div class="mv-feature-item">
+                <i class="ri-links-line"></i>
+                <div class="mv-feature-text">
+                  <strong>Direct ERP APIs</strong>
+                  Native EDI and REST integrations for SAP, Oracle, and NetSuite.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Historical Milestones Timeline -->
-    <section class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="tag-badge"><i class="ri-calendar-event-line"></i> 38 Years of Growth</span>
-          <h2>Our Manufacturing Milestones</h2>
-          <p class="lead">Key achievements that established IndustrialPro as an industry authority.</p>
-        </div>
+    
 
-        <div class="card-grid-4">
-          <div class="card">
-            <div class="card-icon"><i class="ri-building-line"></i></div>
-            <span class="badge-grade">1988</span>
-            <h4>Founding In Ohio</h4>
-            <p>Started operations with a 15,000 sq ft warehouse supplying heavy equipment builders across the Midwest.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon"><i class="ri-award-line"></i></div>
-            <span class="badge-grade">1999</span>
-            <h4>ISO 9001 Accreditation</h4>
-            <p>Achieved early ISO 9001 quality management certification and commissioned an in-house tensile testing cell.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon"><i class="ri-truck-line"></i></div>
-            <span class="badge-grade">2018</span>
-            <h4>500K Sq Ft Mega Hub</h4>
-            <p>Opened our flagship Cleveland automated distribution hub, scaling stock capacity to over 75,000 SKUs.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon"><i class="ri-scan-line"></i></div>
-            <span class="badge-grade">2024</span>
-            <h4>Optical AI Sorting</h4>
-            <p>Deployed computerized high-speed laser sorting tables achieving < 50 PPM tolerance thresholds for automotive assembly.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leadership & Engineering Team -->
-    <section class="section">
+    <!-- 5. Executive Leadership & Metallurgy Staff -->
+    <section class="section section-alt" id="leadership">
       <div class="container">
         <div class="section-header">
           <span class="tag-badge"><i class="ri-team-line"></i> Subject Matter Experts</span>
-          <h2>Executive Leadership & Metallurgy Staff</h2>
-          <p class="lead">Our veteran metallurgical engineers and logistics directors bring over a century of combined bolting expertise.</p>
+          <h2>Executive Leadership &amp; Metallurgy Staff</h2>
+          <p class="lead">
+            Our veteran metallurgical engineers, supply chain specialists, and operations directors bring over a century of combined bolting expertise.
+          </p>
         </div>
 
         <div class="card-grid">
           <div class="card">
-            <div class="card-img-wrap" style="height: 220px;">
-              <img src="assets/images/3.jpg" alt="Arthur Sterling, PE - Chief Executive Officer" loading="lazy">
+            <div class="card-img-wrap" style="height:300px; overflow:hidden; border-radius:var(--radius-md,8px);">
+              <img src="assets/images/leader-arthur-sterling.jpg" alt="Arthur Sterling, PE - Chief Executive Officer" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top center;">
             </div>
             <span class="badge-grade" style="margin-block-end: var(--space-2);">Chief Executive Officer</span>
             <h3>Arthur Sterling, PE</h3>
-            <p>30+ years in structural fasteners. Former chair of the Industrial Fasteners Institute (IFI) Standards Committee.</p>
+            <p>
+              30+ years in structural fasteners. Former chair of the Industrial Fasteners Institute (IFI) Standards Committee. Licensed Professional Engineer specializing in high-tensile structural bolting.
+            </p>
           </div>
 
           <div class="card">
-            <div class="card-img-wrap" style="height: 220px;">
-              <img src="assets/images/4.jpg" alt="Dr. Linda Chen, PhD - VP of Metallurgy & Quality Lab" loading="lazy">
+            <div class="card-img-wrap" style="height:300px; overflow:hidden; border-radius:var(--radius-md,8px);">
+              <img src="assets/images/leader-linda-chen.jpg" alt="Dr. Linda Chen, PhD - VP of Metallurgy &amp; Quality Lab" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top center;">
             </div>
             <span class="badge-grade" style="margin-block-end: var(--space-2);">VP Metallurgy &amp; Quality</span>
             <h3>Dr. Linda Chen, PhD</h3>
-            <p>Specializes in hydrogen embrittlement mitigation, advanced zinc-flake coatings, and ASTM F3125 mechanical testing.</p>
+            <p>
+              Specializes in hydrogen embrittlement mitigation, advanced zinc-flake coatings, and ASTM F3125 mechanical testing. Leads our A2LA-accredited quality assurance and failure analysis laboratory.
+            </p>
           </div>
 
           <div class="card">
-            <div class="card-img-wrap" style="height: 220px;">
-              <img src="assets/images/10.jpg" alt="Raymond Ramirez - Director of Logistics & VMI" loading="lazy">
+            <div class="card-img-wrap" style="height:300px; overflow:hidden; border-radius:var(--radius-md,8px);">
+              <img src="assets/images/leader-raymond-ramirez.jpg" alt="Raymond Ramirez - Director of Logistics &amp; VMI" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top center;">
             </div>
             <span class="badge-grade" style="margin-block-end: var(--space-2);">Director Logistics &amp; VMI</span>
             <h3>Raymond Ramirez</h3>
-            <p>Oversees nationwide 48-hour delivery networks and automated RFID vendor-managed inventory programs for 200+ plants.</p>
+            <p>
+              Oversees nationwide 48-hour delivery logistics and automated RFID vendor-managed inventory programs for 250+ plants. Pioneer in warehouse robotics and point-of-use kanban systems.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Quality & Environmental Accreditations -->
-    <section class="section section-alt">
+    <!-- 6. Quality & Environmental Accreditations -->
+    <section class="section" id="accreditations">
       <div class="container">
         <div class="section-header">
           <span class="tag-badge"><i class="ri-award-line"></i> Industry Recognition</span>
-          <h2>Quality &amp; Environmental Accreditations</h2>
-          <p class="lead">Certified to the most demanding international aerospace, defense, and industrial management standards.</p>
+          <h2>Quality Accreditations &amp; Industrial Standards</h2>
+          <p class="lead">
+            Certified to the most demanding international aerospace, defense, automotive, and industrial management standards.
+          </p>
         </div>
 
-        <div class="card-grid-4">
-          <div class="card">
-            <div class="card-icon"><i class="ri-shield-check-fill"></i></div>
-            <h4>ISO 9001:2015</h4>
-            <p>Certified Quality Management System covering full master lot traceability, mill inspections, and inventory operations.</p>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <i class="ri-shield-check-fill"></i>
+            <h5>ISO 9001:2015</h5>
+            <span>Quality Management</span>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="ri-microscope-line"></i></div>
-            <h4>ISO 17025 Accredited</h4>
-            <p>Independent metallurgical mechanical testing laboratory for proof load, tensile strength, and Rockwell hardness verification.</p>
+          <div class="cert-card">
+            <i class="ri-microscope-line"></i>
+            <h5>ISO 17025</h5>
+            <span>Mechanical Testing Lab</span>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="ri-plane-fill"></i></div>
-            <h4>AS9100D Registered</h4>
-            <p>Aerospace and defense quality standard compliance with strict foreign object debris (FOD) prevention protocols.</p>
+          <div class="cert-card">
+            <i class="ri-plane-fill"></i>
+            <h5>AS9100D</h5>
+            <span>Aerospace &amp; Defense</span>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="ri-leaf-line"></i></div>
-            <h4>ISO 14001:2015</h4>
-            <p>Environmental management compliance covering zero-effluent hazardous waste handling and eco-friendly packaging.</p>
+          <div class="cert-card">
+            <i class="ri-leaf-line"></i>
+            <h5>ISO 14001:2015</h5>
+            <span>Environmental Protocol</span>
           </div>
+          <div class="cert-card">
+            <i class="ri-survey-line"></i>
+            <h5>ASTM F3125</h5>
+            <span>Structural Bolting</span>
+          </div>
+          <div class="cert-card">
+            <i class="ri-medal-line"></i>
+            <h5>RoHS / REACH</h5>
+            <span>Hazardous Free Finishes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. High-Impact Call To Action Banner -->
+    <section class="section" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border-top: 1px solid var(--color-border); padding-block: var(--space-8);">
+      <div class="container" style="text-align: center;">
+        <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.35); margin-inline: auto;">
+          <i class="ri-handshake-line"></i> Commercial Account Partnership
+        </span>
+        <h2 style="color: #FFFFFF; font-size: clamp(2rem, 3.8vw, 3rem); margin-block: var(--space-3);">
+          Ready to Partner with America's Leading Fastener Master Distributor?
+        </h2>
+        <p class="lead" style="color: #CBD5E1; max-width: 760px; margin-inline: auto; margin-block-end: var(--space-5);">
+          Join over 12,000 structural contractors, heavy equipment manufacturers, and defense builders that rely on FastenCore for certified bolt integrity and zero supply chain delays.
+        </p>
+        <div style="display: flex; justify-content: center; align-items: center; gap: var(--space-3); flex-wrap: wrap;">
+          <a href="register.html" class="btn btn-primary btn-lg"><i class="ri-user-add-line"></i> Open Commercial Account</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg" style="background: rgba(255, 255, 255, 0.1); color: #FFFFFF; border-color: rgba(255, 255, 255, 0.25);"><i class="ri-phone-line"></i> Speak with an Engineer</a>
         </div>
       </div>
     </section>
@@ -275,8 +446,9 @@
         <div class="footer-col">
           <h4>B2B Services</h4>
           <ul class="footer-links">
+            <li><a href="about.html">About FastenCore</a></li>
             <li><a href="services.html">Vendor Managed Inventory</a></li>
-            <li><a href="services.html">Custom CNC Machining</a></li>
+            <li><a href="services.html#secondary-operations">Custom CNC Machining</a></li>
             <li><a href="pricing.html">Account Pricing Tiers</a></li>
             <li><a href="bulk-ordering.html">Bulk Volume Ordering</a></li>
             <li><a href="dashboard.html">Client Portal Login</a></li>
@@ -297,11 +469,11 @@
       </div>
     </div>
   </footer>
+
   <!-- Back To Top Button -->
   <button id="back-to-top" aria-label="Back to top" title="Back to top">
     <i class="ri-arrow-up-line"></i>
   </button>
-
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/gsap-animations.js"></script>

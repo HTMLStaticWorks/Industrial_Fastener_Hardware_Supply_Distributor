@@ -32,12 +32,12 @@
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="catalog.html" class="nav-link">Catalog</a></li>
           <li><a href="bulk-ordering.html" class="nav-link">Bulk Order</a></li>
           <li><a href="pricing.html" class="nav-link">Pricing</a></li>
           <li><a href="contact.html" class="nav-link active">Contact</a></li>
-          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -47,6 +47,9 @@
           <button type="button" class="btn-icon-toggle btn-theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
             <i class="ri-moon-line"></i>
           </button>
+          <a href="dashboard.html" class="btn-icon-toggle btn-dashboard-icon" aria-label="Client Dashboard" title="Dashboard">
+            <i class="ri-apps-2-line"></i>
+          </a>
           <a href="login.html" class="btn-login-nav">Login</a>
           <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
             <i class="ri-menu-line"></i>
@@ -71,17 +74,20 @@
     <ul class="drawer-links">
       <li><a href="index.html"><i class="ri-home-4-line"></i> Home</a></li>
       <li><a href="home2.html"><i class="ri-layout-masonry-line"></i> Home 2</a></li>
+      <li><a href="about.html"><i class="ri-information-line"></i> About</a></li>
       <li><a href="services.html"><i class="ri-tools-line"></i> Services</a></li>
       <li><a href="catalog.html"><i class="ri-archive-stack-line"></i> Catalog</a></li>
       <li><a href="bulk-ordering.html"><i class="ri-shopping-cart-2-line"></i> Bulk Order</a></li>
       <li><a href="pricing.html"><i class="ri-price-tag-3-line"></i> Pricing</a></li>
       <li><a href="contact.html" class="active"><i class="ri-mail-line"></i> Contact</a></li>
-      <li><a href="dashboard.html"><i class="ri-dashboard-3-line"></i> Dashboard</a></li>
     </ul>
     <div class="drawer-footer">
       <div class="drawer-toggles">
         <span style="font-size: var(--size-caption); color: var(--color-text-muted);">Preferences</span>
         <div style="display: flex; gap: var(--space-2);">
+          <a href="dashboard.html" class="btn-icon-toggle" aria-label="Dashboard" title="Dashboard">
+            <i class="ri-apps-2-line"></i>
+          </a>
           <button type="button" class="btn-icon-toggle btn-rtl-toggle" aria-label="Toggle RTL Layout">
             <i class="ri-arrow-left-right-line"></i>
           </button>
@@ -94,17 +100,23 @@
     </div>
   </aside>
 
-  <main>
-    <section class="section">
+  <main id="main-content">
+    <!-- Dedicated Compact Hero Section -->
+    <section class="page-hero-compact">
       <div class="container">
         <div class="section-header">
           <span class="tag-badge"><i class="ri-customer-service-2-line"></i> Nationwide Dispatch</span>
           <h1>Connect With Our Fastener Engineers</h1>
           <p class="lead">
-            Whether you need emergency job-site bolt staging, chemical test reports, or an enterprise VMI consultation, our team is on standby 24/7.
+            Direct engineering support, rapid RFQ turnaround, and emergency fastener staging available 24/7.
           </p>
         </div>
+      </div>
+    </section>
 
+    <!-- Contact & Hubs Section -->
+    <section class="section">
+      <div class="container">
         <!-- Section 1: Form & Regional Distribution Hubs (Clean Balanced 2-Column Grid) -->
         <div class="contact-grid" style="margin-block-end: 0;">
           
@@ -513,6 +525,7 @@
         <div class="footer-col">
           <h4>B2B Services</h4>
           <ul class="footer-links">
+            <li><a href="about.html">About FastenCore</a></li>
             <li><a href="services.html">Vendor Managed Inventory</a></li>
             <li><a href="services.html">Custom CNC Machining</a></li>
             <li><a href="pricing.html">Account Pricing Tiers</a></li>

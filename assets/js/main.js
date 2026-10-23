@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initPasswordToggle();
   initHeroWordRotator();
+  initAboutTabs();
 });
 
 /* ==========================================================================
@@ -546,3 +547,27 @@ function initHeroWordRotator() {
     }, 600);
   }, 3200);
 }
+
+/* ==========================================================================
+   11. About Page Capability Tabs
+   ========================================================================== */
+function initAboutTabs() {
+  const tabBtns = document.querySelectorAll('.about-tab-btn');
+  const tabPanels = document.querySelectorAll('.about-tab-panel');
+  if (!tabBtns.length || !tabPanels.length) return;
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-tab');
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    });
+  });
+}
+

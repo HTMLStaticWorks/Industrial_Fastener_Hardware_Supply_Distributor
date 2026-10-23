@@ -1198,13 +1198,38 @@ img {
 }
 
 .auth-card .brand-logo {
-  margin-block-end: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: var(--weight-h3);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  margin-block-end: var(--space-2);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.auth-card .brand-logo:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.auth-card .brand-logo i {
+  color: var(--color-accent);
+  font-size: 2.35rem;
+}
+
+.auth-card .brand-logo span.accent {
+  color: var(--color-accent);
 }
 
 .auth-card h2 {
-  font-size: 1.85rem;
-  font-weight: var(--weight-h3);
-  margin-block-end: var(--space-2);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-block-end: var(--space-1);
 }
 
 .auth-card p {
