@@ -3385,8 +3385,8 @@ img {
   justify-content: space-between;
   gap: var(--space-3);
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.02rem;
+  font-weight: 500;
   color: var(--color-text);
   user-select: none;
   list-style: none;
